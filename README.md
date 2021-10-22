@@ -8,4 +8,4 @@ Danh sách thành viên nhóm 6:
   •	20520626 – Dương Hoàng Mai<br />
   •	20520737 – Châu Vĩnh Sinh<br />
 Đề tài đồ án: Phần mềm quản lý khách sạn.<br />
-Tiến độ: null
+Tiến độ: 2%
