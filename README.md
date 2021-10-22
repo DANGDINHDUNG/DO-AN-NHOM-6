@@ -3,7 +3,7 @@
 Danh sách thành viên nhóm 6:
   
   •	20520456 – Đặng Đình Dũng (Nhóm trưởng)<br />
-  •	20520544 – Nguyễn Huỳnh Gia Huy @NHGHuy <br />
+  •	20520544 – Nguyễn Huỳnh Gia Huy <br />
   •	20520406 – Nguyễn Gia Bảo<br />
   •	20520626 – Dương Hoàng Mai<br />
   •	20520737 – Châu Vĩnh Sinh<br />
