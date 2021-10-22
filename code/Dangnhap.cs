@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-namespace form
+namespace 
 {
     public partial class Dangnhap : Form
     {
