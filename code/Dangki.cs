@@ -33,6 +33,7 @@ namespace form
                         + sdtBox.Text + "','" + cmndBox.Text + "')";
                     SqlCommand command = new SqlCommand(sql, connection);
                     int c = command.ExecuteNonQuery();
+                    MessageBox.Show("Bạn đã đăng kí thành công", "Thông báo", MessageBoxButtons.OK);
                     frm.Show();
                     this.Close();
                 }

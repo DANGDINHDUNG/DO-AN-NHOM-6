@@ -56,6 +56,7 @@ namespace form
             this.passBox.Name = "passBox";
             this.passBox.Size = new System.Drawing.Size(213, 29);
             this.passBox.TabIndex = 0;
+            this.passBox.UseSystemPasswordChar = true;
             // 
             // user
             // 

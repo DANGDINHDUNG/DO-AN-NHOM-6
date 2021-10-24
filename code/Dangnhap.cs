@@ -13,6 +13,7 @@ namespace form
 {
     public partial class Dangnhap : Form
     {
+        
         MainForm frm;
         public Dangnhap(MainForm frm)
         {
@@ -26,21 +27,14 @@ namespace form
             connection.Open();
             string tk = userBox.Text;
             string mk = passBox.Text;
-            if (userBox.Text == "admin" && passBox.Text == "123456")
-            {
-                // Ham xu ly cho main form
-                frm.Check = true;
-                frm.Show();
-                this.Close();
-            }
-            else
-            {
+
                 string query = "select *from KHACHHANG where TENTK='" + tk + "'and MATKHAU='" + mk + "'";
                 SqlCommand command = new SqlCommand(query, connection);
                 SqlDataReader reader = command.ExecuteReader();
                 if (reader.Read() == true)
                 {
-                    // Ham xu ly cho main form
+                // Ham xu ly cho main form
+                    MessageBox.Show("Bạn đã đăng nhập thành công", "Thông báo", MessageBoxButtons.OK);
                     frm.Check = true;
                     frm.Show();
                     this.Close();
@@ -49,14 +43,13 @@ namespace form
                 {
                     MessageBox.Show("Sai tên hoặc mật khẩu", "Thống báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Dangki frm = new Dangki(this.frm);
             frm.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
