@@ -12,7 +12,8 @@ namespace form
 {
     public partial class MainForm : Form
     {
-        bool check=false;
+        bool check = false;
+
         public bool Check
         {
            set
@@ -25,6 +26,8 @@ namespace form
             InitializeComponent();
             button3.Visible = false;
             button3.Enabled = false;
+            button4.Visible = false;
+            button4.Enabled = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -43,6 +46,8 @@ namespace form
             {
                 button3.Visible = true;
                 button3.Enabled = true;
+                button4.Visible = true;
+                button4.Enabled = true;
             }
         }
 
@@ -56,6 +61,13 @@ namespace form
             check = false;
             button3.Visible = false;
             button3.Enabled = false;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Doimatkhau frm = new Doimatkhau(this);
+            this.Hide();
+            frm.ShowDialog();
         }
     }
 }
