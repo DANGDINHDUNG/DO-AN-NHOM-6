@@ -33,7 +33,10 @@ namespace form
                 SqlDataReader reader = command.ExecuteReader();
                 if (reader.Read() == true)
                 {
-                // Ham xu ly cho main form
+                    if(tk=="ADMIN")
+                    {
+                        frm.Admin = true;
+                    }
                     MessageBox.Show("Bạn đã đăng nhập thành công", "Thông báo", MessageBoxButtons.OK);
                     frm.Check = true;
                     frm.Show();
@@ -54,7 +57,11 @@ namespace form
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            passBox.UseSystemPasswordChar = false;
+            if (passBox.UseSystemPasswordChar == false)
+            {
+                passBox.UseSystemPasswordChar = true;
+            }
+            else passBox.UseSystemPasswordChar = false;
         }
         private void cancelBtn_Click(object sender, EventArgs e)
         {

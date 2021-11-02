@@ -13,12 +13,19 @@ namespace form
     public partial class MainForm : Form
     {
         bool check = false;
-
+        bool admin = false;
         public bool Check
         {
            set
             {
                 check= value;
+            }
+        }
+        public bool Admin
+        {
+            set
+            {
+                admin = value;
             }
         }
         public MainForm()
@@ -28,6 +35,8 @@ namespace form
             button3.Enabled = false;
             button4.Visible = false;
             button4.Enabled = false;
+            button5.Visible = false;
+            button5.Enabled = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -48,6 +57,11 @@ namespace form
                 button3.Enabled = true;
                 button4.Visible = true;
                 button4.Enabled = true;
+                if (admin == true)
+                {
+                    button5.Visible = true;
+                    button5.Enabled = true;
+                }
             }
         }
 
@@ -66,6 +80,13 @@ namespace form
         private void button4_Click(object sender, EventArgs e)
         {
             Doimatkhau frm = new Doimatkhau(this);
+            this.Hide();
+            frm.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            InDSKH frm = new InDSKH(this);
             this.Hide();
             frm.ShowDialog();
         }

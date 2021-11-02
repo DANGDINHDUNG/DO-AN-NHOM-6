@@ -46,8 +46,16 @@ namespace form
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            mkBox.UseSystemPasswordChar = false;
-            nlmkBox.UseSystemPasswordChar = false;
+            if(mkBox.UseSystemPasswordChar==false && nlmkBox.UseSystemPasswordChar ==false)
+            {
+                mkBox.UseSystemPasswordChar = true;
+                nlmkBox.UseSystemPasswordChar = true;
+            }
+            else
+            {
+                mkBox.UseSystemPasswordChar = false;
+                nlmkBox.UseSystemPasswordChar = false;
+            }
         }
 
         private void huyBtn_Click(object sender, EventArgs e)
