@@ -17,4 +17,4 @@ Danh sách thành viên nhóm 6:
     -> Thiết kế giao diện cho đồ án  <br />
 
 Đề tài đồ án: Phần mềm quản lý khách sạn.<br />
-Tiến độ: 15%
+Tiến độ: 30%
