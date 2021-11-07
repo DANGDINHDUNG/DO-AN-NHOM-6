@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace QuanLyKhachSan
 {
-    public partial class ThietLapMang : Form
+    public partial class HuyPhong : Form
     {
-        public ThietLapMang()
+        public HuyPhong()
         {
             InitializeComponent();
         }
 
-        private void Huy_Btn_Click(object sender, EventArgs e)
+        private void Thoat_Btn_Click(object sender, EventArgs e)
         {
             this.Close();
         }

@@ -1,5 +1,5 @@
 ﻿
-namespace QLKS
+namespace QuanLyKhachSan
 {
     partial class ThanhToan
     {

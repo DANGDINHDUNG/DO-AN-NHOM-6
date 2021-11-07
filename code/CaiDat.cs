@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QLKS
+namespace QuanLyKhachSan
 {
     public partial class CaiDat : Form
     {
@@ -17,25 +17,25 @@ namespace QLKS
             InitializeComponent();
         }
 
-
-        private void CaiDat_TTKS_Btn_Click(object sender, EventArgs e)
+        private void CaiDat_TTKS_Pnl_Click(object sender, EventArgs e)
         {
             TTKS ttks = new TTKS();
             ttks.ShowDialog();
         }
 
-        private void CaiDat_ThanhToan_Btn_Click(object sender, EventArgs e)
+        private void CaiDat_ThanhToan_Pnl_Click(object sender, EventArgs e)
         {
             ThanhToan tt = new ThanhToan();
             tt.ShowDialog();
         }
 
-        private void CaiDat_HuyPhong_Btn_Click(object sender, EventArgs e)
+        private void CaiDat_HuyPhong_Pnl_Click(object sender, EventArgs e)
         {
-
+            HuyPhong hp = new HuyPhong();
+            hp.ShowDialog();
         }
 
-        private void CaiDat_Mang_Btn_Click(object sender, EventArgs e)
+        private void CaiDat_Mang_Pnl_Click(object sender, EventArgs e)
         {
             ThietLapMang tlm = new ThietLapMang();
             tlm.ShowDialog();

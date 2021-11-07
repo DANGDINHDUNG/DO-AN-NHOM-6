@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QLKS
+namespace QuanLyKhachSan
 {
     public partial class TroGiup : Form
     {
@@ -17,15 +17,16 @@ namespace QLKS
             InitializeComponent();
         }
 
-        private void About_Btn_Click(object sender, EventArgs e)
+        private void HDSD_Pnl_Click(object sender, EventArgs e)
         {
             HDSD hdsd = new HDSD();
             hdsd.ShowDialog();
         }
 
-        private void HDSD_Btn_Click(object sender, EventArgs e)
+        private void About_Pnl_Click(object sender, EventArgs e)
         {
-            
+            About about = new About();
+            about.Show();
         }
     }
 }
