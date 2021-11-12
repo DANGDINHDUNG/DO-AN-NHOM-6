@@ -1,5 +1,5 @@
 ﻿
-namespace QuanLyKhachSan
+namespace form
 {
     partial class InHoaDon
     {
@@ -60,12 +60,13 @@ namespace QuanLyKhachSan
             // InHoaDon_Pbx
             // 
             this.InHoaDon_Pbx.Image = ((System.Drawing.Image)(resources.GetObject("InHoaDon_Pbx.Image")));
-            this.InHoaDon_Pbx.Location = new System.Drawing.Point(4, -1);
+            this.InHoaDon_Pbx.Location = new System.Drawing.Point(4, 6);
             this.InHoaDon_Pbx.Name = "InHoaDon_Pbx";
             this.InHoaDon_Pbx.Size = new System.Drawing.Size(67, 75);
             this.InHoaDon_Pbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.InHoaDon_Pbx.TabIndex = 0;
             this.InHoaDon_Pbx.TabStop = false;
+            this.InHoaDon_Pbx.Click += new System.EventHandler(this.InHoaDon_Pbx_Click);
             // 
             // InHoaDon
             // 
@@ -74,7 +75,8 @@ namespace QuanLyKhachSan
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.InHoaDon_Pnl);
             this.Name = "InHoaDon";
-            this.Text = "InHoaDon";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "In Hóa Đơn";
             this.InHoaDon_Pnl.ResumeLayout(false);
             this.InHoaDon_Pnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.InHoaDon_Pbx)).EndInit();

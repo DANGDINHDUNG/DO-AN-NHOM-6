@@ -1,5 +1,5 @@
 ﻿
-namespace QuanLyKhachSan
+namespace form
 {
     partial class HDSD
     {
@@ -39,7 +39,7 @@ namespace QuanLyKhachSan
             this.Title_Lb.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Title_Lb.Location = new System.Drawing.Point(180, 35);
             this.Title_Lb.Name = "Title_Lb";
-            this.Title_Lb.Size = new System.Drawing.Size(215, 39);
+            this.Title_Lb.Size = new System.Drawing.Size(208, 38);
             this.Title_Lb.TabIndex = 0;
             this.Title_Lb.Text = "How To Use";
             // 
@@ -50,6 +50,7 @@ namespace QuanLyKhachSan
             this.ClientSize = new System.Drawing.Size(603, 450);
             this.Controls.Add(this.Title_Lb);
             this.Name = "HDSD";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HDSD";
             this.ResumeLayout(false);
             this.PerformLayout();

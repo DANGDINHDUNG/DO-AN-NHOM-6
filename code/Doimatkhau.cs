@@ -29,7 +29,8 @@ namespace form
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-K8QQEUE;Initial Catalog=QLKS;Integrated Security=True");
+            //// Tui sửa lại tên server
+            SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-MJ9HPF9\HOANGMAI;Initial Catalog=QLKS;Integrated Security=True");
             connection.Open();
             string query = "select *from KHACHHANG where TENTK='" + tdnBox.Text + "'and MATKHAU='" + mkcBox.Text + "'";
             SqlCommand command = new SqlCommand(query, connection);

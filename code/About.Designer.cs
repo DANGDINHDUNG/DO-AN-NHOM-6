@@ -1,5 +1,5 @@
 ﻿
-namespace QuanLyKhachSan
+namespace form
 {
     partial class About
     {
@@ -71,6 +71,7 @@ namespace QuanLyKhachSan
             this.Controls.Add(this.AppIcon_Pbx);
             this.Controls.Add(this.QLKS_Lb);
             this.Name = "About";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "About";
             this.Load += new System.EventHandler(this.About_Load);
             ((System.ComponentModel.ISupportInitialize)(this.AppIcon_Pbx)).EndInit();

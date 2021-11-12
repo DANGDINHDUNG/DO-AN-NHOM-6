@@ -1,5 +1,5 @@
 ﻿
-namespace QuanLyKhachSan
+namespace form
 {
     partial class TTKS
     {
@@ -229,6 +229,7 @@ namespace QuanLyKhachSan
             this.Controls.Add(this.TenKS_Tbx);
             this.Controls.Add(this.TenKS_Lb);
             this.Name = "TTKS";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông Tin Khách Sạn";
             this.ResumeLayout(false);
             this.PerformLayout();

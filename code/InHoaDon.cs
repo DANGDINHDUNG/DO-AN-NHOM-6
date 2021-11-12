@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QuanLyKhachSan
+namespace form
 {
     public partial class InHoaDon : Form
     {
         public InHoaDon()
         {
             InitializeComponent();
+        }
+
+        private void InHoaDon_Pbx_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿
-namespace QuanLyKhachSan
+namespace form
 {
     partial class ThietLapMang
     {
@@ -100,7 +100,8 @@ namespace QuanLyKhachSan
             this.Controls.Add(this.Cong_Lb);
             this.Controls.Add(this.IP_lb);
             this.Name = "ThietLapMang";
-            this.Text = "ThietLapMang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Thiết Lập Mạng";
             this.ResumeLayout(false);
             this.PerformLayout();
 

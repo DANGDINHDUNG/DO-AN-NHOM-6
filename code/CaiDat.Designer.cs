@@ -1,5 +1,5 @@
 ﻿
-namespace QuanLyKhachSan
+namespace form
 {
     partial class CaiDat
     {
@@ -194,6 +194,7 @@ namespace QuanLyKhachSan
             this.Controls.Add(this.CaiDat_ThanhToan_Pnl);
             this.Controls.Add(this.CaiDat_TTKS_Pnl);
             this.Name = "CaiDat";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cài Đặt";
             this.CaiDat_TTKS_Pnl.ResumeLayout(false);
             this.CaiDat_TTKS_Pnl.PerformLayout();

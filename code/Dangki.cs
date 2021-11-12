@@ -26,7 +26,8 @@ namespace form
             {
                 if (mkBox.Text == nlmkBox.Text)
                 {
-                    SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-K8QQEUE;Initial Catalog=QLKS;Integrated Security=True");
+                    //// Tui sửa lại tên server
+                    SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-MJ9HPF9\HOANGMAI;Initial Catalog=QLKS;Integrated Security=True");
                     connection.Open();
                     string sql = "INSERT INTO KHACHHANG(HOTEN,TENTK,MATKHAU,TUOI,SDT,CMND)VALUES " +
                         "('" + hotenBox.Text + "','" + tdnBox.Text + "','" + mkBox.Text + "','" + tuoiBox.Text + "','"
@@ -55,6 +56,46 @@ namespace form
 
            frm.Show();
            this.Close();
+        }
+
+        private void Dangki_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hoten_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

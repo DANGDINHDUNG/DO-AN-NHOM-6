@@ -13,61 +13,130 @@ namespace form
     public partial class MainForm : Form
     {
         bool check = false;
-
         public bool Check
         {
-           set
+            set
             {
-                check= value;
+                check = value;
             }
         }
         public MainForm()
         {
             InitializeComponent();
-            button3.Visible = false;
-            button3.Enabled = false;
-            button4.Visible = false;
-            button4.Enabled = false;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
-            Dangki frm = new Dangki(this);
+            CaiDat cd = new CaiDat();
+            cd.TopLevel = false;
+            cd.Visible = true;
+            cd.FormBorderStyle = FormBorderStyle.None;
+            cd.Dock = DockStyle.Fill;
+
+            InHoaDon hd = new InHoaDon();
+            hd.TopLevel = false;
+            hd.Visible = true;
+            hd.FormBorderStyle = FormBorderStyle.None;
+
+            TroGiup tg = new TroGiup();
+            tg.TopLevel = false;
+            tg.Visible = true;
+            tg.FormBorderStyle = FormBorderStyle.None;
+
+            ChucNang cn = new ChucNang();
+            cn.TopLevel = false;
+            cn.Visible = true;
+            cn.FormBorderStyle = FormBorderStyle.None;
+
+            DichVu dv = new DichVu();
+            dv.TopLevel = false;
+            dv.Visible = true;
+            dv.FormBorderStyle = FormBorderStyle.None;
+
+            QuanLy ql = new QuanLy();
+            ql.TopLevel = false;
+            ql.Visible = true;
+            ql.FormBorderStyle = FormBorderStyle.None;
+
+            MainTabControl.TabPages[1].Controls.Add(cn);
+            MainTabControl.TabPages[2].Controls.Add(dv);
+            MainTabControl.TabPages[3].Controls.Add(ql);
+            MainTabControl.TabPages[4].Controls.Add(cd);
+            MainTabControl.TabPages[5].Controls.Add(hd);
+            MainTabControl.TabPages[6].Controls.Add(tg);
+            
+            
+        }
+
+        private void DangXuat_Pnl_Click(object sender, EventArgs e)
+        {
+            DialogResult dx = MessageBox.Show("Chắc chắn đăng xuất", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (dx == DialogResult.OK)
+            {
+                Check = false;
+
+                MainTabControl.Visible = false;
+                MainTabControl.Enabled = false;
+                DangNhap_Pnl.Visible = true;
+                DangKy_Pnl.Visible = true;
+            }    
+        }
+
+        private void DoiMK_Pnl_Click(object sender, EventArgs e)
+        {
+            Doimatkhau frm = new Doimatkhau(this);
             this.Hide();
             frm.ShowDialog();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void DangNhap_Pnl_Click(object sender, EventArgs e)
         {
             Dangnhap frm = new Dangnhap(this);
             this.Hide();
             frm.ShowDialog();
             if (check == true)
             {
-                button3.Visible = true;
-                button3.Enabled = true;
-                button4.Visible = true;
-                button4.Enabled = true;
+                MainTabControl.Visible = true;
+                MainTabControl.Enabled = true;
+                DangNhap_Pnl.Visible = false;
+                DangKy_Pnl.Visible = false;
             }
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
+        private void DangKy_Pbx_Click(object sender, EventArgs e)
         {
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Chắc chắn đăng xuất", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            check = false;
-            button3.Visible = false;
-            button3.Enabled = false;
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            Doimatkhau frm = new Doimatkhau(this);
+            Dangki frm = new Dangki(this);
             this.Hide();
             frm.ShowDialog();
+        }
+
+        private void GiaoDien_Pnl_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog = new ColorDialog();
+            if (colorDialog.ShowDialog() == DialogResult.OK)
+            {
+                for (int i = 1; i < MainTabControl.TabPages.Count; i++)
+                {
+                    foreach(Form frm in MainTabControl.TabPages[i].Controls)
+                    {
+                        if (frm != null)
+                        {
+                            frm.BackColor = colorDialog.Color;
+
+                        }
+                    }
+                }
+            }
+        }
+
+        private void DangNhap_Pnl_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

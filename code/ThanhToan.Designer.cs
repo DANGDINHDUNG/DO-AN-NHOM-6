@@ -1,5 +1,5 @@
 ﻿
-namespace QuanLyKhachSan
+namespace form
 {
     partial class ThanhToan
     {
@@ -112,12 +112,12 @@ namespace QuanLyKhachSan
             // NhanPhongTu_Dtp
             // 
             this.NhanPhongTu_Dtp.CustomFormat = "hh:mm:ss tt";
-            this.NhanPhongTu_Dtp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NhanPhongTu_Dtp.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NhanPhongTu_Dtp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.NhanPhongTu_Dtp.Location = new System.Drawing.Point(198, 247);
             this.NhanPhongTu_Dtp.Name = "NhanPhongTu_Dtp";
             this.NhanPhongTu_Dtp.ShowUpDown = true;
-            this.NhanPhongTu_Dtp.Size = new System.Drawing.Size(116, 24);
+            this.NhanPhongTu_Dtp.Size = new System.Drawing.Size(116, 22);
             this.NhanPhongTu_Dtp.TabIndex = 7;
             // 
             // TraPhongTu_Dtp
@@ -242,6 +242,7 @@ namespace QuanLyKhachSan
             this.Controls.Add(this.TraPhongTruoc_Lb);
             this.Controls.Add(this.QuyDinh_Lb);
             this.Name = "ThanhToan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thanh Toán";
             this.Load += new System.EventHandler(this.ThanhToan_Load);
             this.ResumeLayout(false);

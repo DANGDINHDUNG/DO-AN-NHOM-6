@@ -1,5 +1,5 @@
 ﻿
-namespace QuanLyKhachSan
+namespace form
 {
     partial class TroGiup
     {
@@ -116,7 +116,8 @@ namespace QuanLyKhachSan
             this.Controls.Add(this.About_Pnl);
             this.Controls.Add(this.HDSD_Pnl);
             this.Name = "TroGiup";
-            this.Text = "TroGiup";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Trợ Giúp";
             this.HDSD_Pnl.ResumeLayout(false);
             this.HDSD_Pnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HDSD_Pbx)).EndInit();

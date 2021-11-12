@@ -44,18 +44,20 @@ namespace form
             // userBox
             // 
             this.userBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userBox.Location = new System.Drawing.Point(204, 95);
+            this.userBox.Location = new System.Drawing.Point(272, 117);
+            this.userBox.Margin = new System.Windows.Forms.Padding(4);
             this.userBox.Name = "userBox";
-            this.userBox.Size = new System.Drawing.Size(213, 29);
+            this.userBox.Size = new System.Drawing.Size(283, 34);
             this.userBox.TabIndex = 0;
             // 
             // passBox
             // 
             this.passBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passBox.Location = new System.Drawing.Point(204, 216);
+            this.passBox.Location = new System.Drawing.Point(272, 233);
+            this.passBox.Margin = new System.Windows.Forms.Padding(4);
             this.passBox.Name = "passBox";
-            this.passBox.Size = new System.Drawing.Size(213, 29);
-            this.passBox.TabIndex = 0;
+            this.passBox.Size = new System.Drawing.Size(283, 34);
+            this.passBox.TabIndex = 1;
             this.passBox.UseSystemPasswordChar = true;
             // 
             // user
@@ -63,9 +65,10 @@ namespace form
             this.user.AutoSize = true;
             this.user.BackColor = System.Drawing.Color.Transparent;
             this.user.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.user.Location = new System.Drawing.Point(25, 95);
+            this.user.Location = new System.Drawing.Point(33, 117);
+            this.user.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.user.Name = "user";
-            this.user.Size = new System.Drawing.Size(170, 25);
+            this.user.Size = new System.Drawing.Size(208, 31);
             this.user.TabIndex = 1;
             this.user.Text = "Tên đăng nhập";
             // 
@@ -74,18 +77,20 @@ namespace form
             this.pass.AutoSize = true;
             this.pass.BackColor = System.Drawing.Color.Transparent;
             this.pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pass.Location = new System.Drawing.Point(25, 216);
+            this.pass.Location = new System.Drawing.Point(33, 236);
+            this.pass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.pass.Name = "pass";
-            this.pass.Size = new System.Drawing.Size(109, 25);
+            this.pass.Size = new System.Drawing.Size(133, 31);
             this.pass.TabIndex = 1;
             this.pass.Text = "Mật khẩu";
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelBtn.Location = new System.Drawing.Point(313, 325);
+            this.cancelBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelBtn.Location = new System.Drawing.Point(458, 400);
+            this.cancelBtn.Margin = new System.Windows.Forms.Padding(4);
             this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(117, 28);
+            this.cancelBtn.Size = new System.Drawing.Size(173, 44);
             this.cancelBtn.TabIndex = 3;
             this.cancelBtn.Text = "Hủy";
             this.cancelBtn.UseVisualStyleBackColor = true;
@@ -93,11 +98,12 @@ namespace form
             // 
             // loginBtn
             // 
-            this.loginBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginBtn.Location = new System.Drawing.Point(115, 325);
+            this.loginBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginBtn.Location = new System.Drawing.Point(153, 400);
+            this.loginBtn.Margin = new System.Windows.Forms.Padding(4);
             this.loginBtn.Name = "loginBtn";
-            this.loginBtn.Size = new System.Drawing.Size(117, 28);
-            this.loginBtn.TabIndex = 3;
+            this.loginBtn.Size = new System.Drawing.Size(167, 44);
+            this.loginBtn.TabIndex = 2;
             this.loginBtn.Text = "Đăng nhập";
             this.loginBtn.UseVisualStyleBackColor = true;
             this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
@@ -107,9 +113,10 @@ namespace form
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(339, 280);
+            this.linkLabel1.Location = new System.Drawing.Point(430, 318);
+            this.linkLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(66, 20);
+            this.linkLabel1.Size = new System.Drawing.Size(84, 25);
             this.linkLabel1.TabIndex = 4;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Tại đây";
@@ -120,18 +127,20 @@ namespace form
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(111, 280);
+            this.label1.Location = new System.Drawing.Point(148, 318);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(222, 20);
+            this.label1.Size = new System.Drawing.Size(274, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Nếu chưa có tài khoản đăng kí";
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(456, 226);
+            this.checkBox1.Location = new System.Drawing.Point(597, 247);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(95, 17);
+            this.checkBox1.Size = new System.Drawing.Size(121, 21);
             this.checkBox1.TabIndex = 5;
             this.checkBox1.Text = "Hiện mật khẩu";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -139,11 +148,11 @@ namespace form
             // 
             // Dangnhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(606, 389);
+            this.ClientSize = new System.Drawing.Size(808, 479);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.loginBtn);
@@ -154,8 +163,10 @@ namespace form
             this.Controls.Add(this.passBox);
             this.Controls.Add(this.userBox);
             this.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Dangnhap";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Đăng Nhập";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -23,7 +23,8 @@ namespace form
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-K8QQEUE;Initial Catalog=QLKS;Integrated Security=True");
+            //// Tui sửa lại tên server
+            SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-MJ9HPF9\HOANGMAI;Initial Catalog=QLKS;Integrated Security=True");
             connection.Open();
             string tk = userBox.Text;
             string mk = passBox.Text;
@@ -54,12 +55,12 @@ namespace form
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            passBox.UseSystemPasswordChar = false;
+            passBox.UseSystemPasswordChar = !passBox.UseSystemPasswordChar;
         }
         private void cancelBtn_Click(object sender, EventArgs e)
         {
-            frm.Show();
             this.Close();
+            frm.Show();
         }
     }
 }

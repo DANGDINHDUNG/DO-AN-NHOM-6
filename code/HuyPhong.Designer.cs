@@ -1,5 +1,5 @@
 ﻿
-namespace QuanLyKhachSan
+namespace form
 {
     partial class HuyPhong
     {
@@ -87,7 +87,8 @@ namespace QuanLyKhachSan
             this.Controls.Add(this.DSPhong_Dgv);
             this.Controls.Add(this.DSPhong_Lb);
             this.Name = "HuyPhong";
-            this.Text = "HuyPhong";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Hủy Phòng";
             ((System.ComponentModel.ISupportInitialize)(this.DSPhong_Dgv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
