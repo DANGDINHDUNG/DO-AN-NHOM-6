@@ -66,6 +66,7 @@ namespace form
             this.label1.Size = new System.Drawing.Size(47, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Đồ Ăn";
+            this.label1.Click += new System.EventHandler(this.ThucAn_Pnl_Click);
             // 
             // pictureBox1
             // 
@@ -76,6 +77,7 @@ namespace form
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.ThucAn_Pnl_Click);
             // 
             // ThucUong_Pnl
             // 
@@ -96,6 +98,7 @@ namespace form
             this.label2.Size = new System.Drawing.Size(78, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Thức Uống";
+            this.label2.Click += new System.EventHandler(this.ThucUong_Pnl_Click);
             // 
             // pictureBox2
             // 
@@ -106,6 +109,7 @@ namespace form
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.ThucUong_Pnl_Click);
             // 
             // DVPhong_Pnl
             // 
@@ -126,6 +130,7 @@ namespace form
             this.label3.Size = new System.Drawing.Size(72, 17);
             this.label3.TabIndex = 1;
             this.label3.Text = "DV Phòng";
+            this.label3.Click += new System.EventHandler(this.DVPhong_Pnl_Click);
             // 
             // pictureBox3
             // 
@@ -138,6 +143,7 @@ namespace form
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 1;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.DVPhong_Pnl_Click);
             // 
             // DichVu
             // 
