@@ -115,6 +115,8 @@ namespace form
             ColorDialog colorDialog = new ColorDialog();
             if (colorDialog.ShowDialog() == DialogResult.OK)
             {
+
+                MainTabControl.TabPages[0].BackColor = colorDialog.Color;
                 for (int i = 1; i < MainTabControl.TabPages.Count; i++)
                 {
                     foreach(Form frm in MainTabControl.TabPages[i].Controls)

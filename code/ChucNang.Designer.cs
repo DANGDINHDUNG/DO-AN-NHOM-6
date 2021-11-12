@@ -112,7 +112,7 @@ namespace form
             // 
             // TraPhong_Pnl
             // 
-            this.TraPhong_Pnl.BackColor = System.Drawing.SystemColors.Control;
+            this.TraPhong_Pnl.BackColor = System.Drawing.Color.Transparent;
             this.TraPhong_Pnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TraPhong_Pnl.Controls.Add(this.label3);
             this.TraPhong_Pnl.Controls.Add(this.pictureBox3);
