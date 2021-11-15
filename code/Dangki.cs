@@ -29,9 +29,19 @@ namespace form
                     //// Tui sửa lại tên server
                     SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-MJ9HPF9\HOANGMAI;Initial Catalog=QLKS;Integrated Security=True");
                     connection.Open();
-                    string sql = "INSERT INTO KHACHHANG(HOTEN,TENTK,MATKHAU,TUOI,SDT,CMND)VALUES " +
-                        "('" + hotenBox.Text + "','" + tdnBox.Text + "','" + mkBox.Text + "','" + tuoiBox.Text + "','"
-                        + sdtBox.Text + "','" + cmndBox.Text + "')";
+                    Hash256 h=new Hash256();
+                    SHA256 sha256Hash = SHA256.Create();
+                    string hash =h.GetHash(sha256Hash, mkBox.Text);
+                    string query ="SELECT COUNT(MANV) FROM NHANVIEN WHERE TENTK!= admin"
+                    SqlCommand command = new SqlCommand(query, connection);
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.Read() == true)
+                    {
+                        int stt = reader.GetInt32(0)+1;
+                    }
+                    string sql = "INSERT INTO NHANVIEN(MANV,TENTK,MATKHAU,HOTEN,TUOI,NGVL,SDT,CCCD_CMND,SODONDP,LUONG)VALUES " +
+                        "('SV"+stt.ToString("0")+"','"+ tdnBox.Text + "','" + hash + "','" + hotenBox.Text + "','" + tuoiBox.Text + "','"+  
+                        ngvlBox.Text + "','"+ sdtBox.Text + "','" + cmndBox.Text + "','" + sodondpBox.Text + "','"+ luongBox.Text + "')";
                     SqlCommand command = new SqlCommand(sql, connection);
                     int c = command.ExecuteNonQuery();
                     MessageBox.Show("Bạn đã đăng kí thành công", "Thông báo", MessageBoxButtons.OK);
