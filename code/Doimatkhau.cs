@@ -35,7 +35,7 @@ namespace form
             Hash256 h = new Hash256();
             SHA256 sha256Hash = SHA256.Create();
             string hash = h.GetHash(sha256Hash, mkcBox.Text);
-            string query = "select *from KHACHHANG where TENTK='" + tdnBox.Text + "'and MATKHAU='" + hash + "'";
+            string query = "select *from NHANVIEN where TENTK='" + tdnBox.Text + "'and MATKHAU='" + hash + "'";
             SqlCommand command = new SqlCommand(query, connection);
             SqlDataReader reader = command.ExecuteReader();
             if (reader.Read() == true)
@@ -51,7 +51,7 @@ namespace form
                     connection.Open();
                     sha256Hash = SHA256.Create();
                     hash = h.GetHash(sha256Hash, mkmBox.Text);
-                    query = "update KHACHHANG set MATKHAU='" + hash + "'where TENTK='" + tdnBox.Text + "'";
+                    query = "update NHANVIEN set MATKHAU='" + hash + "'where TENTK='" + tdnBox.Text + "'";
                     command = new SqlCommand(query, connection);
                     int c = command.ExecuteNonQuery();
                     MessageBox.Show("Bạn đã đổi mật khẩu thành công", "Thông báo", MessageBoxButtons.OK);
