@@ -7,7 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 using System.Data.SqlClient;
+using System.Drawing.Drawing2D;
+using System.Runtime.InteropServices;
 
 namespace form
 {
@@ -19,8 +22,18 @@ namespace form
         {
             InitializeComponent();
             this.frm = frm;
+            this.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
         }
-
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+        (
+            int nLeftRect,
+            int nTopRect,
+            int nRightRect,
+            int nBottomRect,
+            int nWidthEllipse,
+            int nHeightEllipse
+        );
         private void loginBtn_Click(object sender, EventArgs e)
         {
             //// Tui sửa lại tên server
