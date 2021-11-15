@@ -32,7 +32,10 @@ namespace form
             //// Tui sửa lại tên server
             SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-MJ9HPF9\HOANGMAI;Initial Catalog=QLKS;Integrated Security=True");
             connection.Open();
-            string query = "select *from KHACHHANG where TENTK='" + tdnBox.Text + "'and MATKHAU='" + mkcBox.Text + "'";
+            Hash256 h = new Hash256();
+            SHA256 sha256Hash = SHA256.Create();
+            string hash = h.GetHash(sha256Hash, mkcBox.Text);
+            string query = "select *from KHACHHANG where TENTK='" + tdnBox.Text + "'and MATKHAU='" + hash + "'";
             SqlCommand command = new SqlCommand(query, connection);
             SqlDataReader reader = command.ExecuteReader();
             if (reader.Read() == true)
@@ -46,7 +49,9 @@ namespace form
                 {
                     connection = new SqlConnection(@"Data Source=DESKTOP-K8QQEUE;Initial Catalog=QLKS;Integrated Security=True");
                     connection.Open();
-                    query = "update KHACHHANG set MATKHAU='" + mkmBox.Text + "'where TENTK='" + tdnBox.Text + "'";
+                    sha256Hash = SHA256.Create();
+                    hash = h.GetHash(sha256Hash, mkmBox.Text);
+                    query = "update KHACHHANG set MATKHAU='" + hash + "'where TENTK='" + tdnBox.Text + "'";
                     command = new SqlCommand(query, connection);
                     int c = command.ExecuteNonQuery();
                     MessageBox.Show("Bạn đã đổi mật khẩu thành công", "Thông báo", MessageBoxButtons.OK);
