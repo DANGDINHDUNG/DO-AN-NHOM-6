@@ -32,7 +32,7 @@ namespace form
                     Hash256 h=new Hash256();
                     SHA256 sha256Hash = SHA256.Create();
                     string hash =h.GetHash(sha256Hash, mkBox.Text);
-                    string query ="SELECT COUNT(MANV) FROM NHANVIEN WHERE TENTK!= admin"
+                    string query ="SELECT COUNT(MANV) FROM NHANVIEN WHERE TENTK!= admin";
                     SqlCommand command = new SqlCommand(query, connection);
                     SqlDataReader reader = command.ExecuteReader();
                     if (reader.Read() == true)
