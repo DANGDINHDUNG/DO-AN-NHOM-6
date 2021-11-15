@@ -28,8 +28,10 @@ namespace form
             connection.Open();
             string tk = userBox.Text;
             string mk = passBox.Text;
-
-                string query = "select *from KHACHHANG where TENTK='" + tk + "'and MATKHAU='" + mk + "'";
+            Hash256 h = new Hash256();
+            SHA256 sha256Hash = SHA256.Create();
+            string hash = h.GetHash(sha256Hash, passBox.Text);
+                string query = "select *from NHANVIEN where TENTK='" + tk + "'and MATKHAU='" + hash + "'";
                 SqlCommand command = new SqlCommand(query, connection);
                 SqlDataReader reader = command.ExecuteReader();
                 if (reader.Read() == true)
