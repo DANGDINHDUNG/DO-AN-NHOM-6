@@ -64,8 +64,14 @@ namespace form
             MainTabControl.TabPages[4].Controls.Add(cd);
             MainTabControl.TabPages[5].Controls.Add(hd);
             MainTabControl.TabPages[6].Controls.Add(tg);
-            
-            
+
+            Dangnhap frm = new Dangnhap(this);
+            this.Hide();
+            frm.ShowDialog();
+            if (check == false)
+            {
+                this.Close();
+            }
         }
 
         private void DangXuat_Pnl_Click(object sender, EventArgs e)
@@ -77,35 +83,12 @@ namespace form
 
                 MainTabControl.Visible = false;
                 MainTabControl.Enabled = false;
-                DangNhap_Pnl.Visible = true;
-                DangKy_Pnl.Visible = true;
             }    
         }
 
         private void DoiMK_Pnl_Click(object sender, EventArgs e)
         {
             Doimatkhau frm = new Doimatkhau(this);
-            this.Hide();
-            frm.ShowDialog();
-        }
-
-        private void DangNhap_Pnl_Click(object sender, EventArgs e)
-        {
-            Dangnhap frm = new Dangnhap(this);
-            this.Hide();
-            frm.ShowDialog();
-            if (check == true)
-            {
-                MainTabControl.Visible = true;
-                MainTabControl.Enabled = true;
-                DangNhap_Pnl.Visible = false;
-                DangKy_Pnl.Visible = false;
-            }
-        }
-
-        private void DangKy_Pbx_Click(object sender, EventArgs e)
-        {
-            Dangki frm = new Dangki(this);
             this.Hide();
             frm.ShowDialog();
         }

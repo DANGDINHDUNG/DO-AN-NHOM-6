@@ -64,8 +64,8 @@ namespace form
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Dangki frm = new Dangki(this.frm);
-            frm.Show();
-            this.Close();
+            this.Hide();
+            frm.ShowDialog();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)

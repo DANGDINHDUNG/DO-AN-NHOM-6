@@ -30,13 +30,13 @@ namespace form
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dangnhap));
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.logoPnl = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Decription2_Lb = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Decription_Lb = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.DangnhapPnl = new System.Windows.Forms.Panel();
             this.userBox = new System.Windows.Forms.TextBox();
             this.Title_Lb = new System.Windows.Forms.Label();
             this.passBox = new System.Windows.Forms.TextBox();
@@ -47,32 +47,33 @@ namespace form
             this.loginBtn = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.pass = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.logoPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.DangnhapPnl.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // logoPnl
             // 
-            this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.Decription2_Lb);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.Decription_Lb);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(282, 506);
-            this.panel1.TabIndex = 7;
+            this.logoPnl.BackColor = System.Drawing.Color.RoyalBlue;
+            this.logoPnl.Controls.Add(this.label3);
+            this.logoPnl.Controls.Add(this.label2);
+            this.logoPnl.Controls.Add(this.Decription2_Lb);
+            this.logoPnl.Controls.Add(this.pictureBox1);
+            this.logoPnl.Controls.Add(this.Decription_Lb);
+            this.logoPnl.Dock = System.Windows.Forms.DockStyle.Left;
+            this.logoPnl.Location = new System.Drawing.Point(0, 0);
+            this.logoPnl.Name = "logoPnl";
+            this.logoPnl.Size = new System.Drawing.Size(282, 506);
+            this.logoPnl.TabIndex = 7;
             // 
             // label3
             // 
+            this.label3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(24, 477);
+            this.label3.Location = new System.Drawing.Point(0, 484);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(258, 22);
+            this.label3.Size = new System.Drawing.Size(282, 22);
             this.label3.TabIndex = 4;
             this.label3.Text = "Được phát triển bởi nhóm 6";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -120,24 +121,24 @@ namespace form
             this.Decription_Lb.Text = "Chào mừng đến với phần mềm ";
             this.Decription_Lb.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // panel2
+            // DangnhapPnl
             // 
-            this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel2.Controls.Add(this.userBox);
-            this.panel2.Controls.Add(this.Title_Lb);
-            this.panel2.Controls.Add(this.passBox);
-            this.panel2.Controls.Add(this.cancelBtn);
-            this.panel2.Controls.Add(this.checkBox1);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.user);
-            this.panel2.Controls.Add(this.loginBtn);
-            this.panel2.Controls.Add(this.linkLabel1);
-            this.panel2.Controls.Add(this.pass);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(282, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(762, 506);
-            this.panel2.TabIndex = 8;
+            this.DangnhapPnl.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.DangnhapPnl.Controls.Add(this.userBox);
+            this.DangnhapPnl.Controls.Add(this.Title_Lb);
+            this.DangnhapPnl.Controls.Add(this.passBox);
+            this.DangnhapPnl.Controls.Add(this.cancelBtn);
+            this.DangnhapPnl.Controls.Add(this.checkBox1);
+            this.DangnhapPnl.Controls.Add(this.label1);
+            this.DangnhapPnl.Controls.Add(this.user);
+            this.DangnhapPnl.Controls.Add(this.loginBtn);
+            this.DangnhapPnl.Controls.Add(this.linkLabel1);
+            this.DangnhapPnl.Controls.Add(this.pass);
+            this.DangnhapPnl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DangnhapPnl.Location = new System.Drawing.Point(282, 0);
+            this.DangnhapPnl.Name = "DangnhapPnl";
+            this.DangnhapPnl.Size = new System.Drawing.Size(762, 506);
+            this.DangnhapPnl.TabIndex = 8;
             // 
             // userBox
             // 
@@ -247,7 +248,7 @@ namespace form
             this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkColor = System.Drawing.Color.DarkBlue;
-            this.linkLabel1.Location = new System.Drawing.Point(448, 412);
+            this.linkLabel1.Location = new System.Drawing.Point(434, 412);
             this.linkLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(84, 25);
@@ -276,27 +277,27 @@ namespace form
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1044, 506);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.DangnhapPnl);
+            this.Controls.Add(this.logoPnl);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Dangnhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng Nhập";
-            this.panel1.ResumeLayout(false);
+            this.logoPnl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.DangnhapPnl.ResumeLayout(false);
+            this.DangnhapPnl.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel logoPnl;
         private System.Windows.Forms.Label Decription_Lb;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel DangnhapPnl;
         private System.Windows.Forms.TextBox userBox;
         private System.Windows.Forms.Label Title_Lb;
         private System.Windows.Forms.TextBox passBox;

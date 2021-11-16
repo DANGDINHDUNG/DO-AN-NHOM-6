@@ -6,8 +6,10 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Runtime.InteropServices;
 
 namespace form
 {
@@ -18,7 +20,21 @@ namespace form
         {
             InitializeComponent();
             this.frm = frm;
+            this.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
         }
+
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+        (
+            int nLeftRect,
+            int nTopRect,
+            int nRightRect,
+            int nBottomRect,
+            int nWidthEllipse,
+            int nHeightEllipse
+        );
+
+        int stt;
 
         private void dkiBtn_Click(object sender, EventArgs e)
         {
@@ -42,7 +58,7 @@ namespace form
                     string sql = "INSERT INTO NHANVIEN(MANV,TENTK,MATKHAU,HOTEN,TUOI,NGVL,SDT,CCCD_CMND,SODONDP,LUONG)VALUES " +
                         "('SV"+stt.ToString("0")+"','"+ tdnBox.Text + "','" + hash + "','" + hotenBox.Text + "','" + tuoiBox.Text + "','"+  
                         ngvlBox.Text + "','"+ sdtBox.Text + "','" + cmndBox.Text + "','" + sodondpBox.Text + "','"+ luongBox.Text + "')";
-                    SqlCommand command = new SqlCommand(sql, connection);
+                    command = new SqlCommand(sql, connection);
                     int c = command.ExecuteNonQuery();
                     MessageBox.Show("Bạn đã đăng kí thành công", "Thông báo", MessageBoxButtons.OK);
                     frm.Show();
@@ -57,8 +73,8 @@ namespace form
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            mkBox.UseSystemPasswordChar = false;
-            nlmkBox.UseSystemPasswordChar = false;
+            mkBox.UseSystemPasswordChar = !mkBox.UseSystemPasswordChar;
+            nlmkBox.UseSystemPasswordChar = !nlmkBox.UseSystemPasswordChar;
         }
 
         private void huyBtn_Click(object sender, EventArgs e)
@@ -106,6 +122,13 @@ namespace form
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Dangnhap frm = new Dangnhap(this.frm);
+            this.Hide();
+            frm.ShowDialog();
         }
     }
 }
