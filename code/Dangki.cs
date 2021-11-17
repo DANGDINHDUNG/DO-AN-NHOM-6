@@ -130,5 +130,10 @@ namespace form
             this.Hide();
             frm.ShowDialog();
         }
+        private void Dangki_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            frm.ShowDialog();
+            this.Close();
+        }
     }
 }
