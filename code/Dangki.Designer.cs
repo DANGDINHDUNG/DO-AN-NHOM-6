@@ -510,6 +510,7 @@ namespace form
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng Ký";
             this.Load += new System.EventHandler(this.Dangki_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Dangki_FormClosing);
             this.logoPnl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.DangkyPnl.ResumeLayout(false);
