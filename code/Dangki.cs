@@ -41,9 +41,10 @@ namespace form
             Hash256 h = new Hash256();
             SHA256 sha256Hash = SHA256.Create();
             string hash = h.GetHash(sha256Hash, mkBox.Text);
-            string sql = "INSERT INTO NHANVIEN(MANV,TENTK,MATKHAU,HOTEN,TUOI,SDT,CCCD_CMND,SODONDP,LUONG)VALUES " +
+            string ngay = ngvlDtp.Value.ToString("dd/MM/yyyy");
+            string sql = "INSERT INTO NHANVIEN(MANV,TENTK,MATKHAU,HOTEN,TUOI,SDT,CCCD_CMND,NGVL,LUONG)VALUES " +
             "('" + s + "','" + tdnBox.Text + "','" + hash + "',N'" + hotenBox.Text + "','" + tuoiBox.Text + "','" +
-            sdtBox.Text + "','" + cmndBox.Text + "','" + sodondpBox.Text + "','" + luongBox.Text + "')";
+            sdtBox.Text + "','" + cmndBox.Text + "','" + ngay + "','" + luongBox.Text + "')";
             SqlCommand command = new SqlCommand(sql, connection);
             int c = command.ExecuteNonQuery();
         }
