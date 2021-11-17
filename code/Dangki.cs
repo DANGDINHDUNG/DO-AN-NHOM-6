@@ -34,7 +34,40 @@ namespace form
             int nHeightEllipse
         );
 
-        int stt;
+         private void add()
+        {
+            SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-K8QQEUE;Initial Catalog=QL;Integrated Security=True");
+            connection.Open();
+            Hash256 h = new Hash256();
+            SHA256 sha256Hash = SHA256.Create();
+            string hash = h.GetHash(sha256Hash, mkBox.Text);
+            string sql = "INSERT INTO NHANVIEN(MANV,TENTK,MATKHAU,HOTEN,TUOI,SDT,CCCD_CMND,SODONDP,LUONG)VALUES " +
+            "('" + s + "','" + tdnBox.Text + "','" + hash + "',N'" + hotenBox.Text + "','" + tuoiBox.Text + "','" +
+            sdtBox.Text + "','" + cmndBox.Text + "','" + sodondpBox.Text + "','" + luongBox.Text + "')";
+            SqlCommand command = new SqlCommand(sql, connection);
+            int c = command.ExecuteNonQuery();
+        }
+        
+        string s;
+        
+        private void count()
+        {
+            SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-K8QQEUE;Initial Catalog=QL;Integrated Security=True");
+            connection.Open();            
+            string query = @"SELECT COUNT(MANV) FROM NHANVIEN WHERE MANV!= 'ADM'";
+            SqlCommand command = new SqlCommand(query, connection);
+            SqlDataReader reader = command.ExecuteReader();
+            int stt=0;
+            if (reader.Read() == true)
+            {
+                stt = reader.GetInt32(0) ;
+
+            }
+            stt++;
+            s = "NV" + stt.ToString("00");
+            connection.Close();
+        }
+
 
         private void dkiBtn_Click(object sender, EventArgs e)
         {
@@ -42,26 +75,9 @@ namespace form
             {
                 if (mkBox.Text == nlmkBox.Text)
                 {
-                    //// Tui sửa lại tên server
-                    SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-MJ9HPF9\HOANGMAI;Initial Catalog=QLKS;Integrated Security=True");
-                    connection.Open();
-                    Hash256 h=new Hash256();
-                    SHA256 sha256Hash = SHA256.Create();
-                    string hash =h.GetHash(sha256Hash, mkBox.Text);
-                    string query ="SELECT COUNT(MANV) FROM NHANVIEN WHERE TENTK!= admin";
-                    SqlCommand command = new SqlCommand(query, connection);
-                    SqlDataReader reader = command.ExecuteReader();
-                    if (reader.Read() == true)
-                    {
-                        int stt = reader.GetInt32(0)+1;
-                    }
-                    string sql = "INSERT INTO NHANVIEN(MANV,TENTK,MATKHAU,HOTEN,TUOI,NGVL,SDT,CCCD_CMND,SODONDP,LUONG)VALUES " +
-                        "('SV"+stt.ToString("0")+"','"+ tdnBox.Text + "','" + hash + "','" + hotenBox.Text + "','" + tuoiBox.Text + "','"+  
-                        ngvlBox.Text + "','"+ sdtBox.Text + "','" + cmndBox.Text + "','" + sodondpBox.Text + "','"+ luongBox.Text + "')";
-                    command = new SqlCommand(sql, connection);
-                    int c = command.ExecuteNonQuery();
+                   count();
+                    add();
                     MessageBox.Show("Bạn đã đăng kí thành công", "Thông báo", MessageBoxButtons.OK);
-                    frm.Show();
                     this.Close();
                 }
                 else
