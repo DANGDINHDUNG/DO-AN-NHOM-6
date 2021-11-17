@@ -63,8 +63,17 @@ namespace form
                 stt = reader.GetInt32(0) ;
 
             }
-            stt++;
-            s = "NV" + stt.ToString("00");
+            str = count.Substring(2);
+            if (str == "")
+            {
+                s = "NV01";
+            }
+            else
+            {
+                int stt = Convert.ToInt32(str);
+                stt ++;
+                s = "NV" + stt.ToString("00");
+            }
             connection.Close();
         }
 
