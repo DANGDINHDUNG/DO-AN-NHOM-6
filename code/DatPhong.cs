@@ -15,8 +15,8 @@ namespace form
     public partial class DatPhong : Form
     {
         private string sql;
-        private int stt = 0;
-        private string gender;
+        public string name;
+        public string id;
         public DatPhong()
         {
             this.InitializeComponent();
@@ -25,7 +25,8 @@ namespace form
 
         private void DatPhong_Load(object sender, EventArgs e)
         {
-            
+            txbHOTEN.Text = name;
+            txbCCCD.Text = id;
             sql = "select PHONG.MALP 'Mã phòng', PHONG.TENPHONG 'Tên phòng', TRANGTHAI 'Trạng thái', GIA 'Giá tiền (VND)' from PHONG inner join LOAIPHONG on PHONG.MALP = LOAIPHONG.MALP where TRANGTHAI = N'Trống'";
             GetData(sql);
 
@@ -53,50 +54,68 @@ namespace form
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            try
-            {
-                if (cbxMALP.Text == string.Empty)
-                {
-                    txbTENPHONG.Text = "";
-                }
-                else
-                {
-                    txbTENPHONG.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
-                }
-            }
-            catch (Exception)
-            {
-
-            }
+            
         }
 
         private void btnDatphong_Click(object sender, EventArgs e)
         {
-            using (var connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ToString()))
+            if (txbHOTEN.Text == string.Empty || txbTENPHONG.Text == string.Empty || cbxTHANHTOAN.Text == string.Empty)
             {
-                connection.Open();
-
-                using (var command = connection.CreateCommand())
+                return;
+            }
+            else
+            {
+                using (var connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ToString()))
                 {
-                    command.CommandText = "update PHONG set TRANGTHAI = N'ĐÃ THUÊ' where PHONG.TENPHONG = '" + txbTENPHONG.Text + "' ";
-                    command.ExecuteNonQuery();
+                    connection.Open();
 
-                    command.CommandText = "insert into KHACHHANG(MAKH,HOTEN,TUOI,GIOITINH,SDT,CCCD_CMND) values ('null', N'" + txbHOTEN.Text + "' ,'" + comboBox1.Text + "', N'" + gender.ToString() + "', '" + txbSDT.Text + "', '" + txbCCCD.Text + "')";
-                    command.ExecuteNonQuery();
+                    using (var command = connection.CreateCommand())
+                    {
 
-                    command.CommandText = "update KHACHHANG set MAKH = 'KH' + cast((select count(MAKH) + 1 from KHACHHANG) as varchar(2)) where HOTEN = '" + txbHOTEN.Text + "'";
-                    command.ExecuteNonQuery();
+                        command.CommandText = "insert into DATPHONG(MAKH,MAPHONG,NGAYDAT,NGAYDI,THANHTOAN) values ((select distinct KHACHHANG.MAKH from KHACHHANG where CCCD_CMND = N'" + txbCCCD.Text + "'), (SELECT distinct MAPHONG FROM PHONG WHERE TENPHONG = N'" + txbTENPHONG.Text + "'), '" + dateTimePicker1.Text + "', '" + dateTimePicker2.Text + "', N'" + cbxTHANHTOAN.Text + "')";
+                        command.ExecuteNonQuery();
+
+                        command.CommandText = "update PHONG set TRANGTHAI = N'ĐÃ THUÊ' where PHONG.TENPHONG = N'" + txbTENPHONG.Text + "' ";
+                        command.ExecuteNonQuery();
+
+
+                    }
                 }
             }
-            
-            MessageBox.Show("Bạn đã đăng kí thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
+            cbxMALP.Text = string.Empty;
+            txbTENPHONG.Text = string.Empty;
+            DatPhong_Load(this, e);
+            MessageBox.Show("Bạn đã đăng kí thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void radioButton_CheckedChanged(object sender, EventArgs e)
+
+        private void dataGridView1_Click(object sender, EventArgs e)
         {
-            if (((RadioButton)sender).Checked)
-                gender = ((RadioButton)sender).Text;
+            txbTENPHONG.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+            switch (dataGridView1.SelectedRows[0].Cells[0].Value.ToString())
+            {
+                case "RST":
+                    {
+                        cbxMALP.Text = "RST (Phòng tổng thống)";
+                        break;
+                    }
+                case "VIP":
+                    {
+                        cbxMALP.Text = "VIP (Phòng V.I.P)";
+
+                        break;
+                    }
+                case "NRM":
+                    {
+                        cbxMALP.Text = "NRM (Phòng phổ thông)";
+                        break;
+                    }
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
