@@ -38,10 +38,12 @@ namespace form
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Decription_Lb = new System.Windows.Forms.Label();
             this.DangkyPnl = new System.Windows.Forms.Panel();
+            this.NuRbtn = new System.Windows.Forms.RadioButton();
+            this.NamRbtn = new System.Windows.Forms.RadioButton();
+            this.label12 = new System.Windows.Forms.Label();
+            this.ngvlDtp = new System.Windows.Forms.DateTimePicker();
             this.luongBox = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.sodondpBox = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label10 = new System.Windows.Forms.Label();
@@ -63,7 +65,6 @@ namespace form
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.hoten = new System.Windows.Forms.Label();
-            this.ngvlDtp = new System.Windows.Forms.DateTimePicker();
             this.logoPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.DangkyPnl.SuspendLayout();
@@ -154,11 +155,12 @@ namespace form
             // DangkyPnl
             // 
             this.DangkyPnl.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.DangkyPnl.Controls.Add(this.NuRbtn);
+            this.DangkyPnl.Controls.Add(this.NamRbtn);
+            this.DangkyPnl.Controls.Add(this.label12);
             this.DangkyPnl.Controls.Add(this.ngvlDtp);
             this.DangkyPnl.Controls.Add(this.luongBox);
             this.DangkyPnl.Controls.Add(this.label13);
-            this.DangkyPnl.Controls.Add(this.sodondpBox);
-            this.DangkyPnl.Controls.Add(this.label12);
             this.DangkyPnl.Controls.Add(this.label11);
             this.DangkyPnl.Controls.Add(this.linkLabel1);
             this.DangkyPnl.Controls.Add(this.label10);
@@ -187,36 +189,31 @@ namespace form
             this.DangkyPnl.Size = new System.Drawing.Size(824, 721);
             this.DangkyPnl.TabIndex = 11;
             // 
-            // luongBox
+            // NuRbtn
             // 
-            this.luongBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.luongBox.Location = new System.Drawing.Point(317, 511);
-            this.luongBox.Margin = new System.Windows.Forms.Padding(4);
-            this.luongBox.Name = "luongBox";
-            this.luongBox.Size = new System.Drawing.Size(290, 30);
-            this.luongBox.TabIndex = 44;
+            this.NuRbtn.AutoSize = true;
+            this.NuRbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.NuRbtn.ForeColor = System.Drawing.Color.Black;
+            this.NuRbtn.Location = new System.Drawing.Point(454, 319);
+            this.NuRbtn.Name = "NuRbtn";
+            this.NuRbtn.Size = new System.Drawing.Size(58, 29);
+            this.NuRbtn.TabIndex = 7;
+            this.NuRbtn.TabStop = true;
+            this.NuRbtn.Text = "Nữ";
+            this.NuRbtn.UseVisualStyleBackColor = true;
             // 
-            // label13
+            // NamRbtn
             // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label13.Location = new System.Drawing.Point(39, 508);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(100, 32);
-            this.label13.TabIndex = 43;
-            this.label13.Text = "Lương";
-            // 
-            // sodondpBox
-            // 
-            this.sodondpBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sodondpBox.Location = new System.Drawing.Point(317, 463);
-            this.sodondpBox.Margin = new System.Windows.Forms.Padding(4);
-            this.sodondpBox.Name = "sodondpBox";
-            this.sodondpBox.Size = new System.Drawing.Size(290, 30);
-            this.sodondpBox.TabIndex = 42;
+            this.NamRbtn.AutoSize = true;
+            this.NamRbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.NamRbtn.ForeColor = System.Drawing.Color.Black;
+            this.NamRbtn.Location = new System.Drawing.Point(317, 319);
+            this.NamRbtn.Name = "NamRbtn";
+            this.NamRbtn.Size = new System.Drawing.Size(74, 29);
+            this.NamRbtn.TabIndex = 6;
+            this.NamRbtn.TabStop = true;
+            this.NamRbtn.Text = "Nam";
+            this.NamRbtn.UseVisualStyleBackColor = true;
             // 
             // label12
             // 
@@ -224,12 +221,45 @@ namespace form
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label12.Location = new System.Drawing.Point(39, 460);
+            this.label12.Location = new System.Drawing.Point(169, 315);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(255, 32);
-            this.label12.TabIndex = 41;
-            this.label12.Text = "Số đơn đặt phòng";
+            this.label12.Size = new System.Drawing.Size(130, 32);
+            this.label12.TabIndex = 46;
+            this.label12.Text = "Giới tính";
+            // 
+            // ngvlDtp
+            // 
+            this.ngvlDtp.CustomFormat = "dd/MM/yyyy";
+            this.ngvlDtp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.ngvlDtp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.ngvlDtp.Location = new System.Drawing.Point(317, 462);
+            this.ngvlDtp.Name = "ngvlDtp";
+            this.ngvlDtp.Size = new System.Drawing.Size(161, 30);
+            this.ngvlDtp.TabIndex = 10;
+            this.ngvlDtp.Value = new System.DateTime(2021, 1, 1, 0, 0, 0, 0);
+            // 
+            // luongBox
+            // 
+            this.luongBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.luongBox.Location = new System.Drawing.Point(317, 510);
+            this.luongBox.Margin = new System.Windows.Forms.Padding(4);
+            this.luongBox.Name = "luongBox";
+            this.luongBox.Size = new System.Drawing.Size(290, 30);
+            this.luongBox.TabIndex = 11;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label13.Location = new System.Drawing.Point(199, 507);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(100, 32);
+            this.label13.TabIndex = 43;
+            this.label13.Text = "Lương";
             // 
             // label11
             // 
@@ -237,7 +267,7 @@ namespace form
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label11.Location = new System.Drawing.Point(39, 412);
+            this.label11.Location = new System.Drawing.Point(100, 461);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(199, 32);
@@ -337,7 +367,7 @@ namespace form
             this.nlmkBox.Margin = new System.Windows.Forms.Padding(4);
             this.nlmkBox.Name = "nlmkBox";
             this.nlmkBox.Size = new System.Drawing.Size(290, 30);
-            this.nlmkBox.TabIndex = 30;
+            this.nlmkBox.TabIndex = 5;
             this.nlmkBox.UseSystemPasswordChar = true;
             // 
             // mkBox
@@ -347,7 +377,7 @@ namespace form
             this.mkBox.Margin = new System.Windows.Forms.Padding(4);
             this.mkBox.Name = "mkBox";
             this.mkBox.Size = new System.Drawing.Size(290, 30);
-            this.mkBox.TabIndex = 28;
+            this.mkBox.TabIndex = 4;
             this.mkBox.UseSystemPasswordChar = true;
             // 
             // tdnBox
@@ -357,34 +387,34 @@ namespace form
             this.tdnBox.Margin = new System.Windows.Forms.Padding(4);
             this.tdnBox.Name = "tdnBox";
             this.tdnBox.Size = new System.Drawing.Size(290, 30);
-            this.tdnBox.TabIndex = 26;
+            this.tdnBox.TabIndex = 3;
             // 
             // sdtBox
             // 
             this.sdtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sdtBox.Location = new System.Drawing.Point(317, 367);
+            this.sdtBox.Location = new System.Drawing.Point(317, 414);
             this.sdtBox.Margin = new System.Windows.Forms.Padding(4);
             this.sdtBox.Name = "sdtBox";
             this.sdtBox.Size = new System.Drawing.Size(290, 30);
-            this.sdtBox.TabIndex = 31;
+            this.sdtBox.TabIndex = 9;
             // 
             // cmndBox
             // 
             this.cmndBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmndBox.Location = new System.Drawing.Point(317, 319);
+            this.cmndBox.Location = new System.Drawing.Point(317, 366);
             this.cmndBox.Margin = new System.Windows.Forms.Padding(4);
             this.cmndBox.Name = "cmndBox";
             this.cmndBox.Size = new System.Drawing.Size(290, 30);
-            this.cmndBox.TabIndex = 29;
+            this.cmndBox.TabIndex = 8;
             // 
             // tuoiBox
             // 
             this.tuoiBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tuoiBox.Location = new System.Drawing.Point(477, 124);
+            this.tuoiBox.Location = new System.Drawing.Point(477, 130);
             this.tuoiBox.Margin = new System.Windows.Forms.Padding(4);
             this.tuoiBox.Name = "tuoiBox";
             this.tuoiBox.Size = new System.Drawing.Size(130, 30);
-            this.tuoiBox.TabIndex = 27;
+            this.tuoiBox.TabIndex = 2;
             // 
             // hotenBox
             // 
@@ -394,7 +424,7 @@ namespace form
             this.hotenBox.Margin = new System.Windows.Forms.Padding(4);
             this.hotenBox.Name = "hotenBox";
             this.hotenBox.Size = new System.Drawing.Size(235, 30);
-            this.hotenBox.TabIndex = 25;
+            this.hotenBox.TabIndex = 1;
             // 
             // label7
             // 
@@ -415,7 +445,7 @@ namespace form
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label5.Location = new System.Drawing.Point(39, 220);
+            this.label5.Location = new System.Drawing.Point(160, 220);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(139, 32);
@@ -428,7 +458,7 @@ namespace form
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label4.Location = new System.Drawing.Point(39, 172);
+            this.label4.Location = new System.Drawing.Point(80, 172);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(219, 32);
@@ -441,7 +471,7 @@ namespace form
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label3.Location = new System.Drawing.Point(39, 364);
+            this.label3.Location = new System.Drawing.Point(104, 411);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(195, 32);
@@ -454,7 +484,7 @@ namespace form
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label2.Location = new System.Drawing.Point(39, 316);
+            this.label2.Location = new System.Drawing.Point(104, 363);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(195, 32);
@@ -467,7 +497,7 @@ namespace form
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label1.Location = new System.Drawing.Point(394, 121);
+            this.label1.Location = new System.Drawing.Point(394, 127);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 32);
@@ -480,23 +510,12 @@ namespace form
             this.hoten.BackColor = System.Drawing.Color.Transparent;
             this.hoten.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hoten.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.hoten.Location = new System.Drawing.Point(39, 124);
+            this.hoten.Location = new System.Drawing.Point(39, 127);
             this.hoten.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.hoten.Name = "hoten";
             this.hoten.Size = new System.Drawing.Size(104, 32);
             this.hoten.TabIndex = 18;
             this.hoten.Text = "Họ tên";
-            // 
-            // ngvlDtp
-            // 
-            this.ngvlDtp.CustomFormat = "dd/MM/yyyy";
-            this.ngvlDtp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.ngvlDtp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.ngvlDtp.Location = new System.Drawing.Point(317, 415);
-            this.ngvlDtp.Name = "ngvlDtp";
-            this.ngvlDtp.Size = new System.Drawing.Size(161, 30);
-            this.ngvlDtp.TabIndex = 45;
-            this.ngvlDtp.Value = new System.DateTime(2021, 1, 1, 0, 0, 0, 0);
             // 
             // Dangki
             // 
@@ -553,8 +572,9 @@ namespace form
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox luongBox;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox sodondpBox;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DateTimePicker ngvlDtp;
+        private System.Windows.Forms.RadioButton NuRbtn;
+        private System.Windows.Forms.RadioButton NamRbtn;
+        private System.Windows.Forms.Label label12;
     }
 }
