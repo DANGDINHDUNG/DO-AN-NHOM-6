@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,18 +17,19 @@ namespace form
         private string sql;
         private string gender;
         private bool existsCCCD = false;
+
         public KhachHang()
         {
             this.InitializeComponent();
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-
+            count = null;
         }
         
         private void button2_Click(object sender, EventArgs e)
         {
             if (txbHOTEN.Text == string.Empty || txbSDT.Text == string.Empty || comboBox1.Text == string.Empty || txbCCCD.Text == string.Empty)
             {
-                MessageBox.Show("Vui lòng điền đây đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Chọn thông tin khách hàng trước khi thực hiện các thao tác.");
                 return;
             }
             else
@@ -82,7 +83,8 @@ namespace form
                         }
                         else
                         {
-                            command.CommandText = "insert into KHACHHANG(MAKH,HOTEN,TUOI,GIOITINH,SDT,CCCD_CMND) values (('KH' + cast((select count(MAKH) + 1 from KHACHHANG) as varchar(2))), N'" + txbHOTEN.Text + "' ,'" + comboBox1.Text + "', N'" + gender.ToString() + "', '" + txbSDT.Text + "', '" + txbCCCD.Text + "')";
+                            command.CommandText = "insert into KHACHHANG(MAKH,HOTEN,TUOI,GIOITINH,SDT,CCCD_CMND) " +
+                                "values ('" + s + "', N'" + txbHOTEN.Text + "' ,'" + comboBox1.Text + "', N'" + gender.ToString() + "', '" + txbSDT.Text + "', '" + txbCCCD.Text + "')";
                             command.ExecuteNonQuery();
                         }
                         
@@ -137,6 +139,52 @@ namespace form
                 {
                     existsCCCD = true;
                 }
+            }
+        }
+
+        string s;
+        string count;
+
+        private void Count()
+        {
+            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ToString());
+            connection.Open();
+            string query = @"SELECT COUNT(MANV) FROM NHANVIEN WHERE MANV!= 'ADM'";
+            SqlCommand command = new SqlCommand(query, connection);
+            SqlDataReader reader = command.ExecuteReader();
+            int stt = 0;
+            if (reader.Read() == true)
+            {
+                stt = reader.GetInt32(0);
+
+            }
+            string str = count.Substring(2);
+            if (count is null)
+            {
+                s = "NV01";
+            }
+            else
+            {
+                stt = Convert.ToInt32(str);
+                stt++;
+                s = "KH" + stt.ToString("00");
+            }
+            connection.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (txbHOTEN.Text == string.Empty || txbSDT.Text == string.Empty || comboBox1.Text == string.Empty || txbCCCD.Text == string.Empty)
+            {
+                MessageBox.Show("Ch     ");
+                return;
+            }
+            else
+            {
+                DoiPhong doiPhong = new DoiPhong();
+                doiPhong.name = txbHOTEN.Text;
+                doiPhong.id = txbCCCD.Text;
+                doiPhong.ShowDialog();
             }
         }
     }
