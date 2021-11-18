@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +13,6 @@ namespace DOAN
 {
     public partial class InDSNV : Form
     {
-        bool gt = true;
         public InDSNV()
         {
             InitializeComponent();
@@ -37,7 +36,7 @@ namespace DOAN
 
         private void NEW()
         {
-            manvBx = hotenBx = sdtBx = cmndBx  = luongBx = sodonBx = tentkBx = mkBx = null;
+            manvBx.Text=hotenBx.Text = sdtBx.Text = cmndBx.Text  = luongBx.Text = sodonBx.Text = tentkBx.Text = mkBx.Text = "";
             comboBox1.Text = "";
             dateTimePicker1 = new DateTimePicker();
             radioButton1.Checked = false;
@@ -55,6 +54,7 @@ namespace DOAN
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
             DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
             if (row.Cells[0].Value != null)
             {
@@ -97,6 +97,12 @@ namespace DOAN
             {
                 luongBx.Text = row.Cells[9].Value.ToString();
             }
+            if (row.Cells[10].Value != null)
+            {
+                if (row.Cells[10].Value.ToString() == "Nam")
+                    radioButton1.Checked = true;
+                else radioButton2.Checked = true;
+            }
 
         }
 
@@ -109,10 +115,7 @@ namespace DOAN
             int c = command.ExecuteNonQuery();
         }
 
-        private void updateRow(string manv)
-        {
 
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -123,6 +126,31 @@ namespace DOAN
             }
             InDSNV_Load(this, e);
             NEW();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult dl = MessageBox.Show("Bạn muốn thay đổi tài khoản này không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dl == DialogResult.Yes)
+            {
+                string ngay = dateTimePicker1.Value.ToString("dd/MM/yyyy");
+                string gioitinh = "Nam";
+                if (radioButton1.Checked == true)
+                {
+                    gioitinh = "Nam";
+                }
+                else gioitinh = "Nữ";
+                string manv = manvBx.Text;
+                SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-K8QQEUE;Initial Catalog=QL;Integrated Security=True");
+                connection.Open();
+                string sql = "UPDATE NHANVIEN SET TENTK ='"+tentkBx.Text+"', HOTEN = '"+hotenBx.Text+ "', TUOI='" + comboBox1.Text
+                + "', SDT='" + sdtBx.Text + "', CCCD_CMND='" + cmndBx.Text + "', NGVL='" + ngay + "', SODONDP='"  + sodonBx.Text
+                + "', LUONG='" + luongBx.Text + "', GIOITINH=N'" + gioitinh+ "' WHERE MANV = 'NV01'";
+                SqlCommand command = new SqlCommand(sql, connection);
+                int c = command.ExecuteNonQuery();
+                InDSNV_Load(this, e);
+                NEW();
+            }
         }
     }
 }
