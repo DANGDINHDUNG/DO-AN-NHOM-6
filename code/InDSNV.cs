@@ -133,7 +133,7 @@ namespace DOAN
             DialogResult dl = MessageBox.Show("Bạn muốn thay đổi tài khoản này không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (dl == DialogResult.Yes)
             {
-                string ngay = dateTimePicker1.Value.ToString("dd/MM/yyyy");
+                string ngay = dateTimePicker1.Value.ToString("MM/dd/yyyy");
                 string gioitinh = "Nam";
                 if (radioButton1.Checked == true)
                 {
