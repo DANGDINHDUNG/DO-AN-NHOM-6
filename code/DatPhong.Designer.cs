@@ -273,7 +273,7 @@ namespace form
             this.Controls.Add(this.label1);
             this.Name = "DatPhong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "S";
+            this.Text = "Đặt phòng";
             this.Load += new System.EventHandler(this.DatPhong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
