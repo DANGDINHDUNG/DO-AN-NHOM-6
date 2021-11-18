@@ -69,7 +69,7 @@ namespace form
             Hash256 h = new Hash256();
             SHA256 sha256Hash = SHA256.Create();
             string hash = h.GetHash(sha256Hash, mkBox.Text);
-            string ngay = ngvlDtp.Value.ToString("dd/MM/yyyy");
+            string ngay = dateTimePicker1.Value.ToString("MM/dd/yyyy");
             string gioitinh = "Nam";
             if (NamRbtn.Checked == true)
             {
