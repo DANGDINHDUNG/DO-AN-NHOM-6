@@ -143,7 +143,7 @@ namespace DOAN
                 string manv = manvBx.Text;
                 SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-K8QQEUE;Initial Catalog=QL;Integrated Security=True");
                 connection.Open();
-                string sql = "UPDATE NHANVIEN SET TENTK ='"+tentkBx.Text+"', HOTEN = '"+hotenBx.Text+ "', TUOI='" + comboBox1.Text
+                string sql = "UPDATE NHANVIEN SET TENTK ='"+tentkBx.Text+"', HOTEN = N'"+hotenBx.Text+ "', TUOI='" + comboBox1.Text
                 + "', SDT='" + sdtBx.Text + "', CCCD_CMND='" + cmndBx.Text + "', NGVL='" + ngay + "', SODONDP='"  + sodonBx.Text
                 + "', LUONG='" + luongBx.Text + "', GIOITINH=N'" + gioitinh+ "' WHERE MANV = 'NV01'";
                 SqlCommand command = new SqlCommand(sql, connection);
@@ -151,6 +151,20 @@ namespace DOAN
                 InDSNV_Load(this, e);
                 NEW();
             }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-K8QQEUE;Initial Catalog=QL;Integrated Security=True");
+            connection.Open();
+            string sql = @"SELECT * FROM NHANVIEN WHERE MANV!='ADM' AND HOTEN LIKE N'"+textBox1.Text+"%'";
+            SqlCommand com = new SqlCommand(sql, connection);
+            com.CommandType = CommandType.Text;
+            SqlDataAdapter da = new SqlDataAdapter(com);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            connection.Close();
+            dataGridView1.DataSource = dt;
         }
     }
 }
