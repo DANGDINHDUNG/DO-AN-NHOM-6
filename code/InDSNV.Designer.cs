@@ -1,4 +1,4 @@
-﻿
+
 namespace DOAN
 {
     partial class InDSNV
@@ -46,16 +46,16 @@ namespace DOAN
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.luongBx = new System.Windows.Forms.TextBox();
+            this.sodonBx = new System.Windows.Forms.TextBox();
+            this.mkBx = new System.Windows.Forms.TextBox();
+            this.tentkBx = new System.Windows.Forms.TextBox();
+            this.cmndBx = new System.Windows.Forms.TextBox();
+            this.sdtBx = new System.Windows.Forms.TextBox();
+            this.hotenBx = new System.Windows.Forms.TextBox();
             this.manvBx = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.hotenBx = new System.Windows.Forms.TextBox();
-            this.sdtBx = new System.Windows.Forms.TextBox();
-            this.cmndBx = new System.Windows.Forms.TextBox();
-            this.tentkBx = new System.Windows.Forms.TextBox();
-            this.mkBx = new System.Windows.Forms.TextBox();
-            this.sodonBx = new System.Windows.Forms.TextBox();
-            this.luongBx = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -274,6 +274,70 @@ namespace DOAN
             this.label5.TabIndex = 36;
             this.label5.Text = "Tên tài khoản";
             // 
+            // luongBx
+            // 
+            this.luongBx.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.luongBx.Location = new System.Drawing.Point(147, 483);
+            this.luongBx.Margin = new System.Windows.Forms.Padding(2);
+            this.luongBx.Name = "luongBx";
+            this.luongBx.Size = new System.Drawing.Size(202, 26);
+            this.luongBx.TabIndex = 33;
+            // 
+            // sodonBx
+            // 
+            this.sodonBx.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.sodonBx.Location = new System.Drawing.Point(145, 438);
+            this.sodonBx.Margin = new System.Windows.Forms.Padding(2);
+            this.sodonBx.Name = "sodonBx";
+            this.sodonBx.Size = new System.Drawing.Size(202, 26);
+            this.sodonBx.TabIndex = 33;
+            // 
+            // mkBx
+            // 
+            this.mkBx.Enabled = false;
+            this.mkBx.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.mkBx.Location = new System.Drawing.Point(145, 326);
+            this.mkBx.Margin = new System.Windows.Forms.Padding(2);
+            this.mkBx.Name = "mkBx";
+            this.mkBx.Size = new System.Drawing.Size(202, 26);
+            this.mkBx.TabIndex = 33;
+            // 
+            // tentkBx
+            // 
+            this.tentkBx.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tentkBx.Location = new System.Drawing.Point(147, 260);
+            this.tentkBx.Margin = new System.Windows.Forms.Padding(2);
+            this.tentkBx.Name = "tentkBx";
+            this.tentkBx.Size = new System.Drawing.Size(202, 26);
+            this.tentkBx.TabIndex = 33;
+            // 
+            // cmndBx
+            // 
+            this.cmndBx.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cmndBx.Location = new System.Drawing.Point(145, 210);
+            this.cmndBx.Margin = new System.Windows.Forms.Padding(2);
+            this.cmndBx.Name = "cmndBx";
+            this.cmndBx.Size = new System.Drawing.Size(202, 26);
+            this.cmndBx.TabIndex = 33;
+            // 
+            // sdtBx
+            // 
+            this.sdtBx.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.sdtBx.Location = new System.Drawing.Point(145, 120);
+            this.sdtBx.Margin = new System.Windows.Forms.Padding(2);
+            this.sdtBx.Name = "sdtBx";
+            this.sdtBx.Size = new System.Drawing.Size(202, 26);
+            this.sdtBx.TabIndex = 33;
+            // 
+            // hotenBx
+            // 
+            this.hotenBx.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.hotenBx.Location = new System.Drawing.Point(145, 83);
+            this.hotenBx.Margin = new System.Windows.Forms.Padding(2);
+            this.hotenBx.Name = "hotenBx";
+            this.hotenBx.Size = new System.Drawing.Size(202, 26);
+            this.hotenBx.TabIndex = 33;
+            // 
             // manvBx
             // 
             this.manvBx.Enabled = false;
@@ -294,6 +358,7 @@ namespace DOAN
             this.button1.TabIndex = 42;
             this.button1.Text = " Cập nhật";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -306,69 +371,6 @@ namespace DOAN
             this.button2.Text = "Xóa";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // hotenBx
-            // 
-            this.hotenBx.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.hotenBx.Location = new System.Drawing.Point(145, 83);
-            this.hotenBx.Margin = new System.Windows.Forms.Padding(2);
-            this.hotenBx.Name = "hotenBx";
-            this.hotenBx.Size = new System.Drawing.Size(202, 26);
-            this.hotenBx.TabIndex = 33;
-            // 
-            // sdtBx
-            // 
-            this.sdtBx.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.sdtBx.Location = new System.Drawing.Point(145, 120);
-            this.sdtBx.Margin = new System.Windows.Forms.Padding(2);
-            this.sdtBx.Name = "sdtBx";
-            this.sdtBx.Size = new System.Drawing.Size(202, 26);
-            this.sdtBx.TabIndex = 33;
-            // 
-            // cmndBx
-            // 
-            this.cmndBx.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.cmndBx.Location = new System.Drawing.Point(145, 210);
-            this.cmndBx.Margin = new System.Windows.Forms.Padding(2);
-            this.cmndBx.Name = "cmndBx";
-            this.cmndBx.Size = new System.Drawing.Size(202, 26);
-            this.cmndBx.TabIndex = 33;
-            // 
-            // tentkBx
-            // 
-            this.tentkBx.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.tentkBx.Location = new System.Drawing.Point(147, 260);
-            this.tentkBx.Margin = new System.Windows.Forms.Padding(2);
-            this.tentkBx.Name = "tentkBx";
-            this.tentkBx.Size = new System.Drawing.Size(202, 26);
-            this.tentkBx.TabIndex = 33;
-            // 
-            // mkBx
-            // 
-            this.mkBx.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.mkBx.Location = new System.Drawing.Point(145, 326);
-            this.mkBx.Margin = new System.Windows.Forms.Padding(2);
-            this.mkBx.Name = "mkBx";
-            this.mkBx.Size = new System.Drawing.Size(202, 26);
-            this.mkBx.TabIndex = 33;
-            // 
-            // sodonBx
-            // 
-            this.sodonBx.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.sodonBx.Location = new System.Drawing.Point(145, 438);
-            this.sodonBx.Margin = new System.Windows.Forms.Padding(2);
-            this.sodonBx.Name = "sodonBx";
-            this.sodonBx.Size = new System.Drawing.Size(202, 26);
-            this.sodonBx.TabIndex = 33;
-            // 
-            // luongBx
-            // 
-            this.luongBx.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.luongBx.Location = new System.Drawing.Point(147, 483);
-            this.luongBx.Margin = new System.Windows.Forms.Padding(2);
-            this.luongBx.Name = "luongBx";
-            this.luongBx.Size = new System.Drawing.Size(202, 26);
-            this.luongBx.TabIndex = 33;
             // 
             // InDSNV
             // 
