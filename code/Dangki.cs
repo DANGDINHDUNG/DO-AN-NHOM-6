@@ -34,35 +34,19 @@ namespace form
             int nHeightEllipse
         );
 
-         private void add()
-        {
-            SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-K8QQEUE;Initial Catalog=QL;Integrated Security=True");
-            connection.Open();
-            Hash256 h = new Hash256();
-            SHA256 sha256Hash = SHA256.Create();
-            string hash = h.GetHash(sha256Hash, mkBox.Text);
-            string ngay = ngvlDtp.Value.ToString("dd/MM/yyyy");
-            string sql = "INSERT INTO NHANVIEN(MANV,TENTK,MATKHAU,HOTEN,TUOI,SDT,CCCD_CMND,NGVL,LUONG)VALUES " +
-            "('" + s + "','" + tdnBox.Text + "','" + hash + "',N'" + hotenBox.Text + "','" + tuoiBox.Text + "','" +
-            sdtBox.Text + "','" + cmndBox.Text + "','" + ngay + "','" + luongBox.Text + "')";
-            SqlCommand command = new SqlCommand(sql, connection);
-            int c = command.ExecuteNonQuery();
-        }
-        
-        string s;
+       string s;
         
         private void count()
         {
             SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-K8QQEUE;Initial Catalog=QL;Integrated Security=True");
             connection.Open();            
-            string query = @"SELECT COUNT(MANV) FROM NHANVIEN WHERE MANV!= 'ADM'";
+            string query = @"SELECT MAX(MANV) FROM NHANVIEN WHERE MANV!= 'ADM'";
             SqlCommand command = new SqlCommand(query, connection);
             SqlDataReader reader = command.ExecuteReader();
-            int stt=0;
+            string str="", count="";
             if (reader.Read() == true)
             {
-                stt = reader.GetInt32(0) ;
-
+                count = reader.GetString(0);
             }
             str = count.Substring(2);
             if (str == "")
@@ -78,15 +62,35 @@ namespace form
             connection.Close();
         }
 
-
+        private void them()
+        {
+            SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-K8QQEUE;Initial Catalog=QL;Integrated Security=True");
+            connection.Open();
+            Hash256 h = new Hash256();
+            SHA256 sha256Hash = SHA256.Create();
+            string hash = h.GetHash(sha256Hash, mkBox.Text);
+            string ngay = ngvlDtp.Value.ToString("dd/MM/yyyy");
+            string gioitinh = "Nam";
+            if (NamRbtn.Checked == true)
+            {
+                gioitinh = "Nam";
+            }
+            else gioitinh = "Nữ";
+            string sql = "INSERT INTO NHANVIEN(MANV,TENTK,MATKHAU,HOTEN,TUOI,SDT,CCCD_CMND,NGVL,LUONG,GIOITINH)VALUES " +
+    "('" + s + "','" + tdnBox.Text + "','" + hash + "',N'" + hotenBox.Text + "','" + tuoiBox.Text + "','" +
+     sdtBox.Text + "','" + cmndBox.Text + "','" + ngay + "','" + luongBox.Text + "',N'"+gioitinh+ "')";
+            SqlCommand command = new SqlCommand(sql, connection);
+            int c = command.ExecuteNonQuery();
+        }
         private void dkiBtn_Click(object sender, EventArgs e)
         {
             if (tdnBox.Text != null && mkBox.Text != null && nlmkBox.Text != null)
             {
                 if (mkBox.Text == nlmkBox.Text)
                 {
-                   count();
-                    add();
+
+                    count();
+                    them();
                     MessageBox.Show("Bạn đã đăng kí thành công", "Thông báo", MessageBoxButtons.OK);
                     this.Close();
                 }
