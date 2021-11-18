@@ -26,7 +26,20 @@ namespace form
             mkmBox.UseSystemPasswordChar = false;
             nlmkBox.UseSystemPasswordChar = false;
         }
-
+        private void changePass()
+        {
+                    SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-K8QQEUE;Initial Catalog=QLKS;Integrated Security=True");
+                    connection.Open();
+                    Hash256 h = new Hash256();
+                    SHA256 sha256Hash = SHA256.Create();
+                    string hash = h.GetHash(sha256Hash, mkmBox.Text);
+                    string query = "update NHANVIEN set MATKHAU='" + hash + "'where TENTK='" + tdnBox.Text + "'";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    int c = command.ExecuteNonQuery();
+                    MessageBox.Show("Bạn đã đổi mật khẩu thành công", "Thông báo", MessageBoxButtons.OK);
+                    frm.Show();
+                    this.Close();
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             //// Tui sửa lại tên server
@@ -47,16 +60,7 @@ namespace form
                 }
                 else if(mkmBox.Text == nlmkBox.Text)
                 {
-                    connection = new SqlConnection(@"Data Source=DESKTOP-K8QQEUE;Initial Catalog=QLKS;Integrated Security=True");
-                    connection.Open();
-                    sha256Hash = SHA256.Create();
-                    hash = h.GetHash(sha256Hash, mkmBox.Text);
-                    query = "update NHANVIEN set MATKHAU='" + hash + "'where TENTK='" + tdnBox.Text + "'";
-                    command = new SqlCommand(query, connection);
-                    int c = command.ExecuteNonQuery();
-                    MessageBox.Show("Bạn đã đổi mật khẩu thành công", "Thông báo", MessageBoxButtons.OK);
-                    frm.Show();
-                    this.Close();
+                    changePass();
                 }
                 else
                 {
