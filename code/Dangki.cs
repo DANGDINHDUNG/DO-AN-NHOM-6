@@ -35,27 +35,35 @@ namespace form
         );
 
        string s;
+
         
         private void count()
         {
+            string  count = "";
             SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-K8QQEUE;Initial Catalog=QL;Integrated Security=True");
             connection.Open();            
             string query = @"SELECT MAX(MANV) FROM NHANVIEN WHERE MANV!= 'ADM'";
             SqlCommand command = new SqlCommand(query, connection);
             SqlDataReader reader = command.ExecuteReader();
-            string str="", count="";
-            if (reader.Read() == true)
+            if(reader.HasRows)
             {
-                count = reader.GetString(0);
-            }
-            str = count.Substring(2);
-            if (str == "")
+                if(reader.Read())
+                {
+                    if (!reader.IsDBNull(0))
+                    {
+                        count = reader.GetString(0);
+                    }
+                }
+            }        
+            
+            if (count == "")
             {
                 s = "NV01";
             }
             else
             {
-                int stt = Convert.ToInt32(str);
+                count = count.Substring(2);
+                int stt = Convert.ToInt32(count);
                 stt ++;
                 s = "NV" + stt.ToString("00");
             }
