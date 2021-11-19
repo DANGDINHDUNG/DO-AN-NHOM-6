@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -61,7 +61,7 @@ namespace form
             sql = "select PHONG.MALP 'Mã phòng', PHONG.TENPHONG 'Tên phòng', TRANGTHAI 'Trạng thái', FORMAT(GIA, '###,###,###') 'Giá tiền (VND)' from PHONG inner join LOAIPHONG on PHONG.MALP = LOAIPHONG.MALP where TRANGTHAI = N'Trống'";
             GetData(sql);
 
-            sql1 = "select PHONG.MALP 'Mã phòng', PHONG.TENPHONG 'Tên phòng', TRANGTHAI 'Trạng thái', FORMAT(GIA, '###,###,###') 'Giá tiền (VND)' from PHONG inner join LOAIPHONG on PHONG.MALP = LOAIPHONG.MALP inner join DATPHONG on PHONG.MAPHONG = DATPHONG.MAPHONG where TRANGTHAI = N'ĐÃ THUÊ' and MAKH = (select MAKH from KHACHHANG where CCCD_CMND = '" + txbCCCD.Text + "')";
+            sql1 = "select PHONG.MALP 'Mã phòng', PHONG.TENPHONG 'Tên phòng', TRANGTHAI 'Trạng thái', FORMAT(GIA, '###,###,###') 'Giá tiền (VND)', NGAYDAT 'Ngày đặt', NGAYDI 'Ngày trả' from PHONG inner join LOAIPHONG on PHONG.MALP = LOAIPHONG.MALP inner join DATPHONG on PHONG.MAPHONG = DATPHONG.MAPHONG where TRANGTHAI = N'ĐÃ THUÊ' and MAKH = (select MAKH from KHACHHANG where CCCD_CMND = '" + txbCCCD.Text + "')";
             GetData1(sql1);
         }
 
@@ -94,13 +94,15 @@ namespace form
             sql = "select PHONG.MALP 'Mã loại phòng', PHONG.TENPHONG 'Tên phòng', TRANGTHAI 'Trạng thái', FORMAT(GIA, '###,###,###') 'Giá tiền (VND)' from PHONG inner join LOAIPHONG on PHONG.MALP = LOAIPHONG.MALP where TRANGTHAI = N'Trống' and PHONG.MALP = '" + cbxMALP.Text.Substring(0, 3) + "'";
             GetData(sql);
 
-            sql1 = "select PHONG.MALP 'Mã loại phòng', PHONG.TENPHONG 'Tên phòng', TRANGTHAI 'Trạng thái', FORMAT(GIA, '###,###,###') 'Giá tiền (VND)' from PHONG inner join LOAIPHONG on PHONG.MALP = LOAIPHONG.MALP inner join DATPHONG on PHONG.MAPHONG = DATPHONG.MAPHONG where TRANGTHAI = N'ĐÃ THUÊ' and MAKH = (select MAKH from KHACHHANG where CCCD_CMND = '" + txbCCCD.Text + "') and PHONG.MALP = '" + cbxMALP.Text.Substring(0, 3) + "'";
+            sql1 = "select PHONG.MALP 'Mã loại phòng', PHONG.TENPHONG 'Tên phòng', TRANGTHAI 'Trạng thái', FORMAT(GIA, '###,###,###') 'Giá tiền (VND)', NGAYDAT 'Ngày đặt', NGAYDI 'Ngày trả' from PHONG inner join LOAIPHONG on PHONG.MALP = LOAIPHONG.MALP inner join DATPHONG on PHONG.MAPHONG = DATPHONG.MAPHONG where TRANGTHAI = N'ĐÃ THUÊ' and MAKH = (select MAKH from KHACHHANG where CCCD_CMND = '" + txbCCCD.Text + "') and PHONG.MALP = '" + cbxMALP.Text.Substring(0, 3) + "'";
             GetData1(sql1);
         }
 
         private void dataGridView1_Click(object sender, EventArgs e)
         {
             txbTENPHONG.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+            dateTimePicker1.Text = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
+            dateTimePicker2.Text = dataGridView1.SelectedRows[0].Cells[5].Value.ToString();
             switch (dataGridView1.SelectedRows[0].Cells[0].Value.ToString())
             {
                 case "RST":
@@ -124,6 +126,7 @@ namespace form
 
         private void btnDown_Click(object sender, EventArgs e)
         {
+            dataGridView2.Enabled = true;
             try
             {
                 dataGridView2.Enabled = true;
@@ -152,7 +155,6 @@ namespace form
                 MessageBox.Show("Tên phòng muốn đổi chưa đúng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
 
         private void btnUp_Click(object sender, EventArgs e)
         {
@@ -194,6 +196,40 @@ namespace form
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnCAPNHAT_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txbTENPHONG.Text == string.Empty)
+                {
+                    return;
+                }
+                else
+                {
+                    using (var connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ToString()))
+                    {
+                        connection.Open();
+
+                        using (var command = connection.CreateCommand())
+                        {
+
+                            command.CommandText = "update DATPHONG set NGAYDAT = '" + dateTimePicker1.Text + "', NGAYDI = '" + dateTimePicker2.Text + "' where MAPHONG = (select MAPHONG from PHONG where TENPHONG = '" + txbTENPHONG.Text + "' ) ";
+                            command.ExecuteNonQuery();
+
+                        }
+                    }
+                }
+                cbxMALP.Text = string.Empty;
+                txbTENPHONG.Text = string.Empty;
+                DoiPhong_Load(this, e);
+                MessageBox.Show("Bạn đã gia hạn phòng thành công", "Gia hạn", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Thông tin phòng chưa hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }
