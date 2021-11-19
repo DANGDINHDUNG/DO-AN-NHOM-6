@@ -19,7 +19,20 @@ namespace DOAN
             cbx();
         }
 
-
+        private bool Check(string txt)
+        {
+            if(txt=="")
+                return true;
+            else
+            {
+                long num;
+                if (long.TryParse(txt, out num))
+                    return true;
+                else
+                    return false;
+            }
+        }
+        
         private void InDSNV_Load(object sender, EventArgs e)
         {
             SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-K8QQEUE;Initial Catalog=QL;Integrated Security=True");
@@ -127,29 +140,46 @@ namespace DOAN
             InDSNV_Load(this, e);
             NEW();
         }
-
+        private void update()
+        { 
+                    string ngay = dateTimePicker1.Value.ToString("MM/dd/yyyy");
+                    string gioitinh = "Nam";
+                    if (radioButton1.Checked == true)
+                    {
+                        gioitinh = "Nam";
+                    }
+                    else gioitinh = "Nữ";
+                    string manv = manvBx.Text;
+                    SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-K8QQEUE;Initial Catalog=QL;Integrated Security=True");
+                    connection.Open();
+                    string sql = "UPDATE NHANVIEN SET TENTK ='"+tentkBx.Text+"', HOTEN = N'"+hotenBx.Text+ "', TUOI='" + comboBox1.Text
+                    + "', SDT='" + sdtBx.Text + "', CCCD_CMND='" + cmndBx.Text + "', NGVL='" + ngay + "', SODONDP='"  + sodonBx.Text
+                    + "', LUONG='" + luongBx.Text + "', GIOITINH=N'" + gioitinh+ "' WHERE MANV = 'NV01'";
+                    SqlCommand command = new SqlCommand(sql, connection);
+                    int c = command.ExecuteNonQuery();
+                    InDSNV_Load(this, e);
+                    NEW();
+          
+        }
+        
         private void button1_Click(object sender, EventArgs e)
         {
             DialogResult dl = MessageBox.Show("Bạn muốn thay đổi tài khoản này không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (dl == DialogResult.Yes)
             {
-                string ngay = dateTimePicker1.Value.ToString("MM/dd/yyyy");
-                string gioitinh = "Nam";
-                if (radioButton1.Checked == true)
+                if(Check(luongBx.Text) == false)
                 {
-                    gioitinh = "Nam";
+                    MessageBox.Show("Số lương  phải là số", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else gioitinh = "Nữ";
-                string manv = manvBx.Text;
-                SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-K8QQEUE;Initial Catalog=QL;Integrated Security=True");
-                connection.Open();
-                string sql = "UPDATE NHANVIEN SET TENTK ='"+tentkBx.Text+"', HOTEN = N'"+hotenBx.Text+ "', TUOI='" + comboBox1.Text
-                + "', SDT='" + sdtBx.Text + "', CCCD_CMND='" + cmndBx.Text + "', NGVL='" + ngay + "', SODONDP='"  + sodonBx.Text
-                + "', LUONG='" + luongBx.Text + "', GIOITINH=N'" + gioitinh+ "' WHERE MANV = 'NV01'";
-                SqlCommand command = new SqlCommand(sql, connection);
-                int c = command.ExecuteNonQuery();
-                InDSNV_Load(this, e);
-                NEW();
+                if(Check(sodonBx.Text) == false)
+                {
+                    MessageBox.Show("Số đơn  phải là số", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                if(Check(luongBx.Text) == true&&Check(sodonBx.Text) == true)
+                {
+                   update();
+                }
+
             }
         }
 
