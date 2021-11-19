@@ -168,24 +168,31 @@ namespace form
 
         private void Count()
         {
+            string count = "";
             SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ToString());
             connection.Open();
-            string query = "SELECT MAX(MAKH) FROM KHACHHANG";
+            string query = @"SELECT MAX(MAKH) FROM KHACHHANG";
             SqlCommand command = new SqlCommand(query, connection);
             SqlDataReader reader = command.ExecuteReader();
-            string str = "", count = "";
-            if (reader.Read() == true)
+            if (reader.HasRows)
             {
-                count = reader.GetString(0);
+                if (reader.Read())
+                {
+                    if (!reader.IsDBNull(0))
+                    {
+                        count = reader.GetString(0);
+                    }
+                }
             }
-            str = count.Substring(2);
-            if (count is null)
+
+            if (count == "")
             {
                 s = "KH01";
             }
             else
             {
-                int stt = Convert.ToInt32(str);
+                count = count.Substring(2);
+                int stt = Convert.ToInt32(count);
                 stt++;
                 s = "KH" + stt.ToString("00");
             }
