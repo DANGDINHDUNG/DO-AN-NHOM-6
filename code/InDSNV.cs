@@ -156,10 +156,7 @@ namespace DOAN
                     + "', SDT='" + sdtBx.Text + "', CCCD_CMND='" + cmndBx.Text + "', NGVL='" + ngay + "', SODONDP='"  + sodonBx.Text
                     + "', LUONG='" + luongBx.Text + "', GIOITINH=N'" + gioitinh+ "' WHERE MANV = 'NV01'";
                     SqlCommand command = new SqlCommand(sql, connection);
-                    int c = command.ExecuteNonQuery();
-                    InDSNV_Load(this, e);
-                    NEW();
-          
+                    int c = command.ExecuteNonQuery();          
         }
         
         private void button1_Click(object sender, EventArgs e)
@@ -178,6 +175,8 @@ namespace DOAN
                 if(Check(luongBx.Text) == true&&Check(sodonBx.Text) == true)
                 {
                    update();
+                   InDSNV_Load(this, e);
+                    NEW();
                 }
 
             }
