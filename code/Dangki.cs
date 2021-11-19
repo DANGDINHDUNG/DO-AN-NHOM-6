@@ -35,7 +35,14 @@ namespace form
         );
 
        string s;
-
+        private bool Check(string txt)
+        {
+            long num;
+            if (long.TryParse(txt, out num))
+                return true;
+            else
+                return false;
+        }
         
         private void count()
         {
@@ -70,7 +77,7 @@ namespace form
             connection.Close();
         }
 
-        private void them()
+        private void add()
         {
             SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-K8QQEUE;Initial Catalog=QL;Integrated Security=True");
             connection.Open();
@@ -96,11 +103,18 @@ namespace form
             {
                 if (mkBox.Text == nlmkBox.Text)
                 {
-
-                    count();
-                    them();
-                    MessageBox.Show("Bạn đã đăng kí thành công", "Thông báo", MessageBoxButtons.OK);
-                    this.Close();
+                    if(Check(luongBox.Text) == false)
+                    {
+                       MessageBox.Show("Số tiền phải là số", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else 
+                    {
+                        count();
+                        add();
+                        MessageBox.Show("Bạn đã đăng kí thành công", "Thông báo", MessageBoxButtons.OK);
+                        this.Close();
+                    }
+                    
                 }
                 else
                 {
