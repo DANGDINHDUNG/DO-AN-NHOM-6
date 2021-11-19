@@ -14,17 +14,19 @@ namespace form
 {
     public partial class KhachHang : Form
     {
+
+        // KHAI BÁO THÔNG TIN FORM
         private string sql;
         private string gender;
         private bool existsCCCD = false;
-
+        private string s;
         public KhachHang()
         {
             this.InitializeComponent();
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            count = null;
         }
-        
+
+        // SỰ KIỆN FORM 
         private void button2_Click(object sender, EventArgs e)
         {
             if (txbHOTEN.Text == string.Empty || txbSDT.Text == string.Empty || comboBox1.Text == string.Empty || txbCCCD.Text == string.Empty)
@@ -46,59 +48,35 @@ namespace form
             sql = "select * from KHACHHANG";
             GetData(sql);
         }
-
-        public void GetData(string data)
-        {
-            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ToString());
-            connection.Open();
-            string sql = data;
-            SqlCommand com = new SqlCommand(sql, connection);
-            com.CommandType = CommandType.Text;
-            SqlDataAdapter da = new SqlDataAdapter(com);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            connection.Close();
-            dataGridView1.DataSource = dt;
-        }
-
+      
         private void button1_Click(object sender, EventArgs e)
         {
-            if (txbHOTEN.Text == string.Empty || txbSDT.Text == string.Empty ||  comboBox1.Text == string.Empty || txbCCCD.Text == string.Empty)
+            try
             {
-                return;
-            }
-            else
-            {
-                CheckCCCD();
-                using (var connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ToString()))
+                if (txbHOTEN.Text == string.Empty || txbSDT.Text == string.Empty || comboBox1.Text == string.Empty || txbCCCD.Text == string.Empty)
                 {
-                    connection.Open();
-
-                    using (var command = connection.CreateCommand())
-                    {
-                        if (existsCCCD)
-                        {
-                            command.CommandText = "update KHACHHANG set HOTEN = N'" + txbHOTEN.Text + "', TUOI = '" + comboBox1.Text + "', GIOITINH = N'" + gender.ToString() + "', SDT = '" + txbSDT.Text +"' where CCCD_CMND = '" + txbCCCD.Text + "'";
-                            command.ExecuteNonQuery();
-                        }
-                        else
-                        {
-                            command.CommandText = "insert into KHACHHANG(MAKH,HOTEN,TUOI,GIOITINH,SDT,CCCD_CMND) " +
-                                "values ('" + s + "', N'" + txbHOTEN.Text + "' ,'" + comboBox1.Text + "', N'" + gender.ToString() + "', '" + txbSDT.Text + "', '" + txbCCCD.Text + "')";
-                            command.ExecuteNonQuery();
-                        }
-                        
-                    }
+                    return;
                 }
+                else
+                {
+                    CheckCCCD();
+                    Count();
+                    Add();
+                }
+                KhachHang_Load(this, e);
+                MessageBox.Show("Thêm thông tin khách hàng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txbHOTEN.Text = string.Empty;
+                txbSDT.Text = string.Empty;
+                comboBox1.Text = "";
+                txbCCCD.Text = string.Empty;
+                radioButton1.Checked = false;
+                radioButton2.Checked = false;
             }
-            KhachHang_Load(this, e);
-            MessageBox.Show("Thêm thông tin khách hàng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            txbHOTEN.Text = string.Empty;
-            txbSDT.Text = string.Empty;
-            comboBox1.Text = "";
-            txbCCCD.Text = string.Empty;
-            radioButton1.Checked = false;
-            radioButton2.Checked = false;
+            catch (Exception)
+            {
+                MessageBox.Show("Nhập liệu thông tin không đúng định dạng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
         }
 
         private void radioButton_CheckedChanged(object sender, EventArgs e)
@@ -131,52 +109,11 @@ namespace form
             
         }
 
-        private void CheckCCCD()
-        {
-            for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
-            {
-                if (dataGridView1.Rows[i].Cells[3].Value.ToString() == txbCCCD.Text)
-                {
-                    existsCCCD = true;
-                }
-            }
-        }
-
-        string s;
-        string count;
-
-        private void Count()
-        {
-            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ToString());
-            connection.Open();
-            string query = @"SELECT COUNT(MANV) FROM NHANVIEN WHERE MANV!= 'ADM'";
-            SqlCommand command = new SqlCommand(query, connection);
-            SqlDataReader reader = command.ExecuteReader();
-            int stt = 0;
-            if (reader.Read() == true)
-            {
-                stt = reader.GetInt32(0);
-
-            }
-            string str = count.Substring(2);
-            if (count is null)
-            {
-                s = "NV01";
-            }
-            else
-            {
-                stt = Convert.ToInt32(str);
-                stt++;
-                s = "KH" + stt.ToString("00");
-            }
-            connection.Close();
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
             if (txbHOTEN.Text == string.Empty || txbSDT.Text == string.Empty || comboBox1.Text == string.Empty || txbCCCD.Text == string.Empty)
             {
-                MessageBox.Show("Ch     ");
+                MessageBox.Show("Chọn thông tin khách hàng trước khi thực hiện các thao tác.");
                 return;
             }
             else
@@ -185,6 +122,84 @@ namespace form
                 doiPhong.name = txbHOTEN.Text;
                 doiPhong.id = txbCCCD.Text;
                 doiPhong.ShowDialog();
+            }
+        }
+
+
+        // CÁC THAO TÁC VỚI FORM
+
+        public void GetData(string data)
+        {
+            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ToString());
+            connection.Open();
+            string sql = data;
+            SqlCommand com = new SqlCommand(sql, connection);
+            com.CommandType = CommandType.Text;
+            SqlDataAdapter da = new SqlDataAdapter(com);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            connection.Close();
+            dataGridView1.DataSource = dt;
+        }
+
+        private void Add()
+        {
+            using (var connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ToString()))
+            {
+                connection.Open();
+
+                using (var command = connection.CreateCommand())
+                {
+                    if (existsCCCD)
+                    {
+                        command.CommandText = "update KHACHHANG set HOTEN = N'" + txbHOTEN.Text + "', TUOI = '" + comboBox1.Text + "', GIOITINH = N'" + gender.ToString() + "', SDT = '" + txbSDT.Text + "' where CCCD_CMND = '" + txbCCCD.Text + "'";
+                        command.ExecuteNonQuery();
+                    }
+                    else
+                    {
+                        command.CommandText = "insert into KHACHHANG(MAKH,HOTEN,TUOI,GIOITINH,SDT,CCCD_CMND) " +
+                            "values ('" + s + "', N'" + txbHOTEN.Text + "' ,'" + comboBox1.Text + "', N'" + gender.ToString() + "', '" + txbSDT.Text + "', '" + txbCCCD.Text + "')";
+                        command.ExecuteNonQuery();
+                    }
+
+                }
+            }
+        }
+
+        private void Count()
+        {
+            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ToString());
+            connection.Open();
+            string query = "SELECT MAX(MAKH) FROM KHACHHANG";
+            SqlCommand command = new SqlCommand(query, connection);
+            SqlDataReader reader = command.ExecuteReader();
+            string str = "", count = "";
+            if (reader.Read() == true)
+            {
+                count = reader.GetString(0);
+            }
+            str = count.Substring(2);
+            if (count is null)
+            {
+                s = "KH01";
+            }
+            else
+            {
+                int stt = Convert.ToInt32(str);
+                stt++;
+                s = "KH" + stt.ToString("00");
+            }
+            connection.Close();
+        }
+
+        private void CheckCCCD()
+        {
+            for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+            {
+                if (dataGridView1.Rows[i].Cells[3].Value.ToString() == txbCCCD.Text)
+                {
+                    existsCCCD = true;
+                }
             }
         }
     }
