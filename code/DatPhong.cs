@@ -34,7 +34,7 @@ namespace form
 
         private void cbxMALP_SelectedValueChanged(object sender, EventArgs e)
         {
-            sql = "select PHONG.MALP 'Mã loại phòng', PHONG.TENPHONG 'Tên phòng', TRANGTHAI 'Trạng thái', FORMAT(GIA, '###,###,###') 'Giá tiền (VND)' from PHONG inner join LOAIPHONG on PHONG.MALP = LOAIPHONG.MALP where TRANGTHAI = N'Trống' and PHONG.MALP = '" + cbxMALP.Text.Substring(0, 3) + "'" ;
+            sql = "select PHONG.MALP 'Mã loại phòng', PHONG.TENPHONG 'Tên phòng', TRANGTHAI 'Trạng thái', FORMAT(GIA, '###,###,###') 'Giá tiền (VND)' from PHONG inner join LOAIPHONG on PHONG.MALP = LOAIPHONG.MALP where TRANGTHAI = N'Trống' and PHONG.MALP = '" + cbxMALP.Text.Substring(0, 3) + "'";
             GetData(sql);
         }
 
@@ -54,7 +54,7 @@ namespace form
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnDatphong_Click(object sender, EventArgs e)
@@ -117,6 +117,6 @@ namespace form
         {
             this.Close();
         }
+
     }
 }
-
