@@ -1,4 +1,4 @@
-﻿
+
 namespace form
 {
     partial class DoiPhong
@@ -54,6 +54,7 @@ namespace form
             this.label11 = new System.Windows.Forms.Label();
             this.btnDown = new System.Windows.Forms.Button();
             this.btnUp = new System.Windows.Forms.Button();
+            this.btnCAPNHAT = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -129,15 +130,16 @@ namespace form
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(605, 130);
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(701, 130);
             this.dataGridView1.TabIndex = 46;
             this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(198, 504);
+            this.button3.Location = new System.Drawing.Point(299, 504);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(141, 37);
+            this.button3.Size = new System.Drawing.Size(99, 37);
             this.button3.TabIndex = 45;
             this.button3.Text = "Hoàn thành";
             this.button3.UseVisualStyleBackColor = true;
@@ -161,19 +163,20 @@ namespace form
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.CustomFormat = "MM/dd/yyyy HH:mm";
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker2.Location = new System.Drawing.Point(153, 408);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(109, 22);
+            this.dateTimePicker2.Size = new System.Drawing.Size(204, 22);
             this.dateTimePicker2.TabIndex = 41;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.CustomFormat = "";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.CustomFormat = "MM/dd/yyyy HH:mm";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(152, 368);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(110, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(205, 22);
             this.dateTimePicker1.TabIndex = 40;
             // 
             // label8
@@ -245,6 +248,7 @@ namespace form
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(434, 297);
             this.dataGridView2.MultiSelect = false;
@@ -252,7 +256,8 @@ namespace form
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(605, 258);
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(701, 258);
             this.dataGridView2.TabIndex = 53;
             this.dataGridView2.Click += new System.EventHandler(this.dataGridView2_Click);
             // 
@@ -270,7 +275,7 @@ namespace form
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(855, 49);
+            this.label11.Location = new System.Drawing.Point(980, 45);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(155, 27);
             this.label11.TabIndex = 55;
@@ -280,7 +285,7 @@ namespace form
             // 
             this.btnDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnDown.Image = ((System.Drawing.Image)(resources.GetObject("btnDown.Image")));
-            this.btnDown.Location = new System.Drawing.Point(774, 240);
+            this.btnDown.Location = new System.Drawing.Point(832, 237);
             this.btnDown.Name = "btnDown";
             this.btnDown.Size = new System.Drawing.Size(56, 37);
             this.btnDown.TabIndex = 57;
@@ -292,18 +297,29 @@ namespace form
             this.btnUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnUp.ForeColor = System.Drawing.Color.Black;
             this.btnUp.Image = ((System.Drawing.Image)(resources.GetObject("btnUp.Image")));
-            this.btnUp.Location = new System.Drawing.Point(663, 240);
+            this.btnUp.Location = new System.Drawing.Point(687, 237);
             this.btnUp.Name = "btnUp";
             this.btnUp.Size = new System.Drawing.Size(56, 37);
             this.btnUp.TabIndex = 58;
             this.btnUp.UseVisualStyleBackColor = true;
             this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
             // 
+            // btnCAPNHAT
+            // 
+            this.btnCAPNHAT.Location = new System.Drawing.Point(175, 504);
+            this.btnCAPNHAT.Name = "btnCAPNHAT";
+            this.btnCAPNHAT.Size = new System.Drawing.Size(99, 37);
+            this.btnCAPNHAT.TabIndex = 59;
+            this.btnCAPNHAT.Text = "Cập nhật";
+            this.btnCAPNHAT.UseVisualStyleBackColor = true;
+            this.btnCAPNHAT.Click += new System.EventHandler(this.btnCAPNHAT_Click);
+            // 
             // DoiPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1065, 574);
+            this.ClientSize = new System.Drawing.Size(1158, 574);
+            this.Controls.Add(this.btnCAPNHAT);
             this.Controls.Add(this.btnUp);
             this.Controls.Add(this.btnDown);
             this.Controls.Add(this.label11);
@@ -364,5 +380,6 @@ namespace form
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnDown;
         private System.Windows.Forms.Button btnUp;
+        private System.Windows.Forms.Button btnCAPNHAT;
     }
 }
