@@ -1,4 +1,4 @@
-
+﻿
 namespace form
 {
     partial class KhachHang

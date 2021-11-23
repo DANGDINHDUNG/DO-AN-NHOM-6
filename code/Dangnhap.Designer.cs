@@ -1,5 +1,4 @@
-﻿
-namespace form
+﻿namespace form
 {
     partial class Dangnhap
     {
@@ -32,10 +31,7 @@ namespace form
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dangnhap));
             this.logoPnl = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.Decription2_Lb = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Decription_Lb = new System.Windows.Forms.Label();
             this.DangnhapPnl = new System.Windows.Forms.Panel();
             this.userBox = new System.Windows.Forms.TextBox();
             this.Title_Lb = new System.Windows.Forms.Label();
@@ -47,6 +43,8 @@ namespace form
             this.loginBtn = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.pass = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.logoPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.DangnhapPnl.SuspendLayout();
@@ -55,11 +53,10 @@ namespace form
             // logoPnl
             // 
             this.logoPnl.BackColor = System.Drawing.Color.RoyalBlue;
+            this.logoPnl.Controls.Add(this.label9);
+            this.logoPnl.Controls.Add(this.label13);
             this.logoPnl.Controls.Add(this.label3);
-            this.logoPnl.Controls.Add(this.label2);
-            this.logoPnl.Controls.Add(this.Decription2_Lb);
             this.logoPnl.Controls.Add(this.pictureBox1);
-            this.logoPnl.Controls.Add(this.Decription_Lb);
             this.logoPnl.Dock = System.Windows.Forms.DockStyle.Left;
             this.logoPnl.Location = new System.Drawing.Point(0, 0);
             this.logoPnl.Name = "logoPnl";
@@ -69,57 +66,24 @@ namespace form
             // label3
             // 
             this.label3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Comfortaa", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(0, 484);
+            this.label3.Location = new System.Drawing.Point(0, 477);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(282, 22);
+            this.label3.Size = new System.Drawing.Size(282, 29);
             this.label3.TabIndex = 4;
             this.label3.Text = "Được phát triển bởi nhóm 6";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(0, 288);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(282, 44);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Khách Sạn";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Decription2_Lb
-            // 
-            this.Decription2_Lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Decription2_Lb.ForeColor = System.Drawing.Color.White;
-            this.Decription2_Lb.Location = new System.Drawing.Point(3, 232);
-            this.Decription2_Lb.Name = "Decription2_Lb";
-            this.Decription2_Lb.Size = new System.Drawing.Size(279, 54);
-            this.Decription2_Lb.TabIndex = 2;
-            this.Decription2_Lb.Text = "Quản Lý";
-            this.Decription2_Lb.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(24, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(237, 133);
+            this.pictureBox1.Size = new System.Drawing.Size(237, 191);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // Decription_Lb
-            // 
-            this.Decription_Lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Decription_Lb.ForeColor = System.Drawing.Color.White;
-            this.Decription_Lb.Location = new System.Drawing.Point(3, 160);
-            this.Decription_Lb.Name = "Decription_Lb";
-            this.Decription_Lb.Size = new System.Drawing.Size(273, 72);
-            this.Decription_Lb.TabIndex = 0;
-            this.Decription_Lb.Text = "Chào mừng đến với phần mềm ";
-            this.Decription_Lb.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // DangnhapPnl
             // 
@@ -155,7 +119,7 @@ namespace form
             this.Title_Lb.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Title_Lb.Font = new System.Drawing.Font("Maiandra GD", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Title_Lb.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.Title_Lb.Location = new System.Drawing.Point(50, 46);
+            this.Title_Lb.Location = new System.Drawing.Point(238, 25);
             this.Title_Lb.Name = "Title_Lb";
             this.Title_Lb.Size = new System.Drawing.Size(321, 99);
             this.Title_Lb.TabIndex = 16;
@@ -191,12 +155,12 @@ namespace form
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Font = new System.Drawing.Font("Comfortaa", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.checkBox1.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.checkBox1.Location = new System.Drawing.Point(593, 242);
+            this.checkBox1.Location = new System.Drawing.Point(593, 237);
             this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(125, 22);
+            this.checkBox1.Size = new System.Drawing.Size(146, 27);
             this.checkBox1.TabIndex = 15;
             this.checkBox1.Text = "Hiện mật khẩu";
             this.checkBox1.UseVisualStyleBackColor = false;
@@ -206,11 +170,11 @@ namespace form
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(143, 412);
+            this.label1.Font = new System.Drawing.Font("Comfortaa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(131, 404);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(274, 25);
+            this.label1.Size = new System.Drawing.Size(342, 32);
             this.label1.TabIndex = 9;
             this.label1.Text = "Nếu chưa có tài khoản đăng kí";
             // 
@@ -218,12 +182,12 @@ namespace form
             // 
             this.user.AutoSize = true;
             this.user.BackColor = System.Drawing.Color.Transparent;
-            this.user.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.user.Font = new System.Drawing.Font("Comfortaa", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.user.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.user.Location = new System.Drawing.Point(48, 174);
+            this.user.Location = new System.Drawing.Point(40, 165);
             this.user.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.user.Name = "user";
-            this.user.Size = new System.Drawing.Size(208, 31);
+            this.user.Size = new System.Drawing.Size(241, 44);
             this.user.TabIndex = 10;
             this.user.Text = "Tên đăng nhập";
             // 
@@ -231,9 +195,9 @@ namespace form
             // 
             this.loginBtn.BackColor = System.Drawing.Color.RoyalBlue;
             this.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loginBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginBtn.Font = new System.Drawing.Font("Comfortaa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.loginBtn.ForeColor = System.Drawing.Color.White;
-            this.loginBtn.Location = new System.Drawing.Point(279, 302);
+            this.loginBtn.Location = new System.Drawing.Point(292, 302);
             this.loginBtn.Margin = new System.Windows.Forms.Padding(4);
             this.loginBtn.Name = "loginBtn";
             this.loginBtn.Size = new System.Drawing.Size(181, 54);
@@ -248,7 +212,7 @@ namespace form
             this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkColor = System.Drawing.Color.DarkBlue;
-            this.linkLabel1.Location = new System.Drawing.Point(434, 412);
+            this.linkLabel1.Location = new System.Drawing.Point(500, 410);
             this.linkLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(84, 25);
@@ -261,14 +225,36 @@ namespace form
             // 
             this.pass.AutoSize = true;
             this.pass.BackColor = System.Drawing.Color.Transparent;
-            this.pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pass.Font = new System.Drawing.Font("Comfortaa", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.pass.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.pass.Location = new System.Drawing.Point(48, 232);
+            this.pass.Location = new System.Drawing.Point(123, 221);
             this.pass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.pass.Name = "pass";
-            this.pass.Size = new System.Drawing.Size(133, 31);
+            this.pass.Size = new System.Drawing.Size(158, 44);
             this.pass.TabIndex = 11;
             this.pass.Text = "Mật khẩu";
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("ø", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(15, 386);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(258, 78);
+            this.label9.TabIndex = 10;
+            this.label9.Text = "HOTEL";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label13
+            // 
+            this.label13.Font = new System.Drawing.Font("Anastasya Confession", 55.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(33, 206);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(238, 194);
+            this.label13.TabIndex = 9;
+            this.label13.Text = "Aroma \r\nGarden\r\n";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Dangnhap
             // 
@@ -296,7 +282,6 @@ namespace form
         #endregion
 
         private System.Windows.Forms.Panel logoPnl;
-        private System.Windows.Forms.Label Decription_Lb;
         private System.Windows.Forms.Panel DangnhapPnl;
         private System.Windows.Forms.TextBox userBox;
         private System.Windows.Forms.Label Title_Lb;
@@ -309,9 +294,8 @@ namespace form
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label pass;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label Decription2_Lb;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label13;
     }
 }
-

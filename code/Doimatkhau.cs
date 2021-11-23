@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace form
 {
@@ -26,29 +27,13 @@ namespace form
             mkmBox.UseSystemPasswordChar = false;
             nlmkBox.UseSystemPasswordChar = false;
         }
-        private void changePass()
-        {
-                    SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-K8QQEUE;Initial Catalog=QLKS;Integrated Security=True");
-                    connection.Open();
-                    Hash256 h = new Hash256();
-                    SHA256 sha256Hash = SHA256.Create();
-                    string hash = h.GetHash(sha256Hash, mkmBox.Text);
-                    string query = "update NHANVIEN set MATKHAU='" + hash + "'where TENTK='" + tdnBox.Text + "'";
-                    SqlCommand command = new SqlCommand(query, connection);
-                    int c = command.ExecuteNonQuery();
-                    MessageBox.Show("Bạn đã đổi mật khẩu thành công", "Thông báo", MessageBoxButtons.OK);
-                    frm.Show();
-                    this.Close();
-        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             //// Tui sửa lại tên server
-            SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-MJ9HPF9\HOANGMAI;Initial Catalog=QLKS;Integrated Security=True");
+            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ToString());
             connection.Open();
-            Hash256 h = new Hash256();
-            SHA256 sha256Hash = SHA256.Create();
-            string hash = h.GetHash(sha256Hash, mkcBox.Text);
-            string query = "select *from NHANVIEN where TENTK='" + tdnBox.Text + "'and MATKHAU='" + hash + "'";
+            string query = "select *from NHANVIEN where TENTK='" + tdnBox.Text + "'and MATKHAU='" + mkcBox.Text + "'";
             SqlCommand command = new SqlCommand(query, connection);
             SqlDataReader reader = command.ExecuteReader();
             if (reader.Read() == true)
@@ -60,7 +45,14 @@ namespace form
                 }
                 else if(mkmBox.Text == nlmkBox.Text)
                 {
-                    changePass();
+                    connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ToString());
+                    connection.Open();
+                    query = "update NHANVIEN set MATKHAU='" + mkmBox.Text + "'where TENTK='" + tdnBox.Text + "'";
+                    command = new SqlCommand(query, connection);
+                    int c = command.ExecuteNonQuery();
+                    MessageBox.Show("Bạn đã đổi mật khẩu thành công", "Thông báo", MessageBoxButtons.OK);
+                    frm.Show();
+                    this.Close();
                 }
                 else
                 {

@@ -10,6 +10,7 @@ using System.Security.Cryptography;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Runtime.InteropServices;
+using System.Configuration;
 
 namespace form
 {
@@ -21,6 +22,7 @@ namespace form
             InitializeComponent();
             this.frm = frm;
             this.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
+            
         }
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -34,7 +36,7 @@ namespace form
             int nHeightEllipse
         );
 
-       string s;
+        string s;
         private bool Check(string txt)
         {
             long num;
@@ -43,26 +45,27 @@ namespace form
             else
                 return false;
         }
-        
+
         private void count()
         {
-            string  count = "";
-            SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-K8QQEUE;Initial Catalog=QL;Integrated Security=True");
-            connection.Open();            
+            string count = "";
+            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ToString());
+            
+            connection.Open();
             string query = @"SELECT MAX(MANV) FROM NHANVIEN WHERE MANV!= 'ADM'";
             SqlCommand command = new SqlCommand(query, connection);
             SqlDataReader reader = command.ExecuteReader();
-            if(reader.HasRows)
+            if (reader.HasRows)
             {
-                if(reader.Read())
+                if (reader.Read())
                 {
                     if (!reader.IsDBNull(0))
                     {
                         count = reader.GetString(0);
                     }
                 }
-            }        
-            
+            }
+
             if (count == "")
             {
                 s = "NV01";
@@ -71,7 +74,7 @@ namespace form
             {
                 count = count.Substring(2);
                 int stt = Convert.ToInt32(count);
-                stt ++;
+                stt++;
                 s = "NV" + stt.ToString("00");
             }
             connection.Close();
@@ -79,21 +82,21 @@ namespace form
 
         private void add()
         {
-            SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-K8QQEUE;Initial Catalog=QL;Integrated Security=True");
+            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ToString());
             connection.Open();
             Hash256 h = new Hash256();
             SHA256 sha256Hash = SHA256.Create();
             string hash = h.GetHash(sha256Hash, mkBox.Text);
-            string ngay = dateTimePicker1.Value.ToString("MM/dd/yyyy");
+            string ngay = ngvlDtp.Value.ToString("MM/dd/yyyy");
             string gioitinh = "Nam";
             if (NamRbtn.Checked == true)
             {
                 gioitinh = "Nam";
             }
             else gioitinh = "Nữ";
-            string sql = "INSERT INTO NHANVIEN(MANV,TENTK,MATKHAU,HOTEN,TUOI,SDT,CCCD_CMND,NGVL,LUONG,GIOITINH)VALUES " +
+            string sql = "INSERT INTO NHANVIEN(MANV,TENTK,MATKHAU,HOTEN,TUOI,SDT,CCCD_CMND,NGVL,GIOITINH)VALUES " +
     "('" + s + "','" + tdnBox.Text + "','" + hash + "',N'" + hotenBox.Text + "','" + tuoiBox.Text + "','" +
-     sdtBox.Text + "','" + cmndBox.Text + "','" + ngay + "','" + luongBox.Text + "',N'"+gioitinh+ "')";
+     sdtBox.Text + "','" + cmndBox.Text + "','" + ngay + "',N'" + gioitinh + "')";
             SqlCommand command = new SqlCommand(sql, connection);
             int c = command.ExecuteNonQuery();
         }
@@ -103,18 +106,13 @@ namespace form
             {
                 if (mkBox.Text == nlmkBox.Text)
                 {
-                    if(Check(luongBox.Text) == false)
-                    {
-                       MessageBox.Show("Số tiền phải là số", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                    else 
-                    {
-                        count();
-                        add();
-                        MessageBox.Show("Bạn đã đăng kí thành công", "Thông báo", MessageBoxButtons.OK);
-                        this.Close();
-                    }
-                    
+
+                    count();
+                    add();
+                    MessageBox.Show("Bạn đã đăng kí thành công", "Thông báo", MessageBoxButtons.OK);
+                    this.Close();
+
+
                 }
                 else
                 {
@@ -132,8 +130,8 @@ namespace form
         private void huyBtn_Click(object sender, EventArgs e)
         {
 
-           frm.Show();
-           this.Close();
+            frm.Show();
+            this.Close();
         }
 
         private void Dangki_Load(object sender, EventArgs e)

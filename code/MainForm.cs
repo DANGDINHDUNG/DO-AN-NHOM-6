@@ -83,7 +83,7 @@ namespace form
 
                 MainTabControl.Visible = false;
                 MainTabControl.Enabled = false;
-            }    
+            }
         }
 
         private void DoiMK_Pnl_Click(object sender, EventArgs e)
@@ -102,7 +102,7 @@ namespace form
                 MainTabControl.TabPages[0].BackColor = colorDialog.Color;
                 for (int i = 1; i < MainTabControl.TabPages.Count; i++)
                 {
-                    foreach(Form frm in MainTabControl.TabPages[i].Controls)
+                    foreach (Form frm in MainTabControl.TabPages[i].Controls)
                     {
                         if (frm != null)
                         {

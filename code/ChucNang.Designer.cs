@@ -67,7 +67,7 @@ namespace form
             this.label1.Size = new System.Drawing.Size(75, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Đặt Phòng";
-            this.label1.Click += new System.EventHandler(this.DatPhong_Pnl_Click);
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox1
             // 
@@ -79,7 +79,6 @@ namespace form
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.DatPhong_Pnl_Click);
             // 
             // NhanPhong_Pnl
             // 
@@ -112,7 +111,7 @@ namespace form
             // 
             // TraPhong_Pnl
             // 
-            this.TraPhong_Pnl.BackColor = System.Drawing.Color.Transparent;
+            this.TraPhong_Pnl.BackColor = System.Drawing.SystemColors.Control;
             this.TraPhong_Pnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TraPhong_Pnl.Controls.Add(this.label3);
             this.TraPhong_Pnl.Controls.Add(this.pictureBox3);
@@ -130,7 +129,6 @@ namespace form
             this.label3.Size = new System.Drawing.Size(75, 17);
             this.label3.TabIndex = 1;
             this.label3.Text = "Trả Phòng";
-            this.label3.Click += new System.EventHandler(this.TraPhong_Pnl_Click);
             // 
             // pictureBox3
             // 
@@ -141,7 +139,6 @@ namespace form
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.TraPhong_Pnl_Click);
             // 
             // ChucNang
             // 

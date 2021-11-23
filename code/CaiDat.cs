@@ -35,10 +35,5 @@ namespace form
             hp.ShowDialog();
         }
 
-        private void CaiDat_Mang_Pnl_Click(object sender, EventArgs e)
-        {
-            ThietLapMang tlm = new ThietLapMang();
-            tlm.ShowDialog();
-        }
     }
 }

@@ -39,17 +39,12 @@ namespace form
             this.CaiDat_HuyPhong_Pnl = new System.Windows.Forms.Panel();
             this.CaiDat_HuyPhong_Lb = new System.Windows.Forms.Label();
             this.CaiDat_HuyPhong_Pbx = new System.Windows.Forms.PictureBox();
-            this.CaiDat_Mang_Pnl = new System.Windows.Forms.Panel();
-            this.CaiDat_Mang_Lb = new System.Windows.Forms.Label();
-            this.CaiDat_Mang_Pbx = new System.Windows.Forms.PictureBox();
             this.CaiDat_TTKS_Pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CaiDat_TTKS_Pbx)).BeginInit();
             this.CaiDat_ThanhToan_Pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CaiDat_ThanhToan_Pbx)).BeginInit();
             this.CaiDat_HuyPhong_Pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CaiDat_HuyPhong_Pbx)).BeginInit();
-            this.CaiDat_Mang_Pnl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CaiDat_Mang_Pbx)).BeginInit();
             this.SuspendLayout();
             // 
             // CaiDat_TTKS_Pnl
@@ -151,45 +146,11 @@ namespace form
             this.CaiDat_HuyPhong_Pbx.TabStop = false;
             this.CaiDat_HuyPhong_Pbx.Click += new System.EventHandler(this.CaiDat_HuyPhong_Pnl_Click);
             // 
-            // CaiDat_Mang_Pnl
-            // 
-            this.CaiDat_Mang_Pnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.CaiDat_Mang_Pnl.Controls.Add(this.CaiDat_Mang_Lb);
-            this.CaiDat_Mang_Pnl.Controls.Add(this.CaiDat_Mang_Pbx);
-            this.CaiDat_Mang_Pnl.Location = new System.Drawing.Point(486, 14);
-            this.CaiDat_Mang_Pnl.Name = "CaiDat_Mang_Pnl";
-            this.CaiDat_Mang_Pnl.Size = new System.Drawing.Size(113, 114);
-            this.CaiDat_Mang_Pnl.TabIndex = 4;
-            this.CaiDat_Mang_Pnl.Click += new System.EventHandler(this.CaiDat_Mang_Pnl_Click);
-            // 
-            // CaiDat_Mang_Lb
-            // 
-            this.CaiDat_Mang_Lb.AutoSize = true;
-            this.CaiDat_Mang_Lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CaiDat_Mang_Lb.Location = new System.Drawing.Point(1, 84);
-            this.CaiDat_Mang_Lb.Name = "CaiDat_Mang_Lb";
-            this.CaiDat_Mang_Lb.Size = new System.Drawing.Size(107, 17);
-            this.CaiDat_Mang_Lb.TabIndex = 4;
-            this.CaiDat_Mang_Lb.Text = "Thiết Lập Mạng";
-            this.CaiDat_Mang_Lb.Click += new System.EventHandler(this.CaiDat_Mang_Pnl_Click);
-            // 
-            // CaiDat_Mang_Pbx
-            // 
-            this.CaiDat_Mang_Pbx.Image = ((System.Drawing.Image)(resources.GetObject("CaiDat_Mang_Pbx.Image")));
-            this.CaiDat_Mang_Pbx.Location = new System.Drawing.Point(19, 3);
-            this.CaiDat_Mang_Pbx.Name = "CaiDat_Mang_Pbx";
-            this.CaiDat_Mang_Pbx.Size = new System.Drawing.Size(67, 75);
-            this.CaiDat_Mang_Pbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.CaiDat_Mang_Pbx.TabIndex = 0;
-            this.CaiDat_Mang_Pbx.TabStop = false;
-            this.CaiDat_Mang_Pbx.Click += new System.EventHandler(this.CaiDat_Mang_Pnl_Click);
-            // 
             // CaiDat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 445);
-            this.Controls.Add(this.CaiDat_Mang_Pnl);
             this.Controls.Add(this.CaiDat_HuyPhong_Pnl);
             this.Controls.Add(this.CaiDat_ThanhToan_Pnl);
             this.Controls.Add(this.CaiDat_TTKS_Pnl);
@@ -205,9 +166,6 @@ namespace form
             this.CaiDat_HuyPhong_Pnl.ResumeLayout(false);
             this.CaiDat_HuyPhong_Pnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CaiDat_HuyPhong_Pbx)).EndInit();
-            this.CaiDat_Mang_Pnl.ResumeLayout(false);
-            this.CaiDat_Mang_Pnl.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CaiDat_Mang_Pbx)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -222,9 +180,6 @@ namespace form
         private System.Windows.Forms.Panel CaiDat_HuyPhong_Pnl;
         private System.Windows.Forms.Label CaiDat_HuyPhong_Lb;
         private System.Windows.Forms.PictureBox CaiDat_HuyPhong_Pbx;
-        private System.Windows.Forms.Panel CaiDat_Mang_Pnl;
-        private System.Windows.Forms.Label CaiDat_Mang_Lb;
-        private System.Windows.Forms.PictureBox CaiDat_Mang_Pbx;
     }
 }
 
