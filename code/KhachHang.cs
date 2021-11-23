@@ -42,7 +42,75 @@ namespace form
                 datPhong.ShowDialog();
             }
         }
-
+        
+        private void service()
+        {
+            using (var connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ToString()))
+            {
+                connection.Open();
+                if(rfdChk)
+                {
+                     command.CommandText = "insert into DATDICHVU(MAKH,MADV) " +
+                            "values ('" + s + "', 'RFD')";
+                     command.ExecuteNonQuery();
+                }
+                if(parChk)
+                {
+                     command.CommandText = "insert into DATDICHVU(MAKH,MADV) " +
+                     "values ('" + s + "', 'PAR')";
+                     command.ExecuteNonQuery();   
+                }
+                if(msgChk)
+                {
+                     command.CommandText = "insert into DATDICHVU(MAKH,MADV) " +
+                     "values ('" + s + "', 'MSG')";
+                     command.ExecuteNonQuery();   
+                }
+                if(lauChk)
+                {
+                     command.CommandText = "insert into DATDICHVU(MAKH,MADV) " +
+                     "values ('" + s + "', 'LAU')";
+                     command.ExecuteNonQuery();   
+                }
+                if(carChk)
+                {
+                     command.CommandText = "insert into DATDICHVU(MAKH,MADV) " +
+                     "values ('" + s + "', 'CAR')";
+                     command.ExecuteNonQuery();   
+                }
+                if(sptChk)
+                {
+                     command.CommandText = "insert into DATDICHVU(MAKH,MADV) " +
+                     "values ('" + s + "', 'SPT')";
+                     command.ExecuteNonQuery();   
+                }
+                if(fitChk)
+                {
+                     command.CommandText = "insert into DATDICHVU(MAKH,MADV) " +
+                     "values ('" + s + "', 'FIT')";
+                     command.ExecuteNonQuery();   
+                }
+                if(swmChk)
+                {
+                     command.CommandText = "insert into DATDICHVU(MAKH,MADV) " +
+                     "values ('" + s + "', 'SWM')";
+                     command.ExecuteNonQuery();   
+                }
+                if(clnChk)
+                {
+                     command.CommandText = "insert into DATDICHVU(MAKH,MADV) " +
+                     "values ('" + s + "', 'CLN')";
+                     command.ExecuteNonQuery();   
+                }
+                if(bstChk)
+                {
+                     command.CommandText = "insert into DATDICHVU(MAKH,MADV) " +
+                     "values ('" + s + "', 'BST')";
+                     command.ExecuteNonQuery();   
+                }
+                connection.close();
+            }
+        }
         private void KhachHang_Load(object sender, EventArgs e)
         {
             sql = "select * from KHACHHANG";
