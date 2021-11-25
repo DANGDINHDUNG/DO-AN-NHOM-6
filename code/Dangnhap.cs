@@ -38,7 +38,7 @@ namespace form
         private void loginBtn_Click(object sender, EventArgs e)
         {
             //// Tui sửa lại tên server
-            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ToString());
+         /*   SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ToString());
             connection.Open();
             string tk = userBox.Text;
             string mk = passBox.Text;
@@ -47,8 +47,8 @@ namespace form
             string hash = h.GetHash(sha256Hash, passBox.Text);
             string query = "select *from NHANVIEN where TENTK='" + tk + "'and MATKHAU='" + hash + "'";
             SqlCommand command = new SqlCommand(query, connection);
-            SqlDataReader reader = command.ExecuteReader();
-            if (reader.Read() == true)
+            SqlDataReader reader = command.ExecuteReader();*/
+            /*if (reader.Read() == true)
             {
                 // Ham xu ly cho main form
                 MessageBox.Show("Bạn đã đăng nhập thành công", "Thông báo", MessageBoxButtons.OK);
@@ -59,7 +59,14 @@ namespace form
             else
             {
                 MessageBox.Show("Sai tên hoặc mật khẩu", "Thống báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }*/
+            if (userBox.Text == "admin" && passBox.Text == "123456")
+            {
+                MessageBox.Show("Bạn đã đăng nhập thành công", "Thông báo", MessageBoxButtons.OK);
+                frm.Check = true;
+                frm.Show();
+                this.Close();
+            }    
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

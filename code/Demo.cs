@@ -22,11 +22,13 @@ namespace form
 
         private void button4_Click(object sender, EventArgs e)
         {
+            
             hideMenu();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            
             hideMenu();
         }
 
@@ -89,6 +91,22 @@ namespace form
             panel3.Controls.Add(childForm);
             childForm.BringToFront();
             childForm.Show();
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            openChildForm(new KhachHang());
+            hideMenu();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            openChildForm(new TTKS());
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -35,7 +35,7 @@ namespace form
 
         private void InDSNV_Load(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-K8QQEUE;Initial Catalog=QL;Integrated Security=True");
+           /* SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-K8QQEUE;Initial Catalog=QL;Integrated Security=True");
             connection.Open();
             string sql = @"SELECT * FROM NHANVIEN WHERE MANV!='ADM'";
             SqlCommand com = new SqlCommand(sql, connection);
@@ -44,7 +44,7 @@ namespace form
             DataTable dt = new DataTable();
             da.Fill(dt);
             connection.Close();
-            dataGridView1.DataSource = dt;
+            dataGridView1.DataSource = dt;*/
         }
 
         private void NEW()
@@ -121,11 +121,11 @@ namespace form
 
         private void delRow(string manv)
         {
-            SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-K8QQEUE;Initial Catalog=QL;Integrated Security=True");
+          /*  SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-K8QQEUE;Initial Catalog=QL;Integrated Security=True");
             connection.Open();
             string query = @"delete FROM nhanvien where manv='" + manv + "'";
             SqlCommand command = new SqlCommand(query, connection);
-            int c = command.ExecuteNonQuery();
+            int c = command.ExecuteNonQuery();*/
         }
 
 
@@ -142,7 +142,7 @@ namespace form
         }
         private void update()
         {
-            string ngay = dateTimePicker1.Value.ToString("MM/dd/yyyy");
+        /*    string ngay = dateTimePicker1.Value.ToString("MM/dd/yyyy");
             string gioitinh = "Nam";
             if (radioButton1.Checked == true)
             {
@@ -158,7 +158,7 @@ namespace form
             SqlCommand command = new SqlCommand(sql, connection);
             int c = command.ExecuteNonQuery();
 
-            NEW();
+            NEW();*/
 
         }
 
@@ -187,7 +187,7 @@ namespace form
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-K8QQEUE;Initial Catalog=QL;Integrated Security=True");
+         /*   SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-K8QQEUE;Initial Catalog=QL;Integrated Security=True");
             connection.Open();
             string sql = @"SELECT * FROM NHANVIEN WHERE MANV!='ADM' AND HOTEN LIKE N'" + textBox1.Text + "%'";
             SqlCommand com = new SqlCommand(sql, connection);
@@ -196,7 +196,12 @@ namespace form
             DataTable dt = new DataTable();
             da.Fill(dt);
             connection.Close();
-            dataGridView1.DataSource = dt;
+            dataGridView1.DataSource = dt;*/
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
