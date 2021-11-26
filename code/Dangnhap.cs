@@ -52,21 +52,21 @@ namespace form
                 MessageBox.Show("Bạn đã đăng nhập thành công", "Thông báo", MessageBoxButtons.OK);
                 maso = reader.GetString(0);
                 this.Hide();
-                //Khởi tạo form giao diện ( nhớ truyền biến maso)
-                Giaodien frm=new Giaodien(maso);
-                frm.ShowDialog();
+                if(maso=="ADM")
+                {
+                    Demo frm=new Demo(maso);
+                    frm.ShowDialog();
+                }
+                else
+                {
+                    FromNV frm=new FromNV(maso);
+                    frm.ShowDialog();
+                }
                 this.Close();
             }
             else
             {
                 MessageBox.Show("Sai tên hoặc mật khẩu", "Thống báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            if (userBox.Text == "admin" && passBox.Text == "123456")
-            {
-                MessageBox.Show("Bạn đã đăng nhập thành công", "Thông báo", MessageBoxButtons.OK);
-                frm.Check = true;
-                frm.Show();
-                this.Close();
             }    
         }
 
