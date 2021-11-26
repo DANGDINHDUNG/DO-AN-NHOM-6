@@ -16,13 +16,10 @@ namespace form
 {
     public partial class Dangki : Form
     {
-        MainForm frm;
-        public Dangki(MainForm frm)
+        public Dangki()
         {
             InitializeComponent();
-            this.frm = frm;
             this.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
-            
         }
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -129,8 +126,6 @@ namespace form
 
         private void huyBtn_Click(object sender, EventArgs e)
         {
-
-            frm.Show();
             this.Close();
         }
 
