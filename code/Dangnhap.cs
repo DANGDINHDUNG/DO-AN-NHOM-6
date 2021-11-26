@@ -17,9 +17,8 @@ namespace form
 {
     public partial class Dangnhap : Form
     {
-
-        MainForm frm;
-        public Dangnhap(MainForm frm)
+        string maso;
+        public Dangnhap()
         {
             InitializeComponent();
             this.frm = frm;
@@ -38,28 +37,30 @@ namespace form
         private void loginBtn_Click(object sender, EventArgs e)
         {
             //// Tui sửa lại tên server
-         /*   SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ToString());
+            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ToString());
             connection.Open();
             string tk = userBox.Text;
             string mk = passBox.Text;
             Hash256 h = new Hash256();
             SHA256 sha256Hash = SHA256.Create();
             string hash = h.GetHash(sha256Hash, passBox.Text);
-            string query = "select *from NHANVIEN where TENTK='" + tk + "'and MATKHAU='" + hash + "'";
+            string query = "select MANV from NHANVIEN where TENTK='" + tk + "'and MATKHAU='" + hash + "'";
             SqlCommand command = new SqlCommand(query, connection);
             SqlDataReader reader = command.ExecuteReader();*/
-            /*if (reader.Read() == true)
+            if (reader.Read() == true)
             {
-                // Ham xu ly cho main form
                 MessageBox.Show("Bạn đã đăng nhập thành công", "Thông báo", MessageBoxButtons.OK);
-                frm.Check = true;
-                frm.Show();
+                maso = reader.GetString(0);
+                this.Hide();
+                //Khởi tạo form giao diện ( nhớ truyền biến maso)
+                Giaodien frm=new Giaodien(maso);
+                frm.ShowDialog();
                 this.Close();
             }
             else
             {
                 MessageBox.Show("Sai tên hoặc mật khẩu", "Thống báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }*/
+            }
             if (userBox.Text == "admin" && passBox.Text == "123456")
             {
                 MessageBox.Show("Bạn đã đăng nhập thành công", "Thông báo", MessageBoxButtons.OK);
@@ -71,9 +72,10 @@ namespace form
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Dangki frm = new Dangki(this.frm);
             this.Hide();
+            QuenMK frm = new QuenMK();
             frm.ShowDialog();
+            this.close();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
