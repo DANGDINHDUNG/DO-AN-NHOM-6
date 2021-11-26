@@ -14,9 +14,11 @@ namespace form
     {
         private Button currentBtn;
         private Panel leftBorderBtn;
-        public FormNV()
+        string maso; //Biến để lấy mã số nhân viên 
+        public FormNV(string maso)
         {
             InitializeComponent();
+            this.maso=maso;
             custom();
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 69);
