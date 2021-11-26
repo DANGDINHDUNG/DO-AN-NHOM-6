@@ -14,9 +14,11 @@ namespace form
     {
         private Button currentBtn;
         private Panel leftBorderBtn;
-        public Demo()
+        string maso; //Biến dùng để lấy mã số admin
+        public Demo(string maso)
         {
             InitializeComponent();
+            this.maso=maso;
             custom();
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 69);
