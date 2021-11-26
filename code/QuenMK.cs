@@ -43,7 +43,10 @@ namespace DOAN
         {
             SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-K8QQEUE;Initial Catalog=QLKS;Integrated Security=True");
             connection.Open();
-            string query = "update NHANVIEN set MATKHAU='" + mkmBx.Text + "'where TENTK='" + tdnBx.Text + "'";
+            Hash256 h = new Hash256();
+            SHA256 sha256Hash = SHA256.Create();
+            string hash = h.GetHash(sha256Hash, mkmBx.Text);
+            string query = "update NHANVIEN set MATKHAU='" + hash + "'where TENTK='" + tdnBx.Text + "'";
             SqlCommand command = new SqlCommand(query, connection);
             int c = command.ExecuteNonQuery();
             MessageBox.Show("Bạn đã đổi mật khẩu thành công", "Thông báo", MessageBoxButtons.OK);
