@@ -23,9 +23,9 @@ namespace form
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            mkcBox.UseSystemPasswordChar = false;
-            mkmBox.UseSystemPasswordChar = false;
-            nlmkBox.UseSystemPasswordChar = false;
+            mkcBox.UseSystemPasswordChar = !mkcBox.UseSystemPasswordChar
+            mkmBox.UseSystemPasswordChar = !mkmBox.UseSystemPasswordChar;
+            nlmkBox.UseSystemPasswordChar = !nlmkBox.UseSystemPasswordChar;
         }
 
         private void button1_Click(object sender, EventArgs e)
