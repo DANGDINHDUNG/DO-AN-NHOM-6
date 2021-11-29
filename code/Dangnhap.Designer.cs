@@ -176,7 +176,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(342, 32);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Nếu chưa có tài khoản đăng kí";
+            this.label1.Text = "QUên mật khẩu? Nhấn";
             // 
             // user
             // 
