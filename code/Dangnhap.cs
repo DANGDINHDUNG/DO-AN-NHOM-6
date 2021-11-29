@@ -59,7 +59,7 @@ namespace form
                 }
                 else
                 {
-                    FromNV frm=new FromNV(maso);
+                    FormNV frm=new FormNV(maso);
                     frm.ShowDialog();
                 }
                 this.Close();
