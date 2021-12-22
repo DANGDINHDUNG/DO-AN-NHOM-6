@@ -46,17 +46,18 @@ namespace form
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnInvoice = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.Color.Turquoise;
-            this.label1.Font = new System.Drawing.Font("Comfortaa", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.ForeColor = System.Drawing.Color.Aqua;
             this.label1.Location = new System.Drawing.Point(101, -23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(830, 114);
+            this.label1.Size = new System.Drawing.Size(683, 114);
             this.label1.TabIndex = 1;
             this.label1.Text = "DỊCH VỤ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -64,7 +65,7 @@ namespace form
             // txbHOTEN
             // 
             this.txbHOTEN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txbHOTEN.Location = new System.Drawing.Point(225, 120);
+            this.txbHOTEN.Location = new System.Drawing.Point(191, 142);
             this.txbHOTEN.Name = "txbHOTEN";
             this.txbHOTEN.Size = new System.Drawing.Size(207, 27);
             this.txbHOTEN.TabIndex = 4;
@@ -72,10 +73,12 @@ namespace form
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(50, 121);
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.ForeColor = System.Drawing.Color.Aqua;
+            this.label2.Location = new System.Drawing.Point(16, 143);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(160, 23);
+            this.label2.Size = new System.Drawing.Size(159, 22);
             this.label2.TabIndex = 3;
             this.label2.Text = "Họ tên khách hàng:";
             // 
@@ -119,7 +122,7 @@ namespace form
             "PHỔ THÔNG ĐÔI 3",
             "PHỔ THÔNG ĐÔI 4",
             "PHỔ THÔNG ĐÔI 5"});
-            this.txbTENPHONG.Location = new System.Drawing.Point(588, 122);
+            this.txbTENPHONG.Location = new System.Drawing.Point(554, 144);
             this.txbTENPHONG.Name = "txbTENPHONG";
             this.txbTENPHONG.Size = new System.Drawing.Size(170, 24);
             this.txbTENPHONG.TabIndex = 6;
@@ -127,18 +130,20 @@ namespace form
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(473, 120);
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.ForeColor = System.Drawing.Color.Aqua;
+            this.label3.Location = new System.Drawing.Point(439, 142);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 23);
+            this.label3.Size = new System.Drawing.Size(98, 22);
             this.label3.TabIndex = 5;
             this.label3.Text = "Tên phòng:";
             // 
             // lblMoney
             // 
             this.lblMoney.AutoSize = true;
-            this.lblMoney.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblMoney.Location = new System.Drawing.Point(923, 180);
+            this.lblMoney.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblMoney.Location = new System.Drawing.Point(187, 263);
             this.lblMoney.Name = "lblMoney";
             this.lblMoney.Size = new System.Drawing.Size(0, 23);
             this.lblMoney.TabIndex = 23;
@@ -156,27 +161,31 @@ namespace form
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label8.Location = new System.Drawing.Point(812, 181);
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label8.ForeColor = System.Drawing.Color.Aqua;
+            this.label8.Location = new System.Drawing.Point(16, 263);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(92, 23);
+            this.label8.Size = new System.Drawing.Size(92, 22);
             this.label8.TabIndex = 21;
             this.label8.Text = "Thành tiền";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.Location = new System.Drawing.Point(699, 181);
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label6.ForeColor = System.Drawing.Color.Aqua;
+            this.label6.Location = new System.Drawing.Point(665, 203);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(107, 23);
+            this.label6.Size = new System.Drawing.Size(119, 22);
             this.label6.TabIndex = 20;
             this.label6.Text = "(Lần/Giờ/Bộ)";
             // 
             // txbQuantity
             // 
             this.txbQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txbQuantity.Location = new System.Drawing.Point(588, 180);
+            this.txbQuantity.Location = new System.Drawing.Point(554, 202);
             this.txbQuantity.Name = "txbQuantity";
             this.txbQuantity.Size = new System.Drawing.Size(97, 27);
             this.txbQuantity.TabIndex = 19;
@@ -185,17 +194,19 @@ namespace form
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(473, 181);
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label5.ForeColor = System.Drawing.Color.Aqua;
+            this.label5.Location = new System.Drawing.Point(439, 203);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 23);
+            this.label5.Size = new System.Drawing.Size(82, 22);
             this.label5.TabIndex = 18;
             this.label5.Text = "Số lượng";
             // 
             // cbxDichVu
             // 
             this.cbxDichVu.FormattingEnabled = true;
-            this.cbxDichVu.Location = new System.Drawing.Point(225, 183);
+            this.cbxDichVu.Location = new System.Drawing.Point(191, 205);
             this.cbxDichVu.Name = "cbxDichVu";
             this.cbxDichVu.Size = new System.Drawing.Size(207, 24);
             this.cbxDichVu.TabIndex = 17;
@@ -204,10 +215,12 @@ namespace form
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(50, 181);
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label4.ForeColor = System.Drawing.Color.Aqua;
+            this.label4.Location = new System.Drawing.Point(16, 203);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 23);
+            this.label4.Size = new System.Drawing.Size(109, 22);
             this.label4.TabIndex = 16;
             this.label4.Text = "Tên dịch vụ:";
             // 
@@ -215,19 +228,21 @@ namespace form
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(54, 289);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 372);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1051, 209);
+            this.dataGridView1.Size = new System.Drawing.Size(909, 253);
             this.dataGridView1.TabIndex = 24;
             this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(727, 228);
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Location = new System.Drawing.Point(743, 305);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(151, 41);
             this.btnDelete.TabIndex = 27;
@@ -237,7 +252,9 @@ namespace form
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(532, 228);
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(548, 305);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(151, 41);
             this.btnAdd.TabIndex = 26;
@@ -247,7 +264,9 @@ namespace form
             // 
             // btnInvoice
             // 
-            this.btnInvoice.Location = new System.Drawing.Point(332, 228);
+            this.btnInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInvoice.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInvoice.Location = new System.Drawing.Point(348, 305);
             this.btnInvoice.Name = "btnInvoice";
             this.btnInvoice.Size = new System.Drawing.Size(151, 41);
             this.btnInvoice.TabIndex = 25;
@@ -255,11 +274,29 @@ namespace form
             this.btnInvoice.UseVisualStyleBackColor = true;
             this.btnInvoice.Click += new System.EventHandler(this.btnInvoice_Click);
             // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.ForeColor = System.Drawing.Color.Aqua;
+            this.button9.Location = new System.Drawing.Point(876, 2);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(56, 40);
+            this.button9.TabIndex = 28;
+            this.button9.Text = "x";
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
             // DichVu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1151, 528);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.ClientSize = new System.Drawing.Size(933, 637);
+            this.Controls.Add(this.button9);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnInvoice);
@@ -277,6 +314,7 @@ namespace form
             this.Controls.Add(this.txbHOTEN);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.ForeColor = System.Drawing.Color.Aqua;
             this.Name = "DichVu";
             this.Text = "DichVu";
             this.Load += new System.EventHandler(this.DichVu_Load);
@@ -305,5 +343,6 @@ namespace form
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnInvoice;
+        private System.Windows.Forms.Button button9;
     }
 }

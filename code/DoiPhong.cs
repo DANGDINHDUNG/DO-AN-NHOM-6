@@ -20,25 +20,9 @@ namespace form
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
-        SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ToString());
-
-        private void ComboBoxData(string data)
-        {
-            SqlCommand cmd = new SqlCommand(data, connection);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            cmd.ExecuteNonQuery();
-
-            connection.Close();
-
-            cbxMALP.DataSource = ds.Tables[0];
-            cbxMALP.DisplayMember = "MALP";
-
-        }
-
         public void GetData(string data)
         {
+            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ToString());
             connection.Open();
             string sql = data;
             SqlCommand com = new SqlCommand(sql, connection);
@@ -52,6 +36,7 @@ namespace form
 
         public void GetData1(string data)
         {
+            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ToString());
             connection.Open();
             string sql = data;
             SqlCommand com = new SqlCommand(sql, connection);
@@ -68,12 +53,6 @@ namespace form
             txbHOTEN.Text = name;
             txbCCCD.Text = id;
             txbSOLUONG.Text = amount;
-
-            connection.Open();
-
-            sql1 = "select MALP from LOAIPHONG";
-            ComboBoxData(sql1);
-
             sql = "select PHONG.MALP 'Mã loại phòng', PHONG.TENPHONG 'Tên phòng', TRANGTHAI 'Trạng thái', FORMAT(GIA, '###,###,###') 'Giá tiền (VND)' from PHONG inner join LOAIPHONG on PHONG.MALP = LOAIPHONG.MALP where TRANGTHAI = N'Trống'";
             GetData(sql);
 
@@ -84,8 +63,35 @@ namespace form
         private void dataGridView2_Click(object sender, EventArgs e)
         {
             txbTENPHONG.Text = dataGridView2.SelectedRows[0].Cells[1].Value.ToString();
-            cbxMALP.Text = dataGridView2.SelectedRows[0].Cells[0].Value.ToString();
+            switch (dataGridView2.SelectedRows[0].Cells[0].Value.ToString())
+            {
+                case "RST0":
+                    {
+                        cbxMALP.Text = "RST0 (Phòng tổng thống)";
+                        break;
+                    }
+                case "VIP1":
+                    {
+                        cbxMALP.Text = "VIP1 (Phòng V.I.P đơn)";
 
+                        break;
+                    }
+                case "NRM1":
+                    {
+                        cbxMALP.Text = "NRM1 (Phòng phổ thông đơn)";
+                        break;
+                    }
+                case "VIP2":
+                    {
+                        cbxMALP.Text = "VIP2 (Phòng V.I.P đôi)";
+                        break;
+                    }
+                case "NRM2":
+                    {
+                        cbxMALP.Text = "NRM2 (Phòng phổ thông đôi)";
+                        break;
+                    }
+            }
         }
 
         private void cbxMALP_SelectedValueChanged(object sender, EventArgs e)
@@ -102,7 +108,35 @@ namespace form
             txbTENPHONG.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
             dateTimePicker1.Text = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
             dateTimePicker2.Text = dataGridView1.SelectedRows[0].Cells[5].Value.ToString();
-            cbxMALP.Text = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+            switch (dataGridView1.SelectedRows[0].Cells[0].Value.ToString())
+            {
+                case "RST":
+                    {
+                        cbxMALP.Text = "RST0 (Phòng tổng thống)";
+                        break;
+                    }
+                case "VIP1":
+                    {
+                        cbxMALP.Text = "VIP1 (Phòng V.I.P đơn)";
+
+                        break;
+                    }
+                case "NRM1":
+                    {
+                        cbxMALP.Text = "NRM1 (Phòng phổ thông đơn)";
+                        break;
+                    }
+                case "VIP2":
+                    {
+                        cbxMALP.Text = "VIP2 (Phòng V.I.P đôi)";
+                        break;
+                    }
+                case "NRM2":
+                    {
+                        cbxMALP.Text = "NRM2 (Phòng phổ thông đôi)";
+                        break;
+                    }
+            }
         }
 
         private void btnDown_Click(object sender, EventArgs e)

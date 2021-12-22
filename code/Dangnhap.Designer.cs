@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dangnhap));
             this.logoPnl = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.DangnhapPnl = new System.Windows.Forms.Panel();
@@ -43,8 +45,6 @@
             this.loginBtn = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.pass = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.logoPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.DangnhapPnl.SuspendLayout();
@@ -62,6 +62,28 @@
             this.logoPnl.Name = "logoPnl";
             this.logoPnl.Size = new System.Drawing.Size(282, 506);
             this.logoPnl.TabIndex = 7;
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("ø", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(15, 386);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(258, 78);
+            this.label9.TabIndex = 10;
+            this.label9.Text = "HOTEL";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label13
+            // 
+            this.label13.Font = new System.Drawing.Font("Anastasya Confession", 55.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(33, 206);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(238, 194);
+            this.label13.TabIndex = 9;
+            this.label13.Text = "Aroma \r\nGarden\r\n";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
@@ -174,7 +196,7 @@
             this.label1.Location = new System.Drawing.Point(131, 404);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(342, 32);
+            this.label1.Size = new System.Drawing.Size(257, 32);
             this.label1.TabIndex = 9;
             this.label1.Text = "QUên mật khẩu? Nhấn";
             // 
@@ -234,30 +256,9 @@
             this.pass.TabIndex = 11;
             this.pass.Text = "Mật khẩu";
             // 
-            // label9
-            // 
-            this.label9.Font = new System.Drawing.Font("ø", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(15, 386);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(258, 78);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "HOTEL";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label13
-            // 
-            this.label13.Font = new System.Drawing.Font("Anastasya Confession", 55.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(33, 206);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(238, 194);
-            this.label13.TabIndex = 9;
-            this.label13.Text = "Aroma \r\nGarden\r\n";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // Dangnhap
             // 
+            this.AcceptButton = this.loginBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;

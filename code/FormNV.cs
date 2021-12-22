@@ -14,14 +14,14 @@ namespace form
     {
         private Button currentBtn;
         private Panel leftBorderBtn;
-        string maso; //Biến để lấy mã số nhân viên 
+        string maso;
         public FormNV(string maso)
         {
             InitializeComponent();
-            this.maso=maso;
+            this.maso = maso;
             custom();
             leftBorderBtn = new Panel();
-            leftBorderBtn.Size = new Size(7, 69);
+            leftBorderBtn.Size = new Size(7, 57);
             panel1.Controls.Add(leftBorderBtn);
             this.Text = string.Empty;
             this.ControlBox = false;
@@ -33,25 +33,7 @@ namespace form
             public static Color color2 = Color.FromArgb(249, 118, 176);
         }
 
-        private void ActivateButton(object senderBtn, Color color)
-        {
-            if (senderBtn != null)
-            {
-                DisableButton();
-                //Button
-                currentBtn = (Button)senderBtn;
-                currentBtn.BackColor = Color.FromArgb(37, 36, 81);
-                currentBtn.ForeColor = color;
-                currentBtn.TextAlign = ContentAlignment.MiddleCenter;
-                currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
-                currentBtn.ImageAlign = ContentAlignment.MiddleRight;
-                //Left border button
-                leftBorderBtn.BackColor = color;
-                leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
-                leftBorderBtn.Visible = true;
-                leftBorderBtn.BringToFront();
-            }
-        }
+       
         private void DisableButton()
         {
             if (currentBtn != null)
@@ -67,6 +49,7 @@ namespace form
         {
             panelPhongmenu.Visible = false;
             panelDVmenu.Visible = false;
+            HoaDonMenu_panel.Visible = false;
         }
 
         private void hideMenu()
@@ -75,6 +58,8 @@ namespace form
                 panelPhongmenu.Visible = false;
             if (panelDVmenu.Visible == true)
                 panelDVmenu.Visible = false;
+            if (HoaDonMenu_panel.Visible == true)
+                HoaDonMenu_panel.Visible = false;
         }
 
         private void showMenu(Panel menu)
@@ -87,6 +72,7 @@ namespace form
             else
                 menu.Visible = false;
         }
+        
         private Form activeForm = null;
         private void openChildForm(Form childForm)
         {
@@ -101,26 +87,32 @@ namespace form
             childForm.Show();
         }
 
-
-        private void button2_Click(object sender, EventArgs e)
+        private void ActivateButton(object senderBtn, Color color)
         {
-
+            if (senderBtn != null)
+            {
+                DisableButton();
+                //Button
+                currentBtn = (Button)senderBtn;
+                currentBtn.BackColor = Color.FromArgb(37, 36, 81);
+                currentBtn.ForeColor = color;
+                currentBtn.TextAlign = ContentAlignment.MiddleCenter;
+                currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
+                currentBtn.ImageAlign = ContentAlignment.MiddleRight;
+            }
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
-        {
-            openChildForm(new HuyPhong());
-            hideMenu();
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
+            showMenu(panelPhongmenu);
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
+            showMenu(panelDVmenu);
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -136,6 +128,49 @@ namespace form
         private void iconButton4_Click(object sender, EventArgs e)
         {
             openChildForm(new DatPhong());
+        }
+
+        private void iconButton3_Click(object sender, EventArgs e)
+        {
+            openChildForm(new DoAn());
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color2);
+            openChildForm(new Doimatkhau());
+        }
+
+
+        private void iconButton6_Click(object sender, EventArgs e)
+        {
+            openChildForm(new DichVu());
+        }
+
+        private void iconButton7_Click(object sender, EventArgs e)
+        {
+            openChildForm(new HoaDon());
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            openChildForm(new HoaDonDoAn());
+        }
+
+        private void iconButton8_Click(object sender, EventArgs e)
+        {
+            openChildForm(new HoaDonDV());
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color2);
+            showMenu(HoaDonMenu_panel);
         }
     }
 }

@@ -40,11 +40,13 @@ namespace form
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button9 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tdnBox
             // 
-            this.tdnBox.Location = new System.Drawing.Point(312, 78);
+            this.tdnBox.Location = new System.Drawing.Point(439, 201);
             this.tdnBox.Margin = new System.Windows.Forms.Padding(4);
             this.tdnBox.Name = "tdnBox";
             this.tdnBox.Size = new System.Drawing.Size(217, 22);
@@ -52,7 +54,7 @@ namespace form
             // 
             // mkcBox
             // 
-            this.mkcBox.Location = new System.Drawing.Point(312, 148);
+            this.mkcBox.Location = new System.Drawing.Point(439, 274);
             this.mkcBox.Margin = new System.Windows.Forms.Padding(4);
             this.mkcBox.Name = "mkcBox";
             this.mkcBox.Size = new System.Drawing.Size(217, 22);
@@ -61,7 +63,7 @@ namespace form
             // 
             // nlmkBox
             // 
-            this.nlmkBox.Location = new System.Drawing.Point(312, 304);
+            this.nlmkBox.Location = new System.Drawing.Point(439, 430);
             this.nlmkBox.Margin = new System.Windows.Forms.Padding(4);
             this.nlmkBox.Name = "nlmkBox";
             this.nlmkBox.Size = new System.Drawing.Size(217, 22);
@@ -70,7 +72,7 @@ namespace form
             // 
             // mkmBox
             // 
-            this.mkmBox.Location = new System.Drawing.Point(312, 230);
+            this.mkmBox.Location = new System.Drawing.Point(439, 356);
             this.mkmBox.Margin = new System.Windows.Forms.Padding(4);
             this.mkmBox.Name = "mkmBox";
             this.mkmBox.Size = new System.Drawing.Size(217, 22);
@@ -80,53 +82,60 @@ namespace form
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(55, 75);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Aqua;
+            this.label1.Location = new System.Drawing.Point(116, 203);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(158, 25);
+            this.label1.Size = new System.Drawing.Size(164, 26);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tên đăng nhập";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(55, 145);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Aqua;
+            this.label2.Location = new System.Drawing.Point(116, 273);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 25);
+            this.label2.Size = new System.Drawing.Size(142, 26);
             this.label2.TabIndex = 1;
             this.label2.Text = "Mật khẩu cũ";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(55, 228);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Aqua;
+            this.label3.Location = new System.Drawing.Point(116, 356);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(141, 25);
+            this.label3.Size = new System.Drawing.Size(157, 26);
             this.label3.TabIndex = 1;
             this.label3.Text = "Mật khẩu mới";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(56, 302);
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Aqua;
+            this.label4.Location = new System.Drawing.Point(117, 430);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(225, 25);
+            this.label4.Size = new System.Drawing.Size(246, 26);
             this.label4.TabIndex = 1;
             this.label4.Text = "Nhập lại mật khẩu mới";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(164, 369);
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Aqua;
+            this.button1.Location = new System.Drawing.Point(190, 537);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(128, 34);
+            this.button1.Size = new System.Drawing.Size(198, 45);
             this.button1.TabIndex = 4;
             this.button1.Text = "Xác nhận";
             this.button1.UseVisualStyleBackColor = true;
@@ -134,10 +143,13 @@ namespace form
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(455, 369);
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Aqua;
+            this.button2.Location = new System.Drawing.Point(481, 537);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(128, 34);
+            this.button2.Size = new System.Drawing.Size(175, 45);
             this.button2.TabIndex = 5;
             this.button2.Text = "Hủy";
             this.button2.UseVisualStyleBackColor = true;
@@ -146,20 +158,53 @@ namespace form
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(567, 304);
+            this.checkBox1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.ForeColor = System.Drawing.Color.Aqua;
+            this.checkBox1.Location = new System.Drawing.Point(694, 430);
             this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(140, 21);
+            this.checkBox1.Size = new System.Drawing.Size(206, 31);
             this.checkBox1.TabIndex = 6;
             this.checkBox1.Text = "Hiển thị mật khẩu";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Aqua;
+            this.label5.Location = new System.Drawing.Point(259, 49);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(397, 68);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Đổi Mật Khẩu";
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.ForeColor = System.Drawing.Color.Aqua;
+            this.button9.Location = new System.Drawing.Point(876, 12);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(56, 40);
+            this.button9.TabIndex = 8;
+            this.button9.Text = "x";
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
             // Doimatkhau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(781, 436);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.ClientSize = new System.Drawing.Size(933, 637);
+            this.Controls.Add(this.button9);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -193,5 +238,7 @@ namespace form
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button9;
     }
 }

@@ -14,16 +14,14 @@ namespace form
 {
     public partial class Doimatkhau : Form
     {
-        MainForm frm;
-        public Doimatkhau(MainForm frm)
+        public Doimatkhau()
         {
             InitializeComponent();
-            this.frm = frm;
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            mkcBox.UseSystemPasswordChar = !mkcBox.UseSystemPasswordChar
+            mkcBox.UseSystemPasswordChar = !mkcBox.UseSystemPasswordChar;
             mkmBox.UseSystemPasswordChar = !mkmBox.UseSystemPasswordChar;
             nlmkBox.UseSystemPasswordChar = !nlmkBox.UseSystemPasswordChar;
         }
@@ -38,12 +36,12 @@ namespace form
             SqlDataReader reader = command.ExecuteReader();
             if (reader.Read() == true)
             {
-                if(mkmBox.Text == mkcBox.Text)
+                if (mkmBox.Text == mkcBox.Text)
                 {
                     MessageBox.Show("Mật khẩu mới và mật khẩu cũ không được giống nhau", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                   
+
                 }
-                else if(mkmBox.Text == nlmkBox.Text)
+                else if (mkmBox.Text == nlmkBox.Text)
                 {
                     connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ToString());
                     connection.Open();
@@ -51,7 +49,6 @@ namespace form
                     command = new SqlCommand(query, connection);
                     int c = command.ExecuteNonQuery();
                     MessageBox.Show("Bạn đã đổi mật khẩu thành công", "Thông báo", MessageBoxButtons.OK);
-                    frm.Show();
                     this.Close();
                 }
                 else
@@ -67,7 +64,11 @@ namespace form
 
         private void button2_Click(object sender, EventArgs e)
         {
-            frm.Show();
+            this.Close();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }

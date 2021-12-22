@@ -47,7 +47,7 @@ namespace form
         {
             string count = "";
             SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ToString());
-            
+
             connection.Open();
             string query = @"SELECT MAX(MANV) FROM NHANVIEN WHERE MANV!= 'ADM'";
             SqlCommand command = new SqlCommand(query, connection);
@@ -171,13 +171,12 @@ namespace form
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Dangnhap frm = new Dangnhap(this.frm);
+            Dangnhap frm = new Dangnhap();
             this.Hide();
             frm.ShowDialog();
         }
         private void Dangki_FormClosing(object sender, FormClosingEventArgs e)
         {
-            frm.ShowDialog();
             this.Close();
         }
     }

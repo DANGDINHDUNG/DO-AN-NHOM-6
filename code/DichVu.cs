@@ -72,45 +72,38 @@ namespace form
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            try
+            if (txbHOTEN.Text == string.Empty || txbTENPHONG.Text == string.Empty || cbxDichVu.Text == string.Empty || txbQuantity.Text == string.Empty)
             {
-                if (txbHOTEN.Text == string.Empty || txbTENPHONG.Text == string.Empty || cbxDichVu.Text == string.Empty || txbQuantity.Text == string.Empty)
-                {
-                    MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                else
-                {
-                    CheckExists();
-
-                    using (var connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ToString()))
-                    {
-                        connection.Open();
-
-                        using (var command = connection.CreateCommand())
-                        {
-
-                            if (existsService)
-                            {
-                                command.CommandText = "update DATDV set TONGTIEN = '" + lblMoney.Text + "' where MADV = (select MADV from DICHVU where TENDV = N'" + cbxDichVu.Text + "')";
-                                command.ExecuteNonQuery();
-                            }
-                            else
-                            {
-                                command.CommandText = "insert into DATDV(MADV, MAKH, TONGTIEN) values ((select MADV from DICHVU where TENDV = N'" + cbxDichVu.Text + "'), (select MAKH from DATPHONG where TENPHONG = N'" + txbTENPHONG.Text + "'), '" + lblMoney.Text + "')";
-                                command.ExecuteNonQuery();
-                            }
-
-                            existsService = false;
-                        }
-                    }
-
-                    DichVu_Load(this, e);
-                }
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
-            catch
+            else
             {
-                MessageBox.Show("Phòng chưa được đặt. Vui lòng kiểm tra lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                CheckExists();
+
+                using (var connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ToString()))
+                {
+                    connection.Open();
+
+                    using (var command = connection.CreateCommand())
+                    {
+
+                        if (existsService)
+                        {
+                            command.CommandText = "update DATDV set TONGTIEN = '" + lblMoney.Text + "' where MADV = (select MADV from DICHVU where TENDV = N'" + cbxDichVu.Text + "')";
+                            command.ExecuteNonQuery();
+                        }
+                        else
+                        {
+                            command.CommandText = "insert into DATDV(MADV, MAKH, TONGTIEN) values ((select MADV from DICHVU where TENDV = N'" + cbxDichVu.Text + "'), (select MAKH from DATPHONG where TENPHONG = N'" + txbTENPHONG.Text + "'), '" + lblMoney.Text + "')";
+                            command.ExecuteNonQuery();
+                        }
+
+                        existsService = false;
+                    }
+                }
+
+                DichVu_Load(this, e);
             }
         }
 
@@ -244,6 +237,9 @@ namespace form
             }
         }
 
-
+        private void button9_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

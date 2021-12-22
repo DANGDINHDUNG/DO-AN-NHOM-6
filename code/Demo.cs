@@ -18,7 +18,7 @@ namespace form
         public Demo(string maso)
         {
             InitializeComponent();
-            this.maso=maso;
+            this.maso = maso;
             custom();
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 69);
@@ -47,11 +47,6 @@ namespace form
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
                 currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
                 currentBtn.ImageAlign = ContentAlignment.MiddleRight;
-                //Left border button
-                leftBorderBtn.BackColor = color;
-                leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
-                leftBorderBtn.Visible = true;
-                leftBorderBtn.BringToFront();
             }
         }
         private void DisableButton()
@@ -134,6 +129,11 @@ namespace form
         {
             if (activeForm != null)
                 activeForm.Close();
+            this.Width = childForm.Width + panelMenu.Width;
+            this.Height = Math.Max(childForm.Height, panelMenu.Height);
+            this.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2, 
+                (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
+
             activeForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
@@ -149,11 +149,7 @@ namespace form
             hideMenu();
         }
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color2);
-           openChildForm(new TTKS());
-        }
+        
 
         private void button9_Click(object sender, EventArgs e)
         {
@@ -177,6 +173,7 @@ namespace form
 
         private void iconButton4_Click(object sender, EventArgs e)
         {
+            
         }
 
         private void iconButton5_Click(object sender, EventArgs e)
@@ -190,13 +187,43 @@ namespace form
 
         private void iconButton7_Click(object sender, EventArgs e)
         {
-            //openChildForm(new Doimatkhau());
+            openChildForm(new Doimatkhau());
         }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
             showMenu(panel1);
+        }
+
+        private void iconButton8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconButton10_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ThemThucPham());
+        }
+
+        private void iconButton9_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ThemDichVu());
+        }
+
+        private void iconButton7_Click_1(object sender, EventArgs e)
+        {
+            openChildForm(new Doimatkhau());
+        }
+
+        private void iconButton6_Click_1(object sender, EventArgs e)
+        {
+            openChildForm(new ThietLapMang());
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

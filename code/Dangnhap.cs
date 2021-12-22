@@ -21,7 +21,6 @@ namespace form
         public Dangnhap()
         {
             InitializeComponent();
-            this.frm = frm;
             this.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
         }
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -46,20 +45,20 @@ namespace form
             string hash = h.GetHash(sha256Hash, passBox.Text);
             string query = "select MANV from NHANVIEN where TENTK='" + tk + "'and MATKHAU='" + hash + "'";
             SqlCommand command = new SqlCommand(query, connection);
-            SqlDataReader reader = command.ExecuteReader();*/
+            SqlDataReader reader = command.ExecuteReader(); 
             if (reader.Read() == true)
             {
                 MessageBox.Show("Bạn đã đăng nhập thành công", "Thông báo", MessageBoxButtons.OK);
-                maso = reader.GetString(0);
+                maso = reader.GetString(0).TrimEnd();
                 this.Hide();
-                if(maso=="ADM")
+                if (maso == "ADM")
                 {
-                    Demo frm=new Demo(maso);
+                    Demo frm = new Demo(maso);
                     frm.ShowDialog();
                 }
                 else
                 {
-                    FormNV frm=new FormNV(maso);
+                    FormNV frm = new FormNV(maso);
                     frm.ShowDialog();
                 }
                 this.Close();
@@ -67,7 +66,7 @@ namespace form
             else
             {
                 MessageBox.Show("Sai tên hoặc mật khẩu", "Thống báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }    
+            }
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -75,7 +74,6 @@ namespace form
             this.Hide();
             QuenMK frm = new QuenMK();
             frm.ShowDialog();
-            this.close();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -85,7 +83,6 @@ namespace form
         private void cancelBtn_Click(object sender, EventArgs e)
         {
             this.Close();
-            frm.Show();
         }
     }
 }
