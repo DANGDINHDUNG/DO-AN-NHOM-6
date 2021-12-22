@@ -20,6 +20,7 @@ namespace form
         private string gender;
         private bool existsCCCD = false;
         private string s;
+
         public KhachHang()
         {
             this.InitializeComponent();
@@ -39,6 +40,7 @@ namespace form
                 DatPhong datPhong = new DatPhong();
                 datPhong.name = txbHOTEN.Text;
                 datPhong.id = txbCCCD.Text;
+                datPhong.amount = txbSOLUONG.Text;
                 datPhong.ShowDialog();
             }
         }
@@ -51,9 +53,9 @@ namespace form
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (txbHOTEN.Text == string.Empty || txbSDT.Text == string.Empty || comboBox1.Text == string.Empty || txbCCCD.Text == string.Empty)
+            //try
+            //{
+                if (txbHOTEN.Text == string.Empty || txbSDT.Text == string.Empty || comboBox1.Text == string.Empty || txbCCCD.Text == string.Empty || txbSOLUONG.Text == string.Empty)
                 {
                     return;
                 }
@@ -69,21 +71,16 @@ namespace form
                 txbSDT.Text = string.Empty;
                 comboBox1.Text = "";
                 txbCCCD.Text = string.Empty;
+                txbSOLUONG.Text = string.Empty;
                 radioButton1.Checked = false;
                 radioButton2.Checked = false;
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Nhập liệu thông tin không đúng định dạng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            //}
+            //catch (Exception)
+            //{
+            //    MessageBox.Show("Nhập liệu thông tin không đúng định dạng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //}
 
-        }
-
-        private void radioButton_CheckedChanged(object sender, EventArgs e)
-        {
-            if (((RadioButton)sender).Checked)
-                gender = ((RadioButton)sender).Text;
-        }
+        }           
 
         private void dataGridView1_Click(object sender, EventArgs e)
         {
@@ -101,6 +98,7 @@ namespace form
                 {
                     radioButton2.Checked = true;
                 }
+                txbSOLUONG.Text = dataGridView1.SelectedRows[0].Cells[6].Value.ToString();
             }
             else
             {
@@ -121,10 +119,32 @@ namespace form
                 DoiPhong doiPhong = new DoiPhong();
                 doiPhong.name = txbHOTEN.Text;
                 doiPhong.id = txbCCCD.Text;
+                doiPhong.amount = txbSOLUONG.Text;
                 doiPhong.ShowDialog();
             }
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (txbHOTEN.Text == string.Empty || txbSDT.Text == string.Empty || comboBox1.Text == string.Empty || txbCCCD.Text == string.Empty)
+            {
+                MessageBox.Show("Chọn thông tin khách hàng trước khi thực hiện các thao tác.");
+                return;
+            }
+            else
+            {
+                TraPhong traPhong = new TraPhong();
+                traPhong.name = txbHOTEN.Text;
+                traPhong.id = txbCCCD.Text;
+                traPhong.ShowDialog();
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            string sql = @"SELECT * FROM KHACHHANG WHERE HOTEN like  N'%" + textBox1.Text + "%')";
+            GetData(sql);
+        }
 
         // CÁC THAO TÁC VỚI FORM
 
@@ -152,13 +172,16 @@ namespace form
                 {
                     if (existsCCCD)
                     {
-                        command.CommandText = "update KHACHHANG set HOTEN = N'" + txbHOTEN.Text + "', TUOI = '" + comboBox1.Text + "', GIOITINH = N'" + gender.ToString() + "', SDT = '" + txbSDT.Text + "' where CCCD_CMND = '" + txbCCCD.Text + "'";
+                        command.CommandText = "update KHACHHANG set HOTEN = N'" + txbHOTEN.Text + "', TUOI = '" + comboBox1.Text + "', " +
+                            "GIOITINH = N'" + gender.ToString() + "', SDT = '" + txbSDT.Text + "', SOLUONG = '" + txbSOLUONG.Text + "' " +
+                            "where CCCD_CMND = '" + txbCCCD.Text + "' ";
                         command.ExecuteNonQuery();
                     }
                     else
                     {
-                        command.CommandText = "insert into KHACHHANG(MAKH,HOTEN,TUOI,GIOITINH,SDT,CCCD_CMND) " +
-                            "values ('" + s + "', N'" + txbHOTEN.Text + "' ,'" + comboBox1.Text + "', N'" + gender.ToString() + "', '" + txbSDT.Text + "', '" + txbCCCD.Text + "')";
+                        command.CommandText = "insert into KHACHHANG(MAKH,HOTEN,TUOI,GIOITINH,SDT,CCCD_CMND,SOLUONG) " +
+                            "values ('" + s + "', N'" + txbHOTEN.Text + "' ,'" + comboBox1.Text + "', N'" + gender.ToString() + "', " +
+                            "'" + txbSDT.Text + "', '" + txbCCCD.Text + "', '" + txbSOLUONG.Text + "')";
                         command.ExecuteNonQuery();
                     }
 
@@ -210,9 +233,11 @@ namespace form
             }
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void radioButton_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (((RadioButton)sender).Checked)
+                gender = ((RadioButton)sender).Text;
         }
+
     }
 }

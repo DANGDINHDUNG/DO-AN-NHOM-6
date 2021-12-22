@@ -1,4 +1,4 @@
-namespace DOAN
+namespace form
 {
     partial class InDSNV
     {

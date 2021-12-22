@@ -42,10 +42,13 @@ namespace form
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txbSOLUONG = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -59,7 +62,7 @@ namespace form
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(761, 585);
+            this.dataGridView1.Size = new System.Drawing.Size(837, 504);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
             // 
@@ -67,7 +70,6 @@ namespace form
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.ForeColor = System.Drawing.Color.Aqua;
             this.label1.Location = new System.Drawing.Point(395, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(378, 32);
@@ -77,11 +79,10 @@ namespace form
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.radioButton2.ForeColor = System.Drawing.Color.Aqua;
-            this.radioButton2.Location = new System.Drawing.Point(310, 191);
+            this.radioButton2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.radioButton2.Location = new System.Drawing.Point(351, 140);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(56, 26);
+            this.radioButton2.Size = new System.Drawing.Size(54, 25);
             this.radioButton2.TabIndex = 40;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Nữ";
@@ -91,78 +92,70 @@ namespace form
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.ForeColor = System.Drawing.Color.Aqua;
-            this.label3.Location = new System.Drawing.Point(15, 66);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.Location = new System.Drawing.Point(22, 44);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 22);
+            this.label3.Size = new System.Drawing.Size(82, 21);
             this.label3.TabIndex = 31;
             this.label3.Text = "Họ và tên";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.ForeColor = System.Drawing.Color.Aqua;
-            this.label4.Location = new System.Drawing.Point(15, 129);
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label4.Location = new System.Drawing.Point(22, 94);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(125, 22);
+            this.label4.Size = new System.Drawing.Size(119, 21);
             this.label4.TabIndex = 32;
             this.label4.Text = "Số Điện Thoại";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txbHOTEN
             // 
-            this.txbHOTEN.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txbHOTEN.Location = new System.Drawing.Point(148, 63);
+            this.txbHOTEN.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txbHOTEN.Location = new System.Drawing.Point(189, 36);
             this.txbHOTEN.Name = "txbHOTEN";
-            this.txbHOTEN.Size = new System.Drawing.Size(218, 30);
+            this.txbHOTEN.Size = new System.Drawing.Size(268, 28);
             this.txbHOTEN.TabIndex = 33;
             // 
             // txbSDT
             // 
-            this.txbSDT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txbSDT.Location = new System.Drawing.Point(148, 126);
+            this.txbSDT.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txbSDT.Location = new System.Drawing.Point(189, 91);
             this.txbSDT.Name = "txbSDT";
-            this.txbSDT.Size = new System.Drawing.Size(218, 30);
+            this.txbSDT.Size = new System.Drawing.Size(268, 28);
             this.txbSDT.TabIndex = 34;
             // 
             // txbTUOI
             // 
             this.txbTUOI.AutoSize = true;
-            this.txbTUOI.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txbTUOI.ForeColor = System.Drawing.Color.Aqua;
-            this.txbTUOI.Location = new System.Drawing.Point(15, 190);
+            this.txbTUOI.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txbTUOI.Location = new System.Drawing.Point(24, 142);
             this.txbTUOI.Name = "txbTUOI";
-            this.txbTUOI.Size = new System.Drawing.Size(46, 22);
+            this.txbTUOI.Size = new System.Drawing.Size(44, 21);
             this.txbTUOI.TabIndex = 35;
             this.txbTUOI.Text = "Tuổi";
-            this.txbTUOI.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label
             // 
             this.label.AutoSize = true;
-            this.label.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label.ForeColor = System.Drawing.Color.Aqua;
-            this.label.Location = new System.Drawing.Point(15, 255);
+            this.label.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label.Location = new System.Drawing.Point(24, 198);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(127, 22);
+            this.label.Size = new System.Drawing.Size(122, 21);
             this.label.TabIndex = 36;
             this.label.Text = "CMND/CCCD";
-            this.label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txbCCCD
             // 
-            this.txbCCCD.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txbCCCD.Location = new System.Drawing.Point(148, 252);
+            this.txbCCCD.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txbCCCD.Location = new System.Drawing.Point(189, 195);
             this.txbCCCD.Name = "txbCCCD";
-            this.txbCCCD.Size = new System.Drawing.Size(218, 30);
+            this.txbCCCD.Size = new System.Drawing.Size(268, 28);
             this.txbCCCD.TabIndex = 37;
             // 
             // comboBox1
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "18",
@@ -208,20 +201,18 @@ namespace form
             "58",
             "59",
             "60"});
-            this.comboBox1.Location = new System.Drawing.Point(148, 190);
+            this.comboBox1.Location = new System.Drawing.Point(112, 139);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(67, 30);
+            this.comboBox1.Size = new System.Drawing.Size(67, 28);
             this.comboBox1.TabIndex = 38;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.radioButton1.ForeColor = System.Drawing.Color.Aqua;
-            this.radioButton1.Location = new System.Drawing.Point(236, 190);
+            this.radioButton1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.radioButton1.Location = new System.Drawing.Point(252, 140);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(68, 26);
+            this.radioButton1.Size = new System.Drawing.Size(66, 25);
             this.radioButton1.TabIndex = 39;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Nam";
@@ -230,6 +221,8 @@ namespace form
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txbSOLUONG);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txbCCCD);
             this.groupBox1.Controls.Add(this.radioButton2);
@@ -241,35 +234,48 @@ namespace form
             this.groupBox1.Controls.Add(this.txbSDT);
             this.groupBox1.Controls.Add(this.txbTUOI);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.groupBox1.ForeColor = System.Drawing.Color.Aqua;
-            this.groupBox1.Location = new System.Drawing.Point(787, 137);
+            this.groupBox1.Location = new System.Drawing.Point(870, 87);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(381, 352);
+            this.groupBox1.Size = new System.Drawing.Size(479, 291);
             this.groupBox1.TabIndex = 41;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thêm thông tin khách hàng";
             // 
+            // txbSOLUONG
+            // 
+            this.txbSOLUONG.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txbSOLUONG.Location = new System.Drawing.Point(189, 250);
+            this.txbSOLUONG.Name = "txbSOLUONG";
+            this.txbSOLUONG.Size = new System.Drawing.Size(268, 28);
+            this.txbSOLUONG.TabIndex = 42;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.Location = new System.Drawing.Point(24, 253);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 21);
+            this.label2.TabIndex = 41;
+            this.label2.Text = "Số lượng";
+            // 
             // button1
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button1.ForeColor = System.Drawing.Color.Aqua;
-            this.button1.Location = new System.Drawing.Point(892, 594);
+            this.button1.Location = new System.Drawing.Point(937, 397);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(181, 52);
+            this.button1.Size = new System.Drawing.Size(370, 52);
             this.button1.TabIndex = 42;
-            this.button1.Text = "Thêm/ Cập Nhật";
+            this.button1.Text = "Thêm/ Cập nhật";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button2.ForeColor = System.Drawing.Color.Aqua;
-            this.button2.Location = new System.Drawing.Point(787, 518);
+            this.button2.Location = new System.Drawing.Point(1067, 479);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(183, 52);
+            this.button2.Size = new System.Drawing.Size(113, 52);
             this.button2.TabIndex = 43;
             this.button2.Text = "Đặt phòng";
             this.button2.UseVisualStyleBackColor = true;
@@ -277,48 +283,50 @@ namespace form
             // 
             // button3
             // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button3.ForeColor = System.Drawing.Color.Aqua;
-            this.button3.Location = new System.Drawing.Point(989, 518);
+            this.button3.Location = new System.Drawing.Point(937, 479);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(181, 52);
+            this.button3.Size = new System.Drawing.Size(113, 52);
             this.button3.TabIndex = 44;
             this.button3.Text = "Đổi phòng";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button9
+            // textBox1
             // 
-            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.Aqua;
-            this.button9.Location = new System.Drawing.Point(1127, 3);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(56, 39);
-            this.button9.TabIndex = 45;
-            this.button9.Text = "x";
-            this.button9.UseVisualStyleBackColor = false;
+            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.textBox1.Location = new System.Drawing.Point(12, 51);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(268, 30);
+            this.textBox1.TabIndex = 41;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button4.Location = new System.Drawing.Point(1194, 479);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(113, 52);
+            this.button4.TabIndex = 45;
+            this.button4.Text = "Trả phòng";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // KhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.ClientSize = new System.Drawing.Size(1182, 684);
-            this.Controls.Add(this.button9);
+            this.ClientSize = new System.Drawing.Size(1361, 612);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.MaximumSize = new System.Drawing.Size(1200, 731);
-            this.MinimumSize = new System.Drawing.Size(1200, 731);
+            this.MaximumSize = new System.Drawing.Size(1379, 659);
+            this.MinimumSize = new System.Drawing.Size(1379, 659);
             this.Name = "KhachHang";
             this.Text = "KHACHHANG";
             this.Load += new System.EventHandler(this.KhachHang_Load);
@@ -348,6 +356,9 @@ namespace form
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox txbSOLUONG;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="QLKSDataSet2" targetNamespace="http://tempuri.org/QLKSDataSet2.xsd" xmlns:mstns="http://tempuri.org/QLKSDataSet2.xsd" xmlns="http://tempuri.org/QLKSDataSet2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QLKSConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QLKSConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.QuanLyKhachSan.Properties.Settings.GlobalReference.Default.QLKSConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="FoodTableAdapter" GeneratorDataComponentClassName="FoodTableAdapter" Name="Food" UserDataComponentName="FoodTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QLKSConnectionString (Settings)" DbObjectName="QLKS.dbo.Food" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT MAHDDA, MATP, TENTP, MALTP, SOLUONG, TONGTIEN FROM dbo.Food</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MAHDDA" DataSetColumn="MAHDDA" />
+              <Mapping SourceColumn="MATP" DataSetColumn="MATP" />
+              <Mapping SourceColumn="TENTP" DataSetColumn="TENTP" />
+              <Mapping SourceColumn="MALTP" DataSetColumn="MALTP" />
+              <Mapping SourceColumn="SOLUONG" DataSetColumn="SOLUONG" />
+              <Mapping SourceColumn="TONGTIEN" DataSetColumn="TONGTIEN" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="InformationFoodTableAdapter" GeneratorDataComponentClassName="InformationFoodTableAdapter" Name="InformationFood" UserDataComponentName="InformationFoodTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QLKSConnectionString (Settings)" DbObjectName="QLKS.dbo.InformationFood" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT MAHDDA, NGAYLAP, TONGTIEN, TENPHONG FROM dbo.InformationFood</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MAHDDA" DataSetColumn="MAHDDA" />
+              <Mapping SourceColumn="NGAYLAP" DataSetColumn="NGAYLAP" />
+              <Mapping SourceColumn="TONGTIEN" DataSetColumn="TONGTIEN" />
+              <Mapping SourceColumn="TENPHONG" DataSetColumn="TENPHONG" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="QLKSDataSet2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="QLKSDataSet2" msprop:Generator_UserDSName="QLKSDataSet2">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Food" msprop:Generator_TableClassName="FoodDataTable" msprop:Generator_TableVarName="tableFood" msprop:Generator_TablePropName="Food" msprop:Generator_RowDeletingName="FoodRowDeleting" msprop:Generator_RowChangingName="FoodRowChanging" msprop:Generator_RowEvHandlerName="FoodRowChangeEventHandler" msprop:Generator_RowDeletedName="FoodRowDeleted" msprop:Generator_UserTableName="Food" msprop:Generator_RowChangedName="FoodRowChanged" msprop:Generator_RowEvArgName="FoodRowChangeEvent" msprop:Generator_RowClassName="FoodRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MAHDDA" msprop:Generator_ColumnVarNameInTable="columnMAHDDA" msprop:Generator_ColumnPropNameInRow="MAHDDA" msprop:Generator_ColumnPropNameInTable="MAHDDAColumn" msprop:Generator_UserColumnName="MAHDDA" type="xs:int" minOccurs="0" />
+              <xs:element name="MATP" msprop:Generator_ColumnVarNameInTable="columnMATP" msprop:Generator_ColumnPropNameInRow="MATP" msprop:Generator_ColumnPropNameInTable="MATPColumn" msprop:Generator_UserColumnName="MATP" type="xs:int" minOccurs="0" />
+              <xs:element name="TENTP" msprop:Generator_ColumnVarNameInTable="columnTENTP" msprop:Generator_ColumnPropNameInRow="TENTP" msprop:Generator_ColumnPropNameInTable="TENTPColumn" msprop:Generator_UserColumnName="TENTP" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MALTP" msprop:Generator_ColumnVarNameInTable="columnMALTP" msprop:Generator_ColumnPropNameInRow="MALTP" msprop:Generator_ColumnPropNameInTable="MALTPColumn" msprop:Generator_UserColumnName="MALTP" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SOLUONG" msprop:Generator_ColumnVarNameInTable="columnSOLUONG" msprop:Generator_ColumnPropNameInRow="SOLUONG" msprop:Generator_ColumnPropNameInTable="SOLUONGColumn" msprop:Generator_UserColumnName="SOLUONG" type="xs:int" minOccurs="0" />
+              <xs:element name="TONGTIEN" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTONGTIEN" msprop:Generator_ColumnPropNameInRow="TONGTIEN" msprop:Generator_ColumnPropNameInTable="TONGTIENColumn" msprop:Generator_UserColumnName="TONGTIEN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="InformationFood" msprop:Generator_TableClassName="InformationFoodDataTable" msprop:Generator_TableVarName="tableInformationFood" msprop:Generator_TablePropName="InformationFood" msprop:Generator_RowDeletingName="InformationFoodRowDeleting" msprop:Generator_RowChangingName="InformationFoodRowChanging" msprop:Generator_RowEvHandlerName="InformationFoodRowChangeEventHandler" msprop:Generator_RowDeletedName="InformationFoodRowDeleted" msprop:Generator_UserTableName="InformationFood" msprop:Generator_RowChangedName="InformationFoodRowChanged" msprop:Generator_RowEvArgName="InformationFoodRowChangeEvent" msprop:Generator_RowClassName="InformationFoodRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MAHDDA" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnMAHDDA" msprop:Generator_ColumnPropNameInRow="MAHDDA" msprop:Generator_ColumnPropNameInTable="MAHDDAColumn" msprop:Generator_UserColumnName="MAHDDA" type="xs:int" />
+              <xs:element name="NGAYLAP" msprop:Generator_ColumnVarNameInTable="columnNGAYLAP" msprop:Generator_ColumnPropNameInRow="NGAYLAP" msprop:Generator_ColumnPropNameInTable="NGAYLAPColumn" msprop:Generator_UserColumnName="NGAYLAP" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TONGTIEN" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTONGTIEN" msprop:Generator_ColumnPropNameInRow="TONGTIEN" msprop:Generator_ColumnPropNameInTable="TONGTIENColumn" msprop:Generator_UserColumnName="TONGTIEN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TENPHONG" msprop:Generator_ColumnVarNameInTable="columnTENPHONG" msprop:Generator_ColumnPropNameInRow="TENPHONG" msprop:Generator_ColumnPropNameInTable="TENPHONGColumn" msprop:Generator_UserColumnName="TENPHONG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:InformationFood" />
+      <xs:field xpath="mstns:MAHDDA" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

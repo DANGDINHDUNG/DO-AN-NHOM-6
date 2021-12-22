@@ -8,8 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Security.Cryptography;
 
-namespace DOAN
+namespace form
 {
     public partial class QuenMK : Form
     {

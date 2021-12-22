@@ -8,8 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
 
-namespace DOAN
+namespace form
 {
     public partial class InDSNV : Form
     {
@@ -35,7 +36,8 @@ namespace DOAN
         
         private void InDSNV_Load(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-K8QQEUE;Initial Catalog=QL;Integrated Security=True");
+
+            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ToString()); 
             connection.Open();
             string sql = @"SELECT * FROM NHANVIEN WHERE MANV!='ADM'";
             SqlCommand com = new SqlCommand(sql, connection);
@@ -161,17 +163,17 @@ namespace DOAN
             }
         }
         
-         private void xuatBtn_Click(object sender, EventArgs e)
-        {
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                ChangeToExcel(dataGridView1, saveFileDialog1.FileName);
-            }
-        }
+        // private void xuatBtn_Click(object sender, EventArgs e)
+        //{
+        //    if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+        //    {
+        //        ChangeToExcel(dataGridView1, saveFileDialog1.FileName);
+        //    }
+        //}
         
         private void delRow(string manv)
         {
-            SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-K8QQEUE;Initial Catalog=QL;Integrated Security=True");
+            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ToString());
             connection.Open();
             string query = @"delete FROM nhanvien where manv='" +manv+ "'";
             SqlCommand command = new SqlCommand(query, connection);
@@ -200,7 +202,7 @@ namespace DOAN
                     }
                     else gioitinh = "Nữ";
                     string manv = manvBx.Text;
-                    SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-K8QQEUE;Initial Catalog=QL;Integrated Security=True");
+                    SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ToString());
                     connection.Open();
                     string sql = "UPDATE NHANVIEN SET TENTK ='"+tentkBx.Text+"', HOTEN = N'"+hotenBx.Text+ "', TUOI='" + comboBox1.Text
                     + "', SDT='" + sdtBx.Text + "', CCCD_CMND='" + cmndBx.Text + "', NGVL='" + ngay + "', SODONDP='"  + sodonBx.Text
@@ -234,7 +236,7 @@ namespace DOAN
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-K8QQEUE;Initial Catalog=QL;Integrated Security=True");
+            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ToString());
             connection.Open();
             string sql = @"SELECT * FROM NHANVIEN WHERE MANV!='ADM' AND HOTEN LIKE N'"+textBox1.Text+"%'";
             SqlCommand com = new SqlCommand(sql, connection);
