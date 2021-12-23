@@ -108,6 +108,11 @@ namespace form
             this.Close();
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void btnTRAPHONG_Click(object sender, EventArgs e)
         {
             btnHUY.Enabled = false;

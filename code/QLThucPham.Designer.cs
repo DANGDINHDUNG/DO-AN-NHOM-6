@@ -38,16 +38,18 @@ namespace form
             this.btnDelete1 = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTHUCPHAM)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label7.Location = new System.Drawing.Point(30, 33);
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Aqua;
+            this.label7.Location = new System.Drawing.Point(385, 20);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(221, 25);
+            this.label7.Size = new System.Drawing.Size(433, 38);
             this.label7.TabIndex = 13;
             this.label7.Text = "THÔNG TIN THỰC PHẨM";
             // 
@@ -55,24 +57,24 @@ namespace form
             // 
             this.dgvTHUCPHAM.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTHUCPHAM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTHUCPHAM.Location = new System.Drawing.Point(35, 81);
+            this.dgvTHUCPHAM.Location = new System.Drawing.Point(12, 120);
             this.dgvTHUCPHAM.Name = "dgvTHUCPHAM";
             this.dgvTHUCPHAM.ReadOnly = true;
             this.dgvTHUCPHAM.RowHeadersWidth = 51;
             this.dgvTHUCPHAM.RowTemplate.Height = 24;
             this.dgvTHUCPHAM.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTHUCPHAM.Size = new System.Drawing.Size(701, 439);
+            this.dgvTHUCPHAM.Size = new System.Drawing.Size(825, 545);
             this.dgvTHUCPHAM.TabIndex = 22;
             // 
             // rbtnAll
             // 
             this.rbtnAll.AutoSize = true;
             this.rbtnAll.Checked = true;
-            this.rbtnAll.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.rbtnAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.rbtnAll.Location = new System.Drawing.Point(326, 33);
+            this.rbtnAll.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnAll.ForeColor = System.Drawing.Color.Aqua;
+            this.rbtnAll.Location = new System.Drawing.Point(15, 74);
             this.rbtnAll.Name = "rbtnAll";
-            this.rbtnAll.Size = new System.Drawing.Size(79, 27);
+            this.rbtnAll.Size = new System.Drawing.Size(93, 31);
             this.rbtnAll.TabIndex = 23;
             this.rbtnAll.TabStop = true;
             this.rbtnAll.Text = "Tất cả";
@@ -82,11 +84,11 @@ namespace form
             // rbtnFood
             // 
             this.rbtnFood.AutoSize = true;
-            this.rbtnFood.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.rbtnFood.ForeColor = System.Drawing.Color.Red;
-            this.rbtnFood.Location = new System.Drawing.Point(438, 33);
+            this.rbtnFood.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnFood.ForeColor = System.Drawing.Color.Aqua;
+            this.rbtnFood.Location = new System.Drawing.Point(178, 74);
             this.rbtnFood.Name = "rbtnFood";
-            this.rbtnFood.Size = new System.Drawing.Size(94, 27);
+            this.rbtnFood.Size = new System.Drawing.Size(112, 31);
             this.rbtnFood.TabIndex = 24;
             this.rbtnFood.Text = "Thức ăn";
             this.rbtnFood.UseVisualStyleBackColor = true;
@@ -95,11 +97,11 @@ namespace form
             // rbtnDrink
             // 
             this.rbtnDrink.AutoSize = true;
-            this.rbtnDrink.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.rbtnDrink.ForeColor = System.Drawing.Color.Blue;
-            this.rbtnDrink.Location = new System.Drawing.Point(559, 33);
+            this.rbtnDrink.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnDrink.ForeColor = System.Drawing.Color.Aqua;
+            this.rbtnDrink.Location = new System.Drawing.Point(392, 74);
             this.rbtnDrink.Name = "rbtnDrink";
-            this.rbtnDrink.Size = new System.Drawing.Size(100, 27);
+            this.rbtnDrink.Size = new System.Drawing.Size(115, 31);
             this.rbtnDrink.TabIndex = 25;
             this.rbtnDrink.Text = "Đồ uống";
             this.rbtnDrink.UseVisualStyleBackColor = true;
@@ -107,10 +109,12 @@ namespace form
             // 
             // btnDeleteAll
             // 
-            this.btnDeleteAll.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnDeleteAll.Location = new System.Drawing.Point(763, 184);
+            this.btnDeleteAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteAll.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteAll.ForeColor = System.Drawing.Color.Aqua;
+            this.btnDeleteAll.Location = new System.Drawing.Point(880, 307);
             this.btnDeleteAll.Name = "btnDeleteAll";
-            this.btnDeleteAll.Size = new System.Drawing.Size(221, 37);
+            this.btnDeleteAll.Size = new System.Drawing.Size(242, 69);
             this.btnDeleteAll.TabIndex = 26;
             this.btnDeleteAll.Text = "Xóa danh sách hiện có";
             this.btnDeleteAll.UseVisualStyleBackColor = true;
@@ -118,10 +122,12 @@ namespace form
             // 
             // btnDelete1
             // 
-            this.btnDelete1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnDelete1.Location = new System.Drawing.Point(763, 279);
+            this.btnDelete1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete1.ForeColor = System.Drawing.Color.Aqua;
+            this.btnDelete1.Location = new System.Drawing.Point(880, 426);
             this.btnDelete1.Name = "btnDelete1";
-            this.btnDelete1.Size = new System.Drawing.Size(221, 37);
+            this.btnDelete1.Size = new System.Drawing.Size(242, 69);
             this.btnDelete1.TabIndex = 27;
             this.btnDelete1.Text = "Xóa mục đã chọn";
             this.btnDelete1.UseVisualStyleBackColor = true;
@@ -129,10 +135,12 @@ namespace form
             // 
             // btnAdd
             // 
-            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnAdd.Location = new System.Drawing.Point(763, 371);
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.Aqua;
+            this.btnAdd.Location = new System.Drawing.Point(880, 542);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(221, 37);
+            this.btnAdd.Size = new System.Drawing.Size(242, 69);
             this.btnAdd.TabIndex = 28;
             this.btnAdd.Text = "Thêm mới thực phẩm ";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -140,20 +148,40 @@ namespace form
             // 
             // btnExport
             // 
-            this.btnExport.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnExport.Location = new System.Drawing.Point(763, 27);
+            this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExport.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExport.ForeColor = System.Drawing.Color.Aqua;
+            this.btnExport.Location = new System.Drawing.Point(880, 188);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(221, 37);
+            this.btnExport.Size = new System.Drawing.Size(242, 69);
             this.btnExport.TabIndex = 29;
             this.btnExport.Text = "Xuất danh sách Excel";
             this.btnExport.UseVisualStyleBackColor = true;
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.Aqua;
+            this.button3.Location = new System.Drawing.Point(1125, 2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(56, 40);
+            this.button3.TabIndex = 108;
+            this.button3.Text = "x";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // QLThucPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1017, 564);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.ClientSize = new System.Drawing.Size(1182, 686);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnDelete1);
@@ -183,5 +211,6 @@ namespace form
         private System.Windows.Forms.Button btnDelete1;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnExport;
+        private System.Windows.Forms.Button button3;
     }
 }
