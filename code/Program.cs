@@ -17,7 +17,7 @@ namespace form
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Dangnhap());
-            Application.Run(new FormNV("2"));
+            Application.Run(new Demo("2"));
         }
     }
 }

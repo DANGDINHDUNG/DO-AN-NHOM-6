@@ -179,5 +179,130 @@ namespace form
         {
             this.Close();
         }
+
+        private void DangkyPnl_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void logoPnl_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NuRbtn_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NamRbtn_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Title_Lb_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nlmkBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mkBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tdnBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sdtBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmndBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tuoiBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hotenBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hoten_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

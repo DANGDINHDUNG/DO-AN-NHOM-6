@@ -247,5 +247,10 @@ namespace form
             connection.Close();
             dataGridView1.DataSource = dt;
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

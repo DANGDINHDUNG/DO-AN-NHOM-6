@@ -122,5 +122,10 @@ namespace form
             this.Hide();
             doAn.ShowDialog();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

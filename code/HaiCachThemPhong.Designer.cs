@@ -30,6 +30,7 @@ namespace form
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.button9 = new System.Windows.Forms.Button();
@@ -41,6 +42,7 @@ namespace form
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel3.Controls.Add(this.button3);
             this.panel3.Controls.Add(this.iconButton2);
             this.panel3.Controls.Add(this.iconButton1);
             this.panel3.Controls.Add(this.button9);
@@ -50,6 +52,22 @@ namespace form
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1200, 686);
             this.panel3.TabIndex = 3;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.Aqua;
+            this.button3.Location = new System.Drawing.Point(1141, 3);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(56, 40);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "x";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // iconButton2
             // 
@@ -130,5 +148,6 @@ namespace form
         private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton iconButton2;
+        private System.Windows.Forms.Button button3;
     }
 }

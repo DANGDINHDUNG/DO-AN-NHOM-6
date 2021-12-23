@@ -173,7 +173,7 @@ namespace form
 
         private void iconButton4_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void iconButton5_Click(object sender, EventArgs e)
@@ -198,7 +198,7 @@ namespace form
 
         private void iconButton8_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new HaiCachThemPhong());
         }
 
         private void iconButton10_Click(object sender, EventArgs e)
@@ -211,11 +211,6 @@ namespace form
             openChildForm(new ThemDichVu());
         }
 
-        private void iconButton7_Click_1(object sender, EventArgs e)
-        {
-            openChildForm(new Doimatkhau());
-        }
-
         private void iconButton6_Click_1(object sender, EventArgs e)
         {
             openChildForm(new ThietLapMang());
@@ -224,6 +219,26 @@ namespace form
         private void button3_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button4_Click_2(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

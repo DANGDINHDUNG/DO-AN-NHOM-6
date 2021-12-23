@@ -246,5 +246,15 @@ namespace form
                 MessageBox.Show("Thông tin phòng chưa hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void txbHOTEN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
