@@ -1,4 +1,4 @@
-﻿
+
 namespace form
 {
     partial class DoanhThu
@@ -40,9 +40,12 @@ namespace form
             this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.button9 = new System.Windows.Forms.Button();
+            this.btnDoanhThu = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // rbtnThisYear
@@ -124,7 +127,7 @@ namespace form
             series1.Name = "Doanh thu";
             this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series1};
-            this.chartControl1.Size = new System.Drawing.Size(1069, 573);
+            this.chartControl1.Size = new System.Drawing.Size(770, 523);
             this.chartControl1.TabIndex = 18;
             // 
             // radioButton1
@@ -157,12 +160,37 @@ namespace form
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
+            // btnDoanhThu
+            // 
+            this.btnDoanhThu.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnDoanhThu.ForeColor = System.Drawing.Color.Teal;
+            this.btnDoanhThu.Location = new System.Drawing.Point(824, 579);
+            this.btnDoanhThu.Name = "btnDoanhThu";
+            this.btnDoanhThu.Size = new System.Drawing.Size(285, 45);
+            this.btnDoanhThu.TabIndex = 75;
+            this.btnDoanhThu.Text = "Xuất Excel doanh thu";
+            this.btnDoanhThu.UseVisualStyleBackColor = true;
+            this.btnDoanhThu.Click += new System.EventHandler(this.btnDoanhThu_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(800, 156);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(330, 409);
+            this.dataGridView1.TabIndex = 76;
+            // 
             // DoanhThu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(1142, 686);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnDoanhThu);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.chartControl1);
@@ -173,11 +201,11 @@ namespace form
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DoanhThu";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DoanhThu";
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,5 +221,7 @@ namespace form
         private DevExpress.XtraCharts.ChartControl chartControl1;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button btnDoanhThu;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
