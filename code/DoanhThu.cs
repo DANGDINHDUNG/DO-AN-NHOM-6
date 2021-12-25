@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -41,32 +41,41 @@ namespace form
             if (rbtnToday.Checked)
             {
                 date = DateTime.Now;
-                sql = "select sum(DOANHTHU), THOIGIAN from DOANHTHU where THOIGIAN = '" + date.ToString("MM/dd/yyyy") + "' group by THOIGIAN";
+                sql = "select Format(sum(DOANHTHU), '###,###') 'Doanh thu (VND)', THOIGIAN 'Thời gian' from DOANHTHU where THOIGIAN = '" + date.ToString("MM/dd/yyyy") + "' group by THOIGIAN";
                 Chart(sql);
+                GetData(sql);
             }
             else if (rbtnThisMonth.Checked)
             {
                 date = DateTime.Now;
-                sql = "select sum(DOANHTHU), THOIGIAN from DOANHTHU where month(THOIGIAN) = '" + date.ToString("MM") + "' and year(THOIGIAN) = '" + date.ToString("yyyy") + "' group by THOIGIAN";
+                sql = "select Format(sum(DOANHTHU), '###,###') 'Doanh thu (VND)', THOIGIAN 'Thời gian' from DOANHTHU where month(THOIGIAN) = '" + date.ToString("MM") + "' and year(THOIGIAN) = '" + date.ToString("yyyy") + "' group by THOIGIAN";
                 Chart(sql);
+                GetData(sql);
+
             }
             else if (rbtnLastMonth.Checked)
             {
                 date = DateTime.Now.AddMonths(-1);
-                sql = "select sum(DOANHTHU), THOIGIAN from DOANHTHU where month(THOIGIAN) = '" + date.ToString("MM") + "' and year(THOIGIAN) = '" + date.ToString("yyyy") + "' group by THOIGIAN";
+                sql = "select Format(sum(DOANHTHU), '###,###') 'Doanh thu (VND)', THOIGIAN 'Thời gian' from DOANHTHU where month(THOIGIAN) = '" + date.ToString("MM") + "' and year(THOIGIAN) = '" + date.ToString("yyyy") + "' group by THOIGIAN";
                 Chart(sql);
+                GetData(sql);
+
             }
             else if (rbtnThisYear.Checked)
             {
                 date = DateTime.Now;
-                sql = "select sum(DOANHTHU), THOIGIAN from DOANHTHU where year(THOIGIAN) = '" + date.ToString("yyyy") + "' group by THOIGIAN";
+                sql = "select Format(sum(DOANHTHU), '###,###') 'Doanh thu (VND)', THOIGIAN 'Thời gian' from DOANHTHU where year(THOIGIAN) = '" + date.ToString("yyyy") + "' group by THOIGIAN";
                 Chart(sql);
+                GetData(sql);
+
             }
             else
             {
                 date = DateTime.Now.AddYears(-1);
-                sql = "select sum(DOANHTHU), THOIGIAN from DOANHTHU where year(THOIGIAN) = '" + date.ToString("yyyy") + "' group by THOIGIAN";
+                sql = "select Format(sum(DOANHTHU), '###,###') 'Doanh thu (VND)', THOIGIAN 'Thời gian' from DOANHTHU where year(THOIGIAN) = '" + date.ToString("yyyy") + "' group by THOIGIAN";
                 Chart(sql);
+                GetData(sql);
+
             }
         }
 
@@ -102,6 +111,73 @@ namespace form
         private void button9_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnDoanhThu_Click(object sender, EventArgs e)
+        {
+            Checked_Date(this, e);
+
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "Excel Files (.xlsx*)|*.xlsx";
+            saveFileDialog1.FileName = "doanh_thu";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                ToExcel(dataGridView1, saveFileDialog1.FileName);
+            }
+        }
+
+        private void ToExcel(DataGridView dataGridView1, string fileName)
+        {
+            Microsoft.Office.Interop.Excel.Application excel;
+            Microsoft.Office.Interop.Excel.Workbook workbook;
+            Microsoft.Office.Interop.Excel.Worksheet worksheet;
+            try
+            {
+                excel = new Microsoft.Office.Interop.Excel.Application();
+                excel.Visible = false;
+                excel.DisplayAlerts = false;
+                workbook = excel.Workbooks.Add(Type.Missing);
+                worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.Sheets["Sheet1"];
+                worksheet.Name = "Quản lý khách sạn";
+
+                for (int i = 0; i < dataGridView1.ColumnCount; i++)
+                {
+                    worksheet.Cells[1, i + 1] = dataGridView1.Columns[i].HeaderText;
+                }
+                for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+                {
+                    for (int j = 0; j < dataGridView1.ColumnCount; j++)
+                    {
+                        worksheet.Cells[i + 2, j + 1] = dataGridView1.Rows[i].Cells[j].Value.ToString();
+                    }
+                }
+                workbook.SaveAs(fileName);
+                workbook.Close();
+                excel.Quit();
+                MessageBox.Show("Xuất dữ liệu ra Excel thành công!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                workbook = null;
+                worksheet = null;
+            }
+        }
+
+        public void GetData(string data)
+        {
+            connection.Open();
+            string sql = data;
+            SqlCommand com = new SqlCommand(sql, connection);
+            com.CommandType = CommandType.Text;
+            SqlDataAdapter da = new SqlDataAdapter(com);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            connection.Close();
+            dataGridView1.DataSource = dt;
         }
     }
 }
