@@ -95,11 +95,19 @@ namespace form
 
             QLPhong_Load(this, e);
         }
+        private bool Check(string txt)
+        {
+            long num;
+            if (long.TryParse(txt, out num))
+                return true;
+            else
+                return false;
+        }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
 
-            if (txbMALP.Text == string.Empty || txbTENLP.Text == string.Empty || txbGIA.Text == string.Empty)
+            if (txbMALP.Text == string.Empty || txbTENLP.Text == string.Empty || txbGIA.Text == string.Empty || !Check(txbGIA.Text))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin để có thể thêm mã phòng mới!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }

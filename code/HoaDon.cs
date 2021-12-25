@@ -66,10 +66,17 @@ namespace form
             da.Fill(dt);
             dataGridView1.DataSource = dt;
         }
+        private bool Check(string txt)
+        {
+            long num;
+            if (long.TryParse(txt, out num))
+                return true;
+            else
+                return false;
+        }
 
         private void comboBox1_TextChanged(object sender, EventArgs e)
         {
-
             decimal discount = Convert.ToDecimal(comboBox1.Text) / 100;
             totalMoney = Convert.ToDecimal(txbTONGTIEN.Text);
             discountMoney = totalMoney - totalMoney * discount;

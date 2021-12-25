@@ -97,9 +97,12 @@ namespace form
             SqlCommand command = new SqlCommand(sql, connection);
             int c = command.ExecuteNonQuery();
         }
+
+
+
         private void dkiBtn_Click(object sender, EventArgs e)
         {
-            if (tdnBox.Text == string.Empty || mkBox.Text == string.Empty || nlmkBox.Text == string.Empty || hotenBox.Text == string.Empty || tuoiBox.Text == string.Empty || cmndBox.Text == string.Empty || sdtBox.Text == string.Empty)
+            if (tdnBox.Text == string.Empty || mkBox.Text == string.Empty || nlmkBox.Text == string.Empty || hotenBox.Text == string.Empty || tuoiBox.Text == string.Empty || cmndBox.Text == string.Empty || sdtBox.Text == string.Empty || !Check(sdtBox.Text))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }

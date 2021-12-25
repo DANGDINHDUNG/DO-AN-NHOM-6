@@ -69,7 +69,7 @@ namespace form
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (e.RowIndex < 0) return;
             DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
             if (row.Cells[0].Value != null)
             {
@@ -81,32 +81,28 @@ namespace form
             }
             if (row.Cells[2].Value != null)
             {
-                mkBx.Text = row.Cells[2].Value.ToString();
+                hotenBx.Text = row.Cells[2].Value.ToString();
             }
             if (row.Cells[3].Value != null)
             {
-                hotenBx.Text = row.Cells[3].Value.ToString();
+                comboBox1.Text = row.Cells[3].Value.ToString();
+
             }
             if (row.Cells[4].Value != null)
             {
-                comboBox1.Text = row.Cells[4].Value.ToString();
 
             }
             if (row.Cells[5].Value != null)
             {
-
+                sdtBx.Text = row.Cells[5].Value.ToString();
             }
             if (row.Cells[6].Value != null)
             {
-                sdtBx.Text = row.Cells[6].Value.ToString();
+                cmndBx.Text = row.Cells[6].Value.ToString();
             }
             if (row.Cells[7].Value != null)
             {
-                cmndBx.Text = row.Cells[7].Value.ToString();
-            }
-            if (row.Cells[8].Value != null)
-            {
-                if (row.Cells[8].Value.ToString() == "Nam")
+                if (row.Cells[7].Value.ToString() == "Nam")
                     radioButton1.Checked = true;
                 else radioButton2.Checked = true;
             }
@@ -185,7 +181,8 @@ namespace form
             NEW();
         }
         private void update()
-        { 
+        {
+            
                     string ngay = dateTimePicker1.Value.ToString("MM/dd/yyyy");
                     string gioitinh = "Nam";
                     if (radioButton1.Checked == true)

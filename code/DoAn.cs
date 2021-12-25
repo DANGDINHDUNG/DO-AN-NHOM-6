@@ -84,10 +84,18 @@ namespace form
             {
             }
         }
+        private bool Check(string txt)
+        {
+            long num;
+            if (long.TryParse(txt, out num))
+                return true;
+            else
+                return false;
+        }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (txbHOTEN.Text == string.Empty || txbTENPHONG.Text == string.Empty || cbxProduct.Text == string.Empty || txbQuantity.Text == string.Empty)
+            if (txbHOTEN.Text == string.Empty || txbTENPHONG.Text == string.Empty || cbxProduct.Text == string.Empty || txbQuantity.Text == string.Empty || !Check(txbQuantity.Text))
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
