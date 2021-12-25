@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -16,6 +16,7 @@ namespace form
     {
         public string day;
         public string sql;
+        public string sql1;
 
         public string money;
         public string dateTime;
@@ -41,9 +42,10 @@ namespace form
             if (rbtnToday.Checked)
             {
                 date = DateTime.Now;
-                sql = "select Format(sum(DOANHTHU), '###,###') 'Doanh thu (VND)', THOIGIAN 'Thời gian' from DOANHTHU where THOIGIAN = '" + date.ToString("MM/dd/yyyy") + "' group by THOIGIAN";
+                sql = "select Format(TONGDOANHTHU, '###,###'), THOIGIANTHUC from (select sum(DOANHTHU) as TONGDOANHTHU from DOANHTHU where day(THOIGIAN) = '" + date.ToString("dd") + "' and month(THOIGIAN) = '" + date.ToString("MM") + "' and year(THOIGIAN) = '" + date.ToString("yyyy") + "') as T, (select distinct CONCAT(day(THOIGIAN), '/', month(THOIGIAN), '/', year(THOIGIAN)) as THOIGIANTHUC from DOANHTHU where day(THOIGIAN) = '" + date.ToString("dd") + "' and month(THOIGIAN) = '" + date.ToString("MM") + "' and year(THOIGIAN) = '" + date.ToString("yyyy") + "') as T2";
                 Chart(sql);
-                GetData(sql);
+                sql1 = "select Format(sum(DOANHTHU), '###,###') 'Doanh thu (VND)', THOIGIAN 'Thời gian' from DOANHTHU where day(THOIGIAN) = '" + date.ToString("dd") + "' and month(THOIGIAN) = '" + date.ToString("MM") + "' and year(THOIGIAN) = '" + date.ToString("yyyy") + "' group by THOIGIAN";
+                GetData(sql1);
             }
             else if (rbtnThisMonth.Checked)
             {
@@ -92,7 +94,7 @@ namespace form
                 {
                     money = reader[0].ToString();
                     dateTime = reader[1].ToString();
-                    chartControl1.Series["Doanh thu"].Points.AddPoint(Convert.ToDateTime(dateTime), Convert.ToDouble(money));
+                    chartControl1.Series["Doanh thu"].Points.AddPoint(Convert.ToString(dateTime), Convert.ToDouble(money));
                 }
             }
             catch
