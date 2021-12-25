@@ -5,16 +5,24 @@ VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QLKS", "QLKS.csproj", "{9DB0FC3A-F3BE-4323-AAC5-781B9547F593}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "QLKS_DONGGOI", "..\QLKS_DONGGOI\QLKS_DONGGOI.vdproj", "{87F6394C-35A6-468D-AF09-BBF853734CB8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		All|Any CPU = All|Any CPU
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9DB0FC3A-F3BE-4323-AAC5-781B9547F593}.All|Any CPU.ActiveCfg = Release|Any CPU
+		{9DB0FC3A-F3BE-4323-AAC5-781B9547F593}.All|Any CPU.Build.0 = Release|Any CPU
 		{9DB0FC3A-F3BE-4323-AAC5-781B9547F593}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9DB0FC3A-F3BE-4323-AAC5-781B9547F593}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DB0FC3A-F3BE-4323-AAC5-781B9547F593}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DB0FC3A-F3BE-4323-AAC5-781B9547F593}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87F6394C-35A6-468D-AF09-BBF853734CB8}.All|Any CPU.ActiveCfg = Debug
+		{87F6394C-35A6-468D-AF09-BBF853734CB8}.Debug|Any CPU.ActiveCfg = Debug
+		{87F6394C-35A6-468D-AF09-BBF853734CB8}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

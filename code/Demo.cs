@@ -80,7 +80,6 @@ namespace form
         private void custom()
         {
             panelQLKSmenu.Visible = false;
-            panelDTmenu.Visible = false;
             panel1.Visible = false;
         }
 
@@ -88,8 +87,6 @@ namespace form
         {
             if (panelQLKSmenu.Visible == true)
                 panelQLKSmenu.Visible = false;
-            if (panelDTmenu.Visible == true)
-                panelDTmenu.Visible = false;
             if (panel1.Visible == true)
                 panel1.Visible = false;
         }
@@ -113,26 +110,17 @@ namespace form
 
         private void button5_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color2);
-            showMenu(panelDTmenu);
+            //Mở form doanh thu 
+            openChildForm(new DoanhThu());
         }
 
-        private void button8_Click(object sender, EventArgs e)
-        {
-            //Form DoanhThu 
-            //openChildForm(new DoanhThu());  
-            hideMenu();
-        }
 
         private Form activeForm = null;
         private void openChildForm(Form childForm)
         {
             if (activeForm != null)
                 activeForm.Close();
-            this.Width = childForm.Width + panelMenu.Width;
-            this.Height = Math.Max(childForm.Height, panelMenu.Height);
-            this.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2, 
-                (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
+            
 
             activeForm = childForm;
             childForm.TopLevel = false;
@@ -163,26 +151,12 @@ namespace form
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
-             openChildForm(new DatPhong());
+             openChildForm(new QLPhong());
         }
 
         private void iconButton3_Click(object sender, EventArgs e)
         {
             openChildForm(new KhachHang());
-        }
-
-        private void iconButton4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void iconButton5_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void iconButton6_Click(object sender, EventArgs e)
-        {
-            openChildForm(new ThietLapMang());
         }
 
         private void iconButton7_Click(object sender, EventArgs e)
@@ -203,17 +177,12 @@ namespace form
 
         private void iconButton10_Click(object sender, EventArgs e)
         {
-            openChildForm(new ThemThucPham());
+            openChildForm(new QLThucPham());
         }
 
         private void iconButton9_Click(object sender, EventArgs e)
         {
-            openChildForm(new ThemDichVu());
-        }
-
-        private void iconButton6_Click_1(object sender, EventArgs e)
-        {
-            openChildForm(new ThietLapMang());
+            openChildForm(new QLDichVu());
         }
 
         private void button3_Click_1(object sender, EventArgs e)
@@ -221,24 +190,11 @@ namespace form
             this.Close();
         }
 
-        private void button4_Click_2(object sender, EventArgs e)
+        private void button2_Click_2(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-
+            Dangnhap dangnhap = new Dangnhap();
+            this.Hide();
+            dangnhap.ShowDialog();
         }
     }
 }

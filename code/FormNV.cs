@@ -49,7 +49,6 @@ namespace form
         {
             panelPhongmenu.Visible = false;
             panelDVmenu.Visible = false;
-            HoaDonMenu_panel.Visible = false;
         }
 
         private void hideMenu()
@@ -58,8 +57,6 @@ namespace form
                 panelPhongmenu.Visible = false;
             if (panelDVmenu.Visible == true)
                 panelDVmenu.Visible = false;
-            if (HoaDonMenu_panel.Visible == true)
-                HoaDonMenu_panel.Visible = false;
         }
 
         private void showMenu(Panel menu)
@@ -74,7 +71,7 @@ namespace form
         }
         
         private Form activeForm = null;
-        private void openChildForm(Form childForm)
+        public void openChildForm(Form childForm)
         {
             if (activeForm != null)
                 activeForm.Close();
@@ -122,7 +119,7 @@ namespace form
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
-            openChildForm(new DoiPhong());
+            openChildForm(new TraPhong());
         }
 
         private void iconButton4_Click(object sender, EventArgs e)
@@ -137,7 +134,9 @@ namespace form
 
         private void button9_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Dangnhap dangnhap = new Dangnhap();
+            this.Hide();
+            dangnhap.ShowDialog();
         }
 
         private void button2_Click_1(object sender, EventArgs e)
@@ -167,10 +166,5 @@ namespace form
             openChildForm(new HoaDonDV());
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color2);
-            showMenu(HoaDonMenu_panel);
-        }
     }
 }

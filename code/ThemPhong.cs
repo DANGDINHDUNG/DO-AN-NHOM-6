@@ -109,14 +109,13 @@ namespace form
                         }
                     }
                 }
-
-            }
-            catch 
-            {
                 MessageBox.Show("Phòng đã được thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
 
-            this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void ToExcel(DataGridView dataGridView1, string fileName)
@@ -159,6 +158,11 @@ namespace form
         }
 
         private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
         {
             this.Close();
         }

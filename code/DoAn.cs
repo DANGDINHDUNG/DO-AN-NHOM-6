@@ -21,7 +21,7 @@ namespace form
 
         public decimal quantity;
         public decimal moneyProduct;
-        public decimal totalMoney;
+        public string totalMoney;
 
         public bool existsProduct = false;
         public DoAn()
@@ -109,7 +109,7 @@ namespace form
                             command.ExecuteNonQuery();
                         }
                         else
-                        {                           
+                        {
                             command.CommandText = "insert into DATTP(MAKH, MATP, TENTP, SOLUONG, MALTP, TONGTIEN) values ((select MAKH from DATPHONG where TENPHONG = N'" + txbTENPHONG.Text + "'), (select MATP from THUCPHAM where TENTP = N'" + cbxProduct.Text + "'), N'" + cbxProduct.Text + "', '" + txbQuantity.Text + "', (select MALTP from THUCPHAM where TENTP = N'" + cbxProduct.Text + "'), '" + lblMoney.Text + "')";
                             command.ExecuteNonQuery();
                         }
@@ -147,34 +147,41 @@ namespace form
         private void btnInvoice_Click(object sender, EventArgs e)
         {
 
-            if (txbHOTEN.Text == string.Empty || txbTENPHONG.Text == string.Empty || lblMoney.Text == string.Empty)
+            try
             {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                HoaDonDoAn hoaDonDoAn = new HoaDonDoAn();
-                hoaDonDoAn.name = txbHOTEN.Text;
-                hoaDonDoAn.id = txbTENPHONG.Text;
-
-                sql = "select sum(SOLUONG), sum(TONGTIEN) from DATTP where MAKH = (select MAKH from DATPHONG where TENPHONG = N'" + txbTENPHONG.Text + "')";
-                SqlCommand com = new SqlCommand(sql, connection);
-
-                connection.Open();
-
-                SqlDataReader dr = com.ExecuteReader();
-                if (dr.Read())
+                if (txbHOTEN.Text == string.Empty || txbTENPHONG.Text == string.Empty)
                 {
-                    hoaDonDoAn.amount = dr[0].ToString();
-                    totalMoney = Convert.ToDecimal(dr[1].ToString());
+                    MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                hoaDonDoAn.totalMoney = totalMoney;
+                else
+                {
+                    HoaDonDoAn hoaDonDoAn = new HoaDonDoAn();
+                    hoaDonDoAn.name = txbHOTEN.Text;
+                    hoaDonDoAn.id = txbTENPHONG.Text;
 
-                connection.Close();
-                this.Hide();
+                    sql = "select sum(SOLUONG), sum(TONGTIEN) from DATTP where MAKH = (select MAKH from DATPHONG where TENPHONG = N'" + txbTENPHONG.Text + "')";
+                    SqlCommand com = new SqlCommand(sql, connection);
 
-                hoaDonDoAn.ShowDialog();
+                    connection.Open();
 
+                    SqlDataReader dr = com.ExecuteReader();
+                    if (dr.Read())
+                    {
+                        hoaDonDoAn.amount = dr[0].ToString();
+                        totalMoney = dr[1].ToString();
+                    }
+                    hoaDonDoAn.totalMoney = Convert.ToDecimal(totalMoney);
+
+                    connection.Close();
+                    this.Hide();
+
+                    hoaDonDoAn.ShowDialog();
+
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Phòng chưa được đặt. Vui lòng chọn đúng phòng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -254,7 +261,7 @@ namespace form
             }
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private void button9_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }

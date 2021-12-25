@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Security.Cryptography;
 
 namespace form
 {
@@ -31,7 +32,13 @@ namespace form
             //// Tui sửa lại tên server
             SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ToString());
             connection.Open();
-            string query = "select *from NHANVIEN where TENTK='" + tdnBox.Text + "'and MATKHAU='" + mkcBox.Text + "'";
+            Hash256 h1 = new Hash256();
+            SHA256 sha256Hash1 = SHA256.Create();
+            string hash1 = h1.GetHash(sha256Hash1, mkcBox.Text);
+            Hash256 h = new Hash256();
+            SHA256 sha256Hash = SHA256.Create();
+            string hash = h.GetHash(sha256Hash, mkmBox.Text);
+            string query = "select * from NHANVIEN where TENTK='" + tdnBox.Text + "'and MATKHAU='" + hash1 + "'";
             SqlCommand command = new SqlCommand(query, connection);
             SqlDataReader reader = command.ExecuteReader();
             if (reader.Read() == true)
@@ -45,7 +52,7 @@ namespace form
                 {
                     connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ToString());
                     connection.Open();
-                    query = "update NHANVIEN set MATKHAU='" + mkmBox.Text + "'where TENTK='" + tdnBox.Text + "'";
+                    query = "update NHANVIEN set MATKHAU='" + hash + "'where TENTK='" + tdnBox.Text + "'";
                     command = new SqlCommand(query, connection);
                     int c = command.ExecuteNonQuery();
                     MessageBox.Show("Bạn đã đổi mật khẩu thành công", "Thông báo", MessageBoxButtons.OK);
@@ -67,7 +74,7 @@ namespace form
             this.Close();
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private void button9_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }

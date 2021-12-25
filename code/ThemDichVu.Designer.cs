@@ -29,6 +29,7 @@ namespace form
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThemDichVu));
             this.label1 = new System.Windows.Forms.Label();
             this.txbFileName = new System.Windows.Forms.TextBox();
             this.btnBrowse = new System.Windows.Forms.Button();
@@ -42,17 +43,18 @@ namespace form
             this.btnSave = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.ForeColor = System.Drawing.Color.Aqua;
             this.label1.Location = new System.Drawing.Point(12, 101);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 26);
+            this.label1.Size = new System.Drawing.Size(103, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "File Name";
             // 
@@ -67,7 +69,7 @@ namespace form
             // btnBrowse
             // 
             this.btnBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBrowse.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBrowse.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnBrowse.ForeColor = System.Drawing.Color.Aqua;
             this.btnBrowse.Location = new System.Drawing.Point(890, 90);
             this.btnBrowse.Name = "btnBrowse";
@@ -80,9 +82,9 @@ namespace form
             // btnExport
             // 
             this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExport.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExport.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnExport.ForeColor = System.Drawing.Color.Aqua;
-            this.btnExport.Location = new System.Drawing.Point(890, 254);
+            this.btnExport.Location = new System.Drawing.Point(890, 198);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(217, 66);
             this.btnExport.TabIndex = 3;
@@ -100,6 +102,7 @@ namespace form
             this.Column3});
             this.dataGridView1.Location = new System.Drawing.Point(12, 155);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(802, 519);
@@ -110,6 +113,7 @@ namespace form
             this.Column1.HeaderText = "Mã dịch vụ";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             this.Column1.Visible = false;
             // 
             // Column2
@@ -117,6 +121,7 @@ namespace form
             this.Column2.HeaderText = "Tên dịch vụ ";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             this.Column2.Visible = false;
             // 
             // Column3
@@ -124,24 +129,25 @@ namespace form
             this.Column3.HeaderText = "Giá tiền";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             this.Column3.Visible = false;
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.ForeColor = System.Drawing.Color.Aqua;
-            this.label2.Location = new System.Drawing.Point(820, 640);
+            this.label2.Location = new System.Drawing.Point(847, 563);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(350, 34);
+            this.label2.Size = new System.Drawing.Size(226, 78);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Chú ý: Mã loại thực phẩm bao gồm 3 ký tự\r\n";
+            this.label2.Text = "Chú ý: Mã loại dịch vụ bao gồm 3 ký tự\r\n";
             // 
             // btnImport
             // 
             this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImport.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImport.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnImport.ForeColor = System.Drawing.Color.Aqua;
-            this.btnImport.Location = new System.Drawing.Point(890, 366);
+            this.btnImport.Location = new System.Drawing.Point(890, 355);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(217, 66);
             this.btnImport.TabIndex = 6;
@@ -152,9 +158,9 @@ namespace form
             // btnSave
             // 
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnSave.ForeColor = System.Drawing.Color.Aqua;
-            this.btnSave.Location = new System.Drawing.Point(890, 482);
+            this.btnSave.Location = new System.Drawing.Point(890, 464);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(217, 66);
             this.btnSave.TabIndex = 7;
@@ -165,11 +171,11 @@ namespace form
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label3.ForeColor = System.Drawing.Color.Aqua;
             this.label3.Location = new System.Drawing.Point(488, 19);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(256, 43);
+            this.label3.Size = new System.Drawing.Size(214, 41);
             this.label3.TabIndex = 8;
             this.label3.Text = "Thêm Dịch Vụ";
             // 
@@ -189,12 +195,28 @@ namespace form
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.ForeColor = System.Drawing.Color.Aqua;
+            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
+            this.button9.Location = new System.Drawing.Point(1087, 0);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(56, 46);
+            this.button9.TabIndex = 109;
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
             // ThemDichVu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.ClientSize = new System.Drawing.Size(1182, 686);
+            this.ClientSize = new System.Drawing.Size(1142, 686);
+            this.Controls.Add(this.button9);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnSave);
@@ -205,7 +227,9 @@ namespace form
             this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.txbFileName);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ThemDichVu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ThemDichVu";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -228,5 +252,6 @@ namespace form
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button9;
     }
 }

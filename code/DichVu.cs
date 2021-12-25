@@ -27,6 +27,7 @@ namespace form
         public DichVu()
         {
             InitializeComponent();
+            dataGridView1.ForeColor = Color.Black;
         }
 
         SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ToString());
@@ -72,38 +73,45 @@ namespace form
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (txbHOTEN.Text == string.Empty || txbTENPHONG.Text == string.Empty || cbxDichVu.Text == string.Empty || txbQuantity.Text == string.Empty)
+            try
             {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            else
-            {
-                CheckExists();
-
-                using (var connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ToString()))
+                if (txbHOTEN.Text == string.Empty || txbTENPHONG.Text == string.Empty || cbxDichVu.Text == string.Empty || txbQuantity.Text == string.Empty)
                 {
-                    connection.Open();
-
-                    using (var command = connection.CreateCommand())
-                    {
-
-                        if (existsService)
-                        {
-                            command.CommandText = "update DATDV set TONGTIEN = '" + lblMoney.Text + "' where MADV = (select MADV from DICHVU where TENDV = N'" + cbxDichVu.Text + "')";
-                            command.ExecuteNonQuery();
-                        }
-                        else
-                        {
-                            command.CommandText = "insert into DATDV(MADV, MAKH, TONGTIEN) values ((select MADV from DICHVU where TENDV = N'" + cbxDichVu.Text + "'), (select MAKH from DATPHONG where TENPHONG = N'" + txbTENPHONG.Text + "'), '" + lblMoney.Text + "')";
-                            command.ExecuteNonQuery();
-                        }
-
-                        existsService = false;
-                    }
+                    MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
+                else
+                {
+                    CheckExists();
 
-                DichVu_Load(this, e);
+                    using (var connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ToString()))
+                    {
+                        connection.Open();
+
+                        using (var command = connection.CreateCommand())
+                        {
+
+                            if (existsService)
+                            {
+                                command.CommandText = "update DATDV set TONGTIEN = '" + lblMoney.Text + "' where MADV = (select MADV from DICHVU where TENDV = N'" + cbxDichVu.Text + "')";
+                                command.ExecuteNonQuery();
+                            }
+                            else
+                            {
+                                command.CommandText = "insert into DATDV(MADV, MAKH, TONGTIEN) values ((select MADV from DICHVU where TENDV = N'" + cbxDichVu.Text + "'), (select MAKH from DATPHONG where TENPHONG = N'" + txbTENPHONG.Text + "'), '" + lblMoney.Text + "')";
+                                command.ExecuteNonQuery();
+                            }
+
+                            existsService = false;
+                        }
+                    }
+
+                    DichVu_Load(this, e);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Phòng chưa được đặt. Vui lòng kiểm tra lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -132,10 +140,10 @@ namespace form
                 hoaDonDV.money = totalMoney;
 
                 connection.Close();
-                this.Hide();
 
                 hoaDonDV.ShowDialog();
             }
+
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -237,9 +245,10 @@ namespace form
             }
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private void button9_Click_1(object sender, EventArgs e)
         {
             this.Close();
+
         }
     }
 }

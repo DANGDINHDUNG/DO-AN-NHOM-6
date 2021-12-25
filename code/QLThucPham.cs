@@ -32,7 +32,7 @@ namespace form
         {
             if (rbtnAll.Checked)
             {
-                sql = "select MATP 'Mã thực phẩm', TENTP 'Tên thực phẩm', FORMAT(GIATIEN, '###,###,###') 'Giá tiền (VND)', MALTP 'Mã loại thực phẩm' from THUCPHAM order by MALTP desc";
+                sql = "select TENTP 'Tên thực phẩm', FORMAT(GIATIEN, '###,###,###') 'Giá tiền (VND)', MALTP 'Mã loại thực phẩm' from THUCPHAM order by MALTP desc";
             }
             else if (rbtnFood.Checked)
             {
@@ -125,6 +125,7 @@ namespace form
         {
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             saveFileDialog1.Filter = "Excel Files (.xlsx*)|*.xlsx";
+            saveFileDialog1.FileName = "Danh_sach_thuc_pham";
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 ToExcel(dgvTHUCPHAM, saveFileDialog1.FileName);
@@ -186,6 +187,11 @@ namespace form
         }
 
         private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
         {
             this.Close();
         }

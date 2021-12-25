@@ -39,7 +39,7 @@ namespace form
 
             SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ToString()); 
             connection.Open();
-            string sql = @"SELECT * FROM NHANVIEN WHERE MANV!='ADM'";
+            string sql = @"SELECT MANV 'Mã NV', TENTK 'Tên TK', HOTEN 'Họ tên', TUOI 'Tuổi', NGVL 'Ngày vào làm', SDT 'Số điện thoại', CCCD_CMND, GIOITINH 'Giới tính' FROM NHANVIEN WHERE MANV!='ADM'";
             SqlCommand com = new SqlCommand(sql, connection);
             com.CommandType = CommandType.Text;
             SqlDataAdapter da = new SqlDataAdapter(com);
@@ -106,15 +106,7 @@ namespace form
             }
             if (row.Cells[8].Value != null)
             {
-                sodonBx.Text = row.Cells[8].Value.ToString();
-            }
-            if (row.Cells[9].Value != null)
-            {
-                luongBx.Text = row.Cells[9].Value.ToString();
-            }
-            if (row.Cells[10].Value != null)
-            {
-                if (row.Cells[10].Value.ToString() == "Nam")
+                if (row.Cells[8].Value.ToString() == "Nam")
                     radioButton1.Checked = true;
                 else radioButton2.Checked = true;
             }
@@ -251,6 +243,66 @@ namespace form
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "Excel Files (.xlsx*)|*.xlsx";
+            saveFileDialog1.FileName = "danh_sach_nhan_vien";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                ToExcel(dataGridView1, saveFileDialog1.FileName);
+            }
+        }
+
+        private void ToExcel(DataGridView dataGridView1, string fileName)
+        {
+            Microsoft.Office.Interop.Excel.Application excel;
+            Microsoft.Office.Interop.Excel.Workbook workbook;
+            Microsoft.Office.Interop.Excel.Worksheet worksheet;
+            try
+            {
+                excel = new Microsoft.Office.Interop.Excel.Application();
+                excel.Visible = false;
+                excel.DisplayAlerts = false;
+                workbook = excel.Workbooks.Add(Type.Missing);
+                worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.Sheets["Sheet1"];
+                worksheet.Name = "Quản lý khách sạn";
+
+                for (int i = 0; i < dataGridView1.ColumnCount; i++)
+                {
+                    worksheet.Cells[1, i + 1] = dataGridView1.Columns[i].HeaderText;
+                }
+                for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+                {
+                    for (int j = 0; j < dataGridView1.ColumnCount; j++)
+                    {
+                        worksheet.Cells[i + 2, j + 1] = dataGridView1.Rows[i].Cells[j].Value.ToString();
+                    }
+                }
+                workbook.SaveAs(fileName);
+                workbook.Close();
+                excel.Quit();
+                MessageBox.Show("Xuất dữ liệu ra Excel thành công!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                workbook = null;
+                worksheet = null;
+            }
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            Dangki dangki = new Dangki();
+            dangki.ShowDialog();
+
+            InDSNV_Load(this, e);
         }
     }
 }

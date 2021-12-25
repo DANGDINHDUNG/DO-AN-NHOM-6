@@ -103,7 +103,7 @@ namespace form
 
                         using (var command = connection.CreateCommand())
                         {
-                            command.CommandText = "insert into THUCPHAM(TENTP, GIATIEN, MALTP) values ('" + dataGridView1.Rows[i].Cells[3].Value.ToString() + "', " +
+                            command.CommandText = "insert into THUCPHAM(TENTP, GIATIEN, MALTP) values (N'" + dataGridView1.Rows[i].Cells[3].Value.ToString() + "', " +
                             "N'" + dataGridView1.Rows[i].Cells[4].Value.ToString() + "', N'" + dataGridView1.Rows[i].Cells[5].Value.ToString() + "')";
                             command.ExecuteNonQuery();
                         }

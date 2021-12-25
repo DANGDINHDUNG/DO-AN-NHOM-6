@@ -29,6 +29,7 @@ namespace form
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThemPhong));
             this.label1 = new System.Windows.Forms.Label();
             this.txtFileName = new System.Windows.Forms.TextBox();
             this.btnBrowse = new System.Windows.Forms.Button();
@@ -42,18 +43,18 @@ namespace form
             this.btnSave = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.ForeColor = System.Drawing.Color.Aqua;
             this.label1.Location = new System.Drawing.Point(12, 93);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 26);
+            this.label1.Size = new System.Drawing.Size(89, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "File Path";
             // 
@@ -62,15 +63,15 @@ namespace form
             this.txtFileName.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtFileName.Location = new System.Drawing.Point(159, 88);
             this.txtFileName.Name = "txtFileName";
-            this.txtFileName.Size = new System.Drawing.Size(726, 31);
+            this.txtFileName.Size = new System.Drawing.Size(681, 31);
             this.txtFileName.TabIndex = 1;
             // 
             // btnBrowse
             // 
             this.btnBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBrowse.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBrowse.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnBrowse.ForeColor = System.Drawing.Color.Aqua;
-            this.btnBrowse.Location = new System.Drawing.Point(935, 78);
+            this.btnBrowse.Location = new System.Drawing.Point(884, 77);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(220, 50);
             this.btnBrowse.TabIndex = 2;
@@ -81,9 +82,9 @@ namespace form
             // btnExportSampleExcel
             // 
             this.btnExportSampleExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExportSampleExcel.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportSampleExcel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnExportSampleExcel.ForeColor = System.Drawing.Color.Aqua;
-            this.btnExportSampleExcel.Location = new System.Drawing.Point(935, 234);
+            this.btnExportSampleExcel.Location = new System.Drawing.Point(884, 177);
             this.btnExportSampleExcel.Name = "btnExportSampleExcel";
             this.btnExportSampleExcel.Size = new System.Drawing.Size(220, 50);
             this.btnExportSampleExcel.TabIndex = 3;
@@ -104,7 +105,7 @@ namespace form
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(873, 532);
+            this.dataGridView1.Size = new System.Drawing.Size(828, 532);
             this.dataGridView1.TabIndex = 4;
             // 
             // Column1
@@ -138,9 +139,9 @@ namespace form
             // btnImport
             // 
             this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImport.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImport.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnImport.ForeColor = System.Drawing.Color.Aqua;
-            this.btnImport.Location = new System.Drawing.Point(935, 337);
+            this.btnImport.Location = new System.Drawing.Point(884, 347);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(220, 50);
             this.btnImport.TabIndex = 5;
@@ -151,9 +152,9 @@ namespace form
             // btnSave
             // 
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnSave.ForeColor = System.Drawing.Color.Aqua;
-            this.btnSave.Location = new System.Drawing.Point(935, 441);
+            this.btnSave.Location = new System.Drawing.Point(884, 441);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(220, 50);
             this.btnSave.TabIndex = 6;
@@ -164,48 +165,47 @@ namespace form
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.ForeColor = System.Drawing.Color.Aqua;
-            this.label2.Location = new System.Drawing.Point(931, 575);
+            this.label2.Location = new System.Drawing.Point(846, 528);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(224, 84);
+            this.label2.Size = new System.Drawing.Size(234, 100);
             this.label2.TabIndex = 7;
             this.label2.Text = "Chú ý:\r\nTrạng thái phòng bao gồm:\r\n         + TRỐNG\r\n         + ĐÃ THUÊ\r\n";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label3.ForeColor = System.Drawing.Color.Aqua;
             this.label3.Location = new System.Drawing.Point(516, 24);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(227, 43);
+            this.label3.Size = new System.Drawing.Size(196, 41);
             this.label3.TabIndex = 8;
             this.label3.Text = "Thêm Phòng";
             // 
-            // button3
+            // button9
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Aqua;
-            this.button3.Location = new System.Drawing.Point(1124, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(56, 40);
-            this.button3.TabIndex = 108;
-            this.button3.Text = "x";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.ForeColor = System.Drawing.Color.Aqua;
+            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
+            this.button9.Location = new System.Drawing.Point(1108, 2);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(56, 40);
+            this.button9.TabIndex = 109;
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // ThemPhong
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.ClientSize = new System.Drawing.Size(1182, 686);
-            this.Controls.Add(this.button3);
+            this.ClientSize = new System.Drawing.Size(1160, 733);
+            this.Controls.Add(this.button9);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnSave);
@@ -215,7 +215,9 @@ namespace form
             this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.txtFileName);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ThemPhong";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ThemPhong";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -238,6 +240,6 @@ namespace form
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button9;
     }
 }

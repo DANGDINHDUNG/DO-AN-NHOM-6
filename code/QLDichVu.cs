@@ -98,8 +98,8 @@ namespace form
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            ThemThucPham themThucPham = new ThemThucPham();
-            themThucPham.ShowDialog();
+            ThemDichVu themDichVu = new ThemDichVu();
+            themDichVu.ShowDialog();
 
             QLThucPham_Load(this, e);
         }
@@ -108,6 +108,7 @@ namespace form
         {
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             saveFileDialog1.Filter = "Excel Files (.xlsx*)|*.xlsx";
+            saveFileDialog1.FileName = "danh_sach_dich_vu";
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 ToExcel(dgvDICHVU, saveFileDialog1.FileName);
@@ -169,6 +170,11 @@ namespace form
         }
 
         private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
         {
             this.Close();
         }

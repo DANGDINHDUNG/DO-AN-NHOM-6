@@ -48,7 +48,6 @@ namespace form
             SqlDataReader reader = command.ExecuteReader(); 
             if (reader.Read() == true)
             {
-                MessageBox.Show("Bạn đã đăng nhập thành công", "Thông báo", MessageBoxButtons.OK);
                 maso = reader.GetString(0).TrimEnd();
                 this.Hide();
                 if (maso == "ADM")
@@ -80,9 +79,11 @@ namespace form
         {
             passBox.UseSystemPasswordChar = !passBox.UseSystemPasswordChar;
         }
-        private void cancelBtn_Click(object sender, EventArgs e)
+
+        private void button9_Click(object sender, EventArgs e)
         {
             this.Close();
+
         }
     }
 }

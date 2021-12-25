@@ -25,6 +25,9 @@ namespace form
         {
             this.InitializeComponent();
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.ForeColor = Color.Black;
+            dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12, GraphicsUnit.Pixel);
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, GraphicsUnit.Pixel);
         }
 
         // SỰ KIỆN FORM 
@@ -47,14 +50,14 @@ namespace form
 
         private void KhachHang_Load(object sender, EventArgs e)
         {
-            sql = "select * from KHACHHANG";
+            sql = "select MAKH 'Mã KH', HOTEN 'Họ tên', TUOI 'Tuổi', CCCD_CMND, SDT 'SĐT', GIOITINH 'Giới tính', SOLUONG 'Số người' from KHACHHANG";
             GetData(sql);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //try
-            //{
+            try
+            {
                 if (txbHOTEN.Text == string.Empty || txbSDT.Text == string.Empty || comboBox1.Text == string.Empty || txbCCCD.Text == string.Empty || txbSOLUONG.Text == string.Empty)
                 {
                     return;
@@ -74,12 +77,11 @@ namespace form
                 txbSOLUONG.Text = string.Empty;
                 radioButton1.Checked = false;
                 radioButton2.Checked = false;
-            //}
-            //catch (Exception)
-            //{
-            //    MessageBox.Show("Nhập liệu thông tin không đúng định dạng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //}
-
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Nhập liệu thông tin không đúng định dạng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }           
 
         private void dataGridView1_Click(object sender, EventArgs e)
@@ -107,42 +109,9 @@ namespace form
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            if (txbHOTEN.Text == string.Empty || txbSDT.Text == string.Empty || comboBox1.Text == string.Empty || txbCCCD.Text == string.Empty)
-            {
-                MessageBox.Show("Chọn thông tin khách hàng trước khi thực hiện các thao tác.");
-                return;
-            }
-            else
-            {
-                DoiPhong doiPhong = new DoiPhong();
-                doiPhong.name = txbHOTEN.Text;
-                doiPhong.id = txbCCCD.Text;
-                doiPhong.amount = txbSOLUONG.Text;
-                doiPhong.ShowDialog();
-            }
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            if (txbHOTEN.Text == string.Empty || txbSDT.Text == string.Empty || comboBox1.Text == string.Empty || txbCCCD.Text == string.Empty)
-            {
-                MessageBox.Show("Chọn thông tin khách hàng trước khi thực hiện các thao tác.");
-                return;
-            }
-            else
-            {
-                TraPhong traPhong = new TraPhong();
-                traPhong.name = txbHOTEN.Text;
-                traPhong.id = txbCCCD.Text;
-                traPhong.ShowDialog();
-            }
-        }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            string sql = @"SELECT * FROM KHACHHANG WHERE HOTEN like  N'%" + textBox1.Text + "%')";
+            string sql = @"SELECT * FROM KHACHHANG WHERE HOTEN LIKE N'" + textBox1.Text + "%'";
             GetData(sql);
         }
 
@@ -240,6 +209,43 @@ namespace form
         }
 
         private void button5_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            if (txbHOTEN.Text == string.Empty || txbCCCD.Text == string.Empty || txbSOLUONG.Text == string.Empty)
+            {
+                MessageBox.Show("Vui lòng chọn thông tin khách hàng muốn xuất!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                this.Hide();
+            }
+        }
+
+        public string GetName()
+        {
+            return txbHOTEN.Text;
+        }
+
+        public string GetCode()
+        {
+            return txbCCCD.Text;
+        }
+
+        public string GetQuantity()
+        {
+            return txbSOLUONG.Text;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
         }

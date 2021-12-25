@@ -20,6 +20,10 @@ namespace form
         public QLPhong()
         {
             InitializeComponent();
+            dgvLOAIPHONG.ForeColor = Color.Black;
+            dgvPHONG.DefaultCellStyle.Font = new Font("Segoe UI", 12, GraphicsUnit.Pixel);
+            dgvLOAIPHONG.DefaultCellStyle.Font = new Font("Segoe UI", 12, GraphicsUnit.Pixel);
+            dgvPHONG.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 11, GraphicsUnit.Pixel);
         }
 
         SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ToString());
@@ -30,7 +34,7 @@ namespace form
             sql = "select MALP 'Mã loại phòng', TENLP 'Tên loại phòng', FORMAT(GIA, '###,###,###') 'Giá tiền (VND)' from LOAIPHONG order by GIA desc";
             GetData(sql);
 
-            sql = "select PHONG.MALP 'Mã loại phòng', PHONG.TENPHONG 'Tên phòng', TRANGTHAI 'Trạng thái', FORMAT(GIA, '###,###,###') 'Giá tiền (VND)' from PHONG inner join LOAIPHONG on PHONG.MALP = LOAIPHONG.MALP where TRANGTHAI = N'Trống' order by GIA desc";
+            sql = "select PHONG.MALP 'Mã LP', PHONG.TENPHONG 'Tên phòng', TRANGTHAI 'Trạng thái', FORMAT(GIA, '###,###,###') 'Giá tiền (VND)' from PHONG inner join LOAIPHONG on PHONG.MALP = LOAIPHONG.MALP where TRANGTHAI = N'Trống' order by GIA desc";
             GetData1(sql);
         }
 
@@ -144,8 +148,8 @@ namespace form
 
         private void btnDeleteAll_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("Bạn có muốn xóa toàn bộ danh sách phòng?", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            if (result == DialogResult.OK)
+            var result = MessageBox.Show("Bạn có muốn xóa toàn bộ danh sách phòng?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
             {
                 try
                 {
@@ -211,25 +215,15 @@ namespace form
 
         private void btnAdd1_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("Bạn có muốn thêm mới danh sách phòng bằng Excel?\n('YES' để thêm phòng bằng Excel, 'NO' để thêm mới 1 phòng bằng cách nhập thông tin)", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
-            if (result == DialogResult.Yes)
-            {
-                ThemPhong themPhong = new ThemPhong();
-                themPhong.ShowDialog();
-            }
-            else if (result == DialogResult.No)
-            {
-                Them1Phong them1Phong = new Them1Phong();
-                them1Phong.ShowDialog();
-            }
-
-            QLPhong_Load(this, e);
+            HaiCachThemPhong haiCachThemPhong = new HaiCachThemPhong();
+            haiCachThemPhong.ShowDialog();
         }
 
         private void btnExport_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             saveFileDialog1.Filter = "Excel Files (.xlsx*)|*.xlsx";
+            saveFileDialog1.FileName = "danh_sach_phong";
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 ToExcel(dgvPHONG, saveFileDialog1.FileName);
@@ -272,6 +266,10 @@ namespace form
                 }
             }
         }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
         private void ToExcel(DataGridView dataGridView1, string fileName)
         {
@@ -312,11 +310,6 @@ namespace form
                 workbook = null;
                 worksheet = null;
             }
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

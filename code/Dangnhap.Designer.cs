@@ -32,18 +32,16 @@
             this.logoPnl = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.DangnhapPnl = new System.Windows.Forms.Panel();
+            this.button9 = new System.Windows.Forms.Button();
             this.userBox = new System.Windows.Forms.TextBox();
             this.Title_Lb = new System.Windows.Forms.Label();
             this.passBox = new System.Windows.Forms.TextBox();
-            this.cancelBtn = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.user = new System.Windows.Forms.Label();
             this.loginBtn = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.pass = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.logoPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.DangnhapPnl.SuspendLayout();
@@ -52,8 +50,6 @@
             // logoPnl
             // 
             this.logoPnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.logoPnl.Controls.Add(this.label9);
-            this.logoPnl.Controls.Add(this.label13);
             this.logoPnl.Controls.Add(this.pictureBox1);
             this.logoPnl.Dock = System.Windows.Forms.DockStyle.Left;
             this.logoPnl.Location = new System.Drawing.Point(0, 0);
@@ -65,7 +61,7 @@
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(24, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(17, 155);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(246, 222);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -75,10 +71,10 @@
             // DangnhapPnl
             // 
             this.DangnhapPnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.DangnhapPnl.Controls.Add(this.button9);
             this.DangnhapPnl.Controls.Add(this.userBox);
             this.DangnhapPnl.Controls.Add(this.Title_Lb);
             this.DangnhapPnl.Controls.Add(this.passBox);
-            this.DangnhapPnl.Controls.Add(this.cancelBtn);
             this.DangnhapPnl.Controls.Add(this.checkBox1);
             this.DangnhapPnl.Controls.Add(this.label1);
             this.DangnhapPnl.Controls.Add(this.user);
@@ -91,20 +87,36 @@
             this.DangnhapPnl.Size = new System.Drawing.Size(762, 506);
             this.DangnhapPnl.TabIndex = 8;
             // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.ForeColor = System.Drawing.Color.Aqua;
+            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
+            this.button9.Location = new System.Drawing.Point(706, 0);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(56, 48);
+            this.button9.TabIndex = 17;
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
             // userBox
             // 
-            this.userBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userBox.Location = new System.Drawing.Point(267, 174);
+            this.userBox.Font = new System.Drawing.Font("Comfortaa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.userBox.Location = new System.Drawing.Point(247, 180);
             this.userBox.Margin = new System.Windows.Forms.Padding(4);
             this.userBox.Name = "userBox";
-            this.userBox.Size = new System.Drawing.Size(283, 34);
+            this.userBox.Size = new System.Drawing.Size(283, 30);
             this.userBox.TabIndex = 7;
             // 
             // Title_Lb
             // 
             this.Title_Lb.BackColor = System.Drawing.Color.Transparent;
             this.Title_Lb.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Title_Lb.Font = new System.Drawing.Font("Times New Roman", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Title_Lb.Font = new System.Drawing.Font("Comfortaa", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Title_Lb.ForeColor = System.Drawing.Color.Aqua;
             this.Title_Lb.Location = new System.Drawing.Point(238, 25);
             this.Title_Lb.Name = "Title_Lb";
@@ -115,39 +127,24 @@
             // 
             // passBox
             // 
-            this.passBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passBox.Location = new System.Drawing.Point(267, 230);
+            this.passBox.Font = new System.Drawing.Font("Comfortaa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.passBox.Location = new System.Drawing.Point(247, 236);
             this.passBox.Margin = new System.Windows.Forms.Padding(4);
             this.passBox.Name = "passBox";
-            this.passBox.Size = new System.Drawing.Size(283, 34);
+            this.passBox.Size = new System.Drawing.Size(283, 30);
             this.passBox.TabIndex = 8;
             this.passBox.UseSystemPasswordChar = true;
-            // 
-            // cancelBtn
-            // 
-            this.cancelBtn.FlatAppearance.BorderSize = 0;
-            this.cancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cancelBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelBtn.ForeColor = System.Drawing.Color.Aqua;
-            this.cancelBtn.Location = new System.Drawing.Point(711, 0);
-            this.cancelBtn.Margin = new System.Windows.Forms.Padding(4);
-            this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(50, 50);
-            this.cancelBtn.TabIndex = 13;
-            this.cancelBtn.Text = "x";
-            this.cancelBtn.UseVisualStyleBackColor = true;
-            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox1.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Font = new System.Drawing.Font("Comfortaa", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.checkBox1.ForeColor = System.Drawing.Color.Aqua;
-            this.checkBox1.Location = new System.Drawing.Point(580, 236);
+            this.checkBox1.Location = new System.Drawing.Point(567, 230);
             this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(169, 30);
+            this.checkBox1.Size = new System.Drawing.Size(166, 31);
             this.checkBox1.TabIndex = 15;
             this.checkBox1.Text = "Hiện mật khẩu";
             this.checkBox1.UseVisualStyleBackColor = false;
@@ -157,12 +154,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Comfortaa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.ForeColor = System.Drawing.Color.Aqua;
             this.label1.Location = new System.Drawing.Point(105, 442);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(325, 26);
+            this.label1.Size = new System.Drawing.Size(371, 32);
             this.label1.TabIndex = 9;
             this.label1.Text = "Quên mật khẩu? Lấy lại mật khẩu";
             // 
@@ -170,19 +167,19 @@
             // 
             this.user.AutoSize = true;
             this.user.BackColor = System.Drawing.Color.Transparent;
-            this.user.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.user.Font = new System.Drawing.Font("Comfortaa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.user.ForeColor = System.Drawing.Color.Aqua;
             this.user.Location = new System.Drawing.Point(53, 174);
             this.user.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.user.Name = "user";
-            this.user.Size = new System.Drawing.Size(151, 26);
+            this.user.Size = new System.Drawing.Size(175, 32);
             this.user.TabIndex = 10;
             this.user.Text = "Tên đăng nhập";
             // 
             // loginBtn
             // 
             this.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loginBtn.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginBtn.Font = new System.Drawing.Font("Comfortaa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.loginBtn.ForeColor = System.Drawing.Color.Aqua;
             this.loginBtn.Location = new System.Drawing.Point(294, 330);
             this.loginBtn.Margin = new System.Windows.Forms.Padding(4);
@@ -197,12 +194,12 @@
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel1.Font = new System.Drawing.Font("Times New Roman", 13.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.Font = new System.Drawing.Font("Comfortaa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.linkLabel1.LinkColor = System.Drawing.Color.HotPink;
-            this.linkLabel1.Location = new System.Drawing.Point(455, 442);
+            this.linkLabel1.Location = new System.Drawing.Point(499, 442);
             this.linkLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(84, 26);
+            this.linkLabel1.Size = new System.Drawing.Size(90, 32);
             this.linkLabel1.TabIndex = 14;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Tại đây";
@@ -212,36 +209,14 @@
             // 
             this.pass.AutoSize = true;
             this.pass.BackColor = System.Drawing.Color.Transparent;
-            this.pass.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pass.Font = new System.Drawing.Font("Comfortaa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.pass.ForeColor = System.Drawing.Color.Aqua;
             this.pass.Location = new System.Drawing.Point(105, 236);
             this.pass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.pass.Name = "pass";
-            this.pass.Size = new System.Drawing.Size(99, 26);
+            this.pass.Size = new System.Drawing.Size(116, 32);
             this.pass.TabIndex = 11;
             this.pass.Text = "Mật khẩu";
-            // 
-            // label9
-            // 
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Aqua;
-            this.label9.Location = new System.Drawing.Point(12, 367);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(258, 116);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "HOTEL";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label13
-            // 
-            this.label13.Font = new System.Drawing.Font(".VnArabiaH", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Aqua;
-            this.label13.Location = new System.Drawing.Point(16, 237);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(258, 186);
-            this.label13.TabIndex = 9;
-            this.label13.Text = "Aroma \r\nGarden\r\n";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Dangnhap
             // 
@@ -274,7 +249,6 @@
         private System.Windows.Forms.TextBox userBox;
         private System.Windows.Forms.Label Title_Lb;
         private System.Windows.Forms.TextBox passBox;
-        private System.Windows.Forms.Button cancelBtn;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label user;
@@ -282,7 +256,6 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label pass;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button button9;
     }
 }

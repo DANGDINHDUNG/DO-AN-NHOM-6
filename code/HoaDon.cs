@@ -21,6 +21,7 @@ namespace form
         public string day;
         public string money;
         public string amount;
+        public string invoiceCode;
 
         public decimal totalMoney;
         public decimal discountMoney;
@@ -58,17 +59,6 @@ namespace form
             connection.Close();
         }
 
-        private void HoaDon_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DatPhong datPhong = new DatPhong();
-            datPhong.name = txbHOTEN.Text;
-            datPhong.id = txbCCCD.Text;
-            datPhong.amount = txbSOLUONG.Text;
-            this.Hide();
-            datPhong.ShowDialog();
-
-        }
-
         public void GetData(SqlCommand com)
         {
             SqlDataAdapter da = new SqlDataAdapter(com);
@@ -103,22 +93,34 @@ namespace form
                         using (var command = connection.CreateCommand())
                         {
 
-                            command.CommandText = "insert into HOADON(NGAYLAP,HINHTHUCTT,TINHTIEN,MAKH,CheckIn,CheckOut,SOPHONG) " +
+                            command.CommandText = "insert into HOADON(NGAYLAP,HINHTHUCTT,TINHTIEN,MAKH,CheckIn,CheckOut,SOPHONG,KHUYENMAI) " +
                                 "values ('" + dateTimePicker3.Text + "', N'" + txbTHANHTOAN.Text + "', N'" + txbTHANHTIEN.Text + "', " +
                                 "(select MAKH from KHACHHANG where CCCD_CMND = '" + txbCCCD.Text + "' ), '" + Check_In.Text + "', " +
                                 "'" + Check_Out.Text + "', (select count(MAPHONG) from DATPHONG where MAKH = " +
-                                "(select MAKH from KHACHHANG where CCCD_CMND = '" + txbCCCD.Text + "')))";
+                                "(select MAKH from KHACHHANG where CCCD_CMND = '" + txbCCCD.Text + "')), '" + comboBox1.Text + "')";
                             command.ExecuteNonQuery();
 
-                            command.CommandText = "update DATPHONG set MAHD = (select MAHD from HOADON where MAKH = (select MAKH from KHACHHANG where CCCD_CMND = '" + txbCCCD.Text + "')) where MAKH = (select MAKH from KHACHHANG where CCCD_CMND = '" + txbCCCD.Text + "')";
+                            command.CommandText = "update DATPHONG set MAHD = (select MAHD from HOADON where MAKH = (select MAKH from KHACHHANG where CCCD_CMND = '" + txbCCCD.Text + "') and NGAYLAP = '" + dateTimePicker3.Text + "') where MAKH = (select MAKH from KHACHHANG where CCCD_CMND = '" + txbCCCD.Text + "')";
                             command.ExecuteNonQuery();
 
-                            command.CommandText = "insert into DOANHTHU(DOANHTHU,THANG,NAM) values ('" + txbTHANHTIEN.Text + "', '" + dateTimePicker3.Value.Month.ToString() + "', '" + dateTimePicker3.Value.Year.ToString() + "')";
+                            command.CommandText = "insert into DOANHTHU(DOANHTHU,THOIGIAN) values ('" + txbTHANHTIEN.Text + "', '" + dateTimePicker3.Value.ToString() + "')";
                             command.ExecuteNonQuery();
 
                         }
                     }
-                    MessageBox.Show("Hóa đơn đã được lưu!", "Thông báo");
+                    sql = "select MAHD from HOADON where MAKH = (select MAKH from KHACHHANG where CCCD_CMND = '" + txbCCCD.Text + "') and SOPHONG <> 0 and NGAYLAP = '" + dateTimePicker3.Text + "'";
+                    SqlCommand com = new SqlCommand(sql, connection);
+
+                    connection.Open();
+
+                    SqlDataReader dr = com.ExecuteReader();
+                    if (dr.Read())
+                    {
+                        invoiceCode = dr[0].ToString();
+                    }
+                    connection.Close();
+
+                    MessageBox.Show("Hóa đơn đã được lưu!\nMã hóa đơn là " + invoiceCode + "", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
@@ -147,17 +149,7 @@ namespace form
             this.Close();
         }
 
-        private void btnPrint_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label20_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
+        private void button9_Click(object sender, EventArgs e)
         {
             this.Close();
         }

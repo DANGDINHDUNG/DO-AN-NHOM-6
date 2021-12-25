@@ -58,10 +58,6 @@ namespace form
                     command.ExecuteNonQuery();
                 }
             }
-            DichVu dichVu = new DichVu();
-
-            this.Hide();
-            dichVu.ShowDialog();
 
         }
 
@@ -101,15 +97,15 @@ namespace form
                             using (var command = connection.CreateCommand())
                             {
 
-                                command.CommandText = "insert into HOADON(MADV,NGAYLAP,TINHTIEN,MAKH) values ('" + dataGridView1.Rows[i].Cells[0].Value.ToString() + "', '" + dateTimePicker3.Text + "', '" + dataGridView1.Rows[i].Cells[3].Value.ToString() + "', (select MAKH from DATPHONG where TENPHONG = N'" + txbTENPHONG.Text + "'))";
+                                command.CommandText = "insert into HOADON(MADV,NGAYLAP,TINHTIEN,MAKH,KHUYENMAI) values ('" + dataGridView1.Rows[i].Cells[0].Value.ToString() + "', '" + dateTimePicker3.Text + "', '" + dataGridView1.Rows[i].Cells[3].Value.ToString() + "', (select MAKH from DATPHONG where TENPHONG = N'" + txbTENPHONG.Text + "'), '" + comboBox1.Text + "')";
                                 command.ExecuteNonQuery();
 
-                                command.CommandText = "insert into DOANHTHU(DOANHTHU,THANG,NAM) values ('" + txbTHANHTIEN.Text + "', '" + dateTimePicker3.Value.Month.ToString() + "', '" + dateTimePicker3.Value.Year.ToString() + "')";
+                                command.CommandText = "insert into DOANHTHU(DOANHTHU,THOIGIAN) values ('" + txbTHANHTIEN.Text + "', '" + dateTimePicker3.Value.ToString() + "')";
                                 command.ExecuteNonQuery();
                             }
                         }
                     }
-                    MessageBox.Show("Hóa đơn đã được lưu!", "Thông báo");
+                    MessageBox.Show("Hóa đơn đã được lưu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
@@ -138,7 +134,7 @@ namespace form
             this.Close();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }

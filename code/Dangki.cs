@@ -99,7 +99,11 @@ namespace form
         }
         private void dkiBtn_Click(object sender, EventArgs e)
         {
-            if (tdnBox.Text != null && mkBox.Text != null && nlmkBox.Text != null)
+            if (tdnBox.Text == string.Empty || mkBox.Text == string.Empty || nlmkBox.Text == string.Empty || hotenBox.Text == string.Empty || tuoiBox.Text == string.Empty || cmndBox.Text == string.Empty || sdtBox.Text == string.Empty)
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
             {
                 if (mkBox.Text == nlmkBox.Text)
                 {

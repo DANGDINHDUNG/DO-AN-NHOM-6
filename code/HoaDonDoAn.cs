@@ -21,6 +21,7 @@ namespace form
         public string day;
         public string money;
         public string amount;
+        public string invoiceCode;
 
         public decimal totalMoney;
         public decimal discountMoney;
@@ -43,7 +44,7 @@ namespace form
             sql = "select MATP, TENTP, SOLUONG, MAKH, MALTP, FORMAT(TONGTIEN, '###,###,###') as GIATIEN from DATTP";
             SqlCommand com = new SqlCommand(sql, connection);
 
-            GetData(com);           
+            GetData(com);
         }
 
         public void GetData(SqlCommand com)
@@ -57,10 +58,16 @@ namespace form
         private void comboBox1_TextChanged(object sender, EventArgs e)
         {
 
-            decimal discount = Convert.ToDecimal(comboBox1.Text) / 100;
-            totalMoney = Convert.ToDecimal(txbTONGTIEN.Text);
-            discountMoney = totalMoney - totalMoney * discount;
-            txbTHANHTIEN.Text = discountMoney.ToString("###,###");
+            try
+            {
+                decimal discount = Convert.ToDecimal(comboBox1.Text) / 100;
+                totalMoney = Convert.ToDecimal(txbTONGTIEN.Text);
+                discountMoney = totalMoney - totalMoney * discount;
+                txbTHANHTIEN.Text = discountMoney.ToString("###,###");
+            }
+            catch
+            {
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -78,15 +85,30 @@ namespace form
                     using (var command = connection.CreateCommand())
                     {
 
-                        command.CommandText = "insert into HOADONDA(NGAYLAP, TONGTIEN, MAKH, SOLUONG) values ('" + dateTimePicker3.Text + "', '" + txbTHANHTIEN.Text + "', (select MAKH from DATPHONG where TENPHONG = N'" + txbTENPHONG.Text + "'), '" + txbSOLUONG.Text + "')";
+                        command.CommandText = "insert into HOADONDA(NGAYLAP, TONGTIEN, MAKH, SOLUONG, TENPHONG) values ('" + dateTimePicker3.Text + "', '" + txbTHANHTIEN.Text + "', (select MAKH from DATPHONG where TENPHONG = N'" + txbTENPHONG.Text + "'), '" + txbSOLUONG.Text + "', N'" + txbTENPHONG.Text + "')";
                         command.ExecuteNonQuery();
 
-                        command.CommandText = "insert into DOANHTHU(DOANHTHU,THANG,NAM) values ('" + txbTHANHTIEN.Text + "', '" + dateTimePicker3.Value.Month.ToString() + "', '" + dateTimePicker3.Value.Year.ToString() + "')";
+                        command.CommandText = "update DATTP set MAHDDA = (select MAHDDA from HOADONDA where TENPHONG = N'" + txbTENPHONG.Text + "' and NGAYLAP = '" + dateTimePicker3.Text + "') where MAKH = (select MAKH from DATPHONG where TENPHONG = N'" + txbTENPHONG.Text + "')";
+                        command.ExecuteNonQuery();
+
+                        command.CommandText = "insert into DOANHTHU(DOANHTHU,THOIGIAN) values ('" + txbTHANHTIEN.Text + "', '" + dateTimePicker3.Value.ToString() + "')";
                         command.ExecuteNonQuery();
 
                     }
                 }
-                MessageBox.Show("Hóa đơn đã được lưu!", "Thông báo");
+                sql = "select MAHDDA from HOADONDA where MAKH = (select MAKH from DATPHONG where TENPHONG = N'" + txbTENPHONG.Text + "') and NGAYLAP = '" + dateTimePicker3.Text + "'";
+                SqlCommand com = new SqlCommand(sql, connection);
+
+                connection.Open();
+
+                SqlDataReader dr = com.ExecuteReader();
+                if (dr.Read())
+                {
+                    invoiceCode = dr[0].ToString();
+                }
+                connection.Close();
+
+                MessageBox.Show("Hóa đơn đã được lưu!\nMã hóa đơn là " + invoiceCode + "", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -117,13 +139,19 @@ namespace form
                     command.ExecuteNonQuery();
                 }
             }
-
-            DoAn doAn = new DoAn();
-            this.Hide();
-            doAn.ShowDialog();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button9_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnCancel_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }

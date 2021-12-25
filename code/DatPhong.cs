@@ -17,7 +17,7 @@ namespace form
         private string sql;
         private string sql1;
 
-        public decimal sum, money,day;
+        public decimal sum, money, day;
         public string name;
         public string id;
         public string amount;
@@ -27,15 +27,20 @@ namespace form
         {
             this.InitializeComponent();
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect; 
+            dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             sum = 0;
+            dataGridView1.ForeColor = Color.Black;
+            dataGridView2.ForeColor = Color.Black;
         }
+
+        SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ToString());
 
         private void DatPhong_Load(object sender, EventArgs e)
         {
-            txbHOTEN.Text = name;
-            txbCCCD.Text = id;
-            txbSOLUONG.Text = amount;
+            connection.Open();
+
+            sql1 = "select MALP from LOAIPHONG";
+            ComboBoxData(sql1);
 
             sql = "select PHONG.MALP 'Mã loại phòng', PHONG.TENPHONG 'Tên phòng', TRANGTHAI 'Trạng thái', FORMAT(GIA, '###,###,###') 'Giá tiền (VND)' from PHONG inner join LOAIPHONG on PHONG.MALP = LOAIPHONG.MALP where TRANGTHAI = N'Trống'";
             GetData(sql);
@@ -44,6 +49,7 @@ namespace form
             GetData1(sql1);
 
             GetSum();
+
 
         }
 
@@ -54,14 +60,13 @@ namespace form
 
         }
 
-
         private void btnDatphong_Click(object sender, EventArgs e)
         {
             try
             {
-                if (txbTENPHONG.Text == string.Empty || cbxTHANHTOAN.Text == string.Empty)
+                if (txbHOTEN.Text == string.Empty || txbTENPHONG.Text == string.Empty || cbxTHANHTOAN.Text == string.Empty)
                 {
-                    MessageBox.Show("Chưa đủ thông tin để tiến hành đặt phòng", "Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Chưa đủ thông tin để tiến hành đặt phòng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
@@ -86,12 +91,14 @@ namespace form
 
                         }
                     }
+
+                    cbxMALP.Text = string.Empty;
+                    txbTENPHONG.Text = string.Empty;
+                    DatPhong_Load(this, e);
+                    MessageBox.Show("Bạn đã đăng kí thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
-                cbxMALP.Text = string.Empty;
-                txbTENPHONG.Text = string.Empty;
-                DatPhong_Load(this, e);
-                MessageBox.Show("Bạn đã đăng kí thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
             catch (Exception ex)
             {
@@ -102,35 +109,7 @@ namespace form
         private void dataGridView1_Click(object sender, EventArgs e)
         {
             txbTENPHONG.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
-            switch (dataGridView1.SelectedRows[0].Cells[0].Value.ToString())
-            {
-                case "RST0":
-                    {
-                        cbxMALP.Text = "RST0 (Phòng tổng thống)";
-                        break;
-                    }
-                case "VIP1":
-                    {
-                        cbxMALP.Text = "VIP1 (Phòng V.I.P đơn)";
-
-                        break;
-                    }
-                case "NRM1":
-                    {
-                        cbxMALP.Text = "NRM1 (Phòng phổ thông đơn)";
-                        break;
-                    }
-                case "VIP2":
-                    {
-                        cbxMALP.Text = "VIP2 (Phòng V.I.P đôi)";
-                        break;
-                    }
-                case "NRM2":
-                    {
-                        cbxMALP.Text = "NRM2 (Phòng phổ thông đôi)";
-                        break;
-                    }
-            }
+            cbxMALP.Text = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -147,7 +126,7 @@ namespace form
                         command.CommandText = "delete from DATPHONG where MAPHONG = (select MAPHONG from PHONG where TENPHONG = N'" + txbTENPHONG.Text + "')";
                         command.ExecuteNonQuery();
 
-                        command.CommandText = "update PHONG set TRANGTHAI = N'Trống' where PHONG.TENPHONG = N'" + txbTENPHONG.Text + "' ";
+                        command.CommandText = "update PHONG set TRANGTHAI = N'TRỐNG' where PHONG.TENPHONG = N'" + txbTENPHONG.Text + "' ";
                         command.ExecuteNonQuery();
 
 
@@ -205,7 +184,7 @@ namespace form
                     sum += (money * day) + (money * (decimal)0.3);
 
                 }
-                else 
+                else
                 {
                     sum += (money * day);
                 }
@@ -220,45 +199,11 @@ namespace form
             txbTENPHONG.Text = dataGridView2.SelectedRows[0].Cells[1].Value.ToString();
             dateTimePicker1.Text = dataGridView2.SelectedRows[0].Cells[4].Value.ToString();
             dateTimePicker2.Text = dataGridView2.SelectedRows[0].Cells[5].Value.ToString();
-            switch (dataGridView2.SelectedRows[0].Cells[0].Value.ToString())
-            {
-                case "RST0":
-                    {
-                        cbxMALP.Text = "RST0 (Phòng tổng thống)";
-                        break;
-                    }
-                case "VIP1":
-                    {
-                        cbxMALP.Text = "VIP1 (Phòng V.I.P đơn)";
-
-                        break;
-                    }
-                case "NRM1":
-                    {
-                        cbxMALP.Text = "NRM1 (Phòng phổ thông đơn)";
-                        break;
-                    }
-                case "VIP2":
-                    {
-                        cbxMALP.Text = "VIP2 (Phòng V.I.P đôi)";
-                        break;
-                    }
-                case "NRM2":
-                    {
-                        cbxMALP.Text = "NRM2 (Phòng phổ thông đôi)";
-                        break;
-                    }
-            }
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            cbxMALP.Text = dataGridView2.SelectedRows[0].Cells[0].Value.ToString();
         }
 
         public void GetData(string data)
         {
-            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ToString());
             connection.Open();
             string sql = data;
             SqlCommand com = new SqlCommand(sql, connection);
@@ -269,6 +214,27 @@ namespace form
             connection.Close();
             dataGridView1.DataSource = dt;
         }
+
+        private void btnInformation_Click(object sender, EventArgs e)
+        {
+            KhachHang khachHang = new KhachHang();
+            this.Hide();
+            khachHang.ShowDialog();
+
+            txbHOTEN.Text = khachHang.GetName();
+            txbCCCD.Text = khachHang.GetCode();
+            txbSOLUONG.Text = khachHang.GetQuantity();
+            this.Show();
+
+            DatPhong_Load(this, e);
+            
+        }
+
+        private void button9_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         public void GetData1(string data)
         {
             SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ToString());
@@ -282,5 +248,21 @@ namespace form
             connection.Close();
             dataGridView2.DataSource = dt;
         }
+
+        private void ComboBoxData(string data)
+        {
+            SqlCommand cmd = new SqlCommand(data, connection);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            cmd.ExecuteNonQuery();
+
+            connection.Close();
+
+            cbxMALP.DataSource = ds.Tables[0];
+            cbxMALP.DisplayMember = "MALP";
+
+        }
+
     }
 }
