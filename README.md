@@ -2,8 +2,8 @@
 # Giáo viên hướng dẫn: Nguyễn Tấn Toàn
 Danh sách thành viên nhóm 6:
   
-  •	20520456 – Đặng Đình Dũng (Nhóm trưởng)<br />
-  •	20520406 – Nguyễn Gia Bảo <br />
+  •	20520456 – Đặng Đình Dũng (Nhóm trưởng)
+  •	20520406 – Nguyễn Gia Bảo 
   
     -> Thiết kế các option cho đồ án  <br />
   
